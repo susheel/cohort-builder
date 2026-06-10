@@ -4,6 +4,10 @@ import { DatasetPicker } from '../components/DatasetPicker';
 import { VariablePalette } from '../components/VariablePalette';
 import { QuerySummary } from '../components/QuerySummary';
 import { QueryBuilderPanel } from '../components/QueryBuilderPanel';
+import { BuilderModeToggle } from '../components/BuilderModeToggle';
+import { GuidedBuilder } from '../components/GuidedBuilder';
+import { TemplatePicker } from '../components/TemplatePicker';
+import { DescribeCohort } from '../components/DescribeCohort';
 import { Characterisation } from '../components/Characterisation';
 import { DataFilesTable } from '../components/DataFilesTable';
 import { CountRail } from '../components/CountRail';
@@ -76,6 +80,7 @@ export function App() {
 }
 
 function ReadyLayout() {
+  const { mode } = useApp();
   return (
     <div className="flex h-full flex-col gap-4 overflow-y-auto p-4 lg:grid lg:grid-cols-[340px_minmax(0,1fr)_300px] lg:gap-4 lg:overflow-hidden lg:p-4">
       <aside className="rounded-lg border border-slate-200 bg-white shadow-sm lg:overflow-hidden">
@@ -85,8 +90,13 @@ function ReadyLayout() {
       </aside>
 
       <section className="flex min-w-0 flex-col gap-4 lg:overflow-y-auto">
+        <BuilderModeToggle />
+        <div className="flex flex-wrap items-start gap-2">
+          <TemplatePicker />
+        </div>
+        <DescribeCohort />
+        {mode === 'guided' ? <GuidedBuilder /> : <QueryBuilderPanel />}
         <QuerySummary />
-        <QueryBuilderPanel />
         <Characterisation />
         <DataFilesTable />
       </section>

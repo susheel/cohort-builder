@@ -33,9 +33,19 @@ npm run build        # production build
 
 - **Filter** on demographics, comorbidities, genetics, assessment availability,
   data modality, and study design.
-- **Compose boolean queries** with a nested rule-group builder (powered by
-  [react-querybuilder](https://react-querybuilder.js.org/), re-skinned in
-  Tailwind):
+- **Two builder modes** (toggle):
+  - **Guided** (default, for clinical researchers): an inclusion/exclusion
+    funnel. "Keep subjects who…" and "remove subjects who…" zones; adding a row
+    narrows the cohort (AND), multiple values in a row mean "any of" (OR), and
+    the Exclude zone is NOT. A live per-step attrition count (disclosure-
+    controlled) sits beside each row. Start from a **template**, or **describe
+    the cohort in plain English** and have an LLM draft editable criteria you
+    confirm before running (see "AI assistance" below). No Boolean operators are
+    ever exposed. Design rationale: `docs/research/08-11`.
+  - **Advanced**: the full nested rule-group builder below.
+- **Compose boolean queries** (Advanced mode) with a nested rule-group builder
+  (powered by [react-querybuilder](https://react-querybuilder.js.org/),
+  re-skinned in Tailwind):
   - Each group has a clear **AND / OR** toggle (OR within a group, AND across
     groups); add **nested groups** for mixed logic.
   - **NOT is a group property**: an **Exclude (NOT)** toggle negates a whole
@@ -220,6 +230,23 @@ a user/organisation site (`<user>.github.io`) served at the root, use
 All runtime asset URLs are resolved through `src/util/asset.ts`
 (`import.meta.env.BASE_URL`), so the app works both at the root in dev and under
 the sub-path in production.
+
+## AI assistance (optional)
+
+The Guided builder has a "describe your cohort in plain English" front door that
+drafts editable inclusion/exclusion criteria (you always confirm before it
+runs; the LLM never executes a query and your data is never sent, only the query
+text). Configure a provider in Settings:
+
+- **In-browser model** (default fallback): runs a small quantised model via
+  `@mlc-ai/web-llm` over **WebGPU** - no API key, fully offline. Weights
+  download to the browser cache on first use; requires a WebGPU-capable browser.
+- **OpenAI-compatible**: any `/chat/completions` endpoint (OpenAI, Azure,
+  OpenRouter, Ollama, LM Studio, vLLM) - set base URL, key, model.
+- **Anthropic-compatible**: `/v1/messages` endpoint - set base URL, key, model.
+
+API keys are stored only in your browser (localStorage) and used to call the
+endpoint directly from the browser.
 
 ## Privacy
 

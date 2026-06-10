@@ -39,6 +39,17 @@ import {
 } from '../query/compileTree';
 import { dataFileColumns } from '../query/builder';
 import { buildFields, fieldByName, type CohortField } from '../query/fields';
+import {
+  funnelSteps,
+  guidedToTree,
+  makeCriterion,
+  treeToGuided,
+  type Criterion,
+  type GuidedModel,
+} from '../query/guided';
+import { makeLlmClient } from '../llm';
+import type { DraftedCohort, LlmConfig, LlmProgress } from '../llm/types';
+import { TEMPLATES, type CohortTemplate } from '../data/templates';
 import { asset } from '../util/asset';
 
 export interface DatasetRef {
@@ -74,6 +85,26 @@ export interface DataFilesPage {
   total: number;
 }
 
+export type BuilderMode = 'guided' | 'advanced';
+
+export interface FunnelRow {
+  kind: 'start' | 'include' | 'exclude';
+  criterion?: Criterion;
+  result: CountResult;
+}
+
+const LLM_CONFIG_KEY = 'cohort-builder.llmConfig';
+
+function loadLlmConfig(): LlmConfig {
+  try {
+    const raw = localStorage.getItem(LLM_CONFIG_KEY);
+    if (raw) return JSON.parse(raw) as LlmConfig;
+  } catch {
+    /* ignore */
+  }
+  return { provider: 'webllm' };
+}
+
 let ruleId = 0;
 
 interface AppStateValue {
@@ -101,6 +132,25 @@ interface AppStateValue {
   addRule: (field: string) => void;
   /** number of active leaf predicates */
   ruleCount: number;
+
+  /** editing surface: guided inclusion/exclusion vs advanced rule tree */
+  mode: BuilderMode;
+  setMode: (m: BuilderMode) => void;
+  /** the query viewed as include/exclude criteria */
+  guided: GuidedModel;
+  setGuided: (include: Criterion[], exclude: Criterion[]) => void;
+  /** per-step attrition counts (SDC-applied) for the funnel */
+  getFunnelCounts: () => Promise<FunnelRow[]>;
+
+  /** natural-language -> criteria via the configured LLM provider */
+  llmConfig: LlmConfig;
+  setLlmConfig: (c: LlmConfig) => void;
+  llmAvailable: () => Promise<{ ok: boolean; reason?: string }>;
+  draftFromText: (text: string, onProgress?: (p: LlmProgress) => void) => Promise<DraftedCohort>;
+  applyDraft: (draft: DraftedCohort) => void;
+
+  templates: CohortTemplate[];
+  applyTemplate: (t: CohortTemplate) => void;
 
   /** highest sensitivity touched by the active query */
   activeSensitivity: Sensitivity;
@@ -152,6 +202,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const [revealRaw, setRevealRaw] = useState(false);
   const [query, setQuery] = useState<RuleGroupType>(EMPTY_QUERY);
   const [chartVars, setChartVars] = useState<string[]>([]);
+  const [mode, setMode] = useState<BuilderMode>('guided');
+  const [llmConfig, setLlmConfigState] = useState<LlmConfig>(loadLlmConfig);
 
   const [count, setCount] = useState<CountResult | null>(null);
   const [rawCount, setRawCount] = useState<number | null>(null);
@@ -261,6 +313,101 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const resetSdc = useCallback(() => setSpec((s) => (s ? (setSdc(s.sdc), s) : s)), []);
 
   const ruleCount = useMemo(() => countLeaves(query), [query]);
+
+  const guided = useMemo(() => treeToGuided(query), [query]);
+
+  const setGuided = useCallback((include: Criterion[], exclude: Criterion[]) => {
+    setQuery(guidedToTree(include, exclude));
+  }, []);
+
+  const sensitivityOf = useCallback(
+    (q: RuleGroupType): Sensitivity => {
+      if (!spec) return 'None';
+      let max: Sensitivity = 'None';
+      for (const name of fieldsInTree(spec, q)) {
+        const v = spec.variables.find((x) => x.name === name);
+        if (v && sensitivityRank(v.sensitivity) > sensitivityRank(max)) max = v.sensitivity;
+      }
+      return max;
+    },
+    [spec],
+  );
+
+  const getFunnelCounts = useCallback(async (): Promise<FunnelRow[]> => {
+    if (!spec) return [];
+    const steps = funnelSteps(guided);
+    const seedBase = canonicalizeQuery({ id: spec.id, funnel: true });
+    const out: FunnelRow[] = [];
+    for (const step of steps) {
+      const raw = await scalar<number>(treeCountSql(spec, step.query));
+      const level = step.kind === 'start' ? 'None' : sensitivityOf(step.query);
+      const seed = `${seedBase}:${out.length}`;
+      out.push({
+        kind: step.kind,
+        criterion: step.criterion,
+        result: applyCount(Number(raw), level, sdc, seed),
+      });
+    }
+    return out;
+  }, [spec, guided, sdc, sensitivityOf]);
+
+  const setLlmConfig = useCallback((c: LlmConfig) => {
+    setLlmConfigState(c);
+    try {
+      localStorage.setItem(LLM_CONFIG_KEY, JSON.stringify(c));
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const llmAvailable = useCallback(async () => {
+    try {
+      const client = makeLlmClient(llmConfig);
+      const ok = await client.available();
+      return { ok, reason: ok ? undefined : client.unavailableReason };
+    } catch (e) {
+      return { ok: false, reason: e instanceof Error ? e.message : String(e) };
+    }
+  }, [llmConfig]);
+
+  const draftFromText = useCallback(
+    async (text: string, onProgress?: (p: LlmProgress) => void): Promise<DraftedCohort> => {
+      if (!spec) return { include: [], exclude: [] };
+      const client = makeLlmClient(llmConfig);
+      return client.draftCohort(text, spec, onProgress);
+    },
+    [spec, llmConfig],
+  );
+
+  // keep only criteria whose field exists and is visible in the current spec
+  const validCriteria = useCallback(
+    (items: { field: string; operator: string; value: unknown }[]): Criterion[] => {
+      if (!spec) return [];
+      const visible = new Set(
+        spec.variables.filter((v) => v.visible !== false && v.widget !== 'internal').map((v) => v.name),
+      );
+      return items
+        .filter((c) => visible.has(c.field))
+        .map((c) => makeCriterion(c.field, c.operator, c.value));
+    },
+    [spec],
+  );
+
+  const applyDraft = useCallback(
+    (draft: DraftedCohort) => {
+      setGuided(validCriteria(draft.include), validCriteria(draft.exclude));
+      setMode('guided');
+    },
+    [setGuided, validCriteria],
+  );
+
+  const applyTemplate = useCallback(
+    (t: CohortTemplate) => {
+      setGuided(validCriteria(t.include), validCriteria(t.exclude));
+      setMode('guided');
+    },
+    [setGuided, validCriteria],
+  );
 
   const activeSensitivity = useMemo<Sensitivity>(() => {
     if (!spec) return 'None';
@@ -389,6 +536,18 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     clearQuery,
     addRule,
     ruleCount,
+    mode,
+    setMode,
+    guided,
+    setGuided,
+    getFunnelCounts,
+    llmConfig,
+    setLlmConfig,
+    llmAvailable,
+    draftFromText,
+    applyDraft,
+    templates: TEMPLATES,
+    applyTemplate,
     activeSensitivity,
     count,
     rawCount,
