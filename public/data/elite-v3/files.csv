@@ -1,0 +1,801 @@
+syn_id,specimen_type,organ,tissue,nucleic_acid_source,cell_type,is_post_mortem,data_type,file_format,assay_type,is_multi_specimen
+syn860761936,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_D,cell_type_A,false,Genomics,processed counts,metabolomics,true
+syn883765020,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_D,cell_type_D,true,Genomics,BAM,scRNAseq,false
+syn425341745,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_A,cell_type_A,false,metabolomics,FASTQ,scRNAseq,false
+syn120175368,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_D,cell_type_D,false,metabolomics,processed counts,scRNAseq,false
+syn780683722,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_A,cell_type_C,false,metabolomics,etc.,WGS,false
+syn500193133,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_A,cell_type_D,false,metabolomics,etc.,metabolomics,false
+syn385837097,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_C,cell_type_C,false,Genomics,processed counts,metabolomics,false
+syn25432723,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_C,cell_type_A,false,transcriptomics,BAM,scRNAseq,false
+syn397005441,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_A,cell_type_D,false,transcriptomics,processed counts,metabolomics,false
+syn586260899,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_B,cell_type_D,false,metabolomics,BAM,WGS,false
+syn941141334,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_A,cell_type_B,false,transcriptomics,FASTQ,scRNAseq,false
+syn794362076,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_D,cell_type_C,false,Genomics,processed counts,proteomics,true
+syn600550309,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,false,transcriptomics,FASTQ,RNAseq,false
+syn265406488,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_D,cell_type_D,true,Genomics,etc.,proteomics,false
+syn317711829,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_C,cell_type_B,false,transcriptomics,processed counts,scRNAseq,false
+syn899791266,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_D,cell_type_C,false,etc.,BAM,RNAseq,false
+syn69988878,specimen_type_A,organ_C,tissue_C,nucleic_acid_source_B,cell_type_B,true,transcriptomics,etc.,proteomics,true
+syn978100380,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_D,cell_type_C,false,Genomics,processed counts,proteomics,false
+syn662499569,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_A,cell_type_B,false,metabolomics,BAM,etc.,false
+syn379226076,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,FASTQ,metabolomics,false
+syn65346725,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_C,cell_type_B,false,Genomics,FASTQ,scRNAseq,false
+syn620135760,specimen_type_A,organ_C,tissue_A,nucleic_acid_source_C,cell_type_C,false,etc.,FASTQ,proteomics,false
+syn433253815,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_A,cell_type_D,false,metabolomics,processed counts,proteomics,false
+syn922410369,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_B,cell_type_D,false,transcriptomics,etc.,metabolomics,true
+syn214397702,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_C,cell_type_A,false,etc.,processed counts,etc.,false
+syn675233522,specimen_type_A,organ_C,tissue_C,nucleic_acid_source_B,cell_type_A,false,proteomics,etc.,proteomics,false
+syn512779885,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_C,cell_type_B,false,proteomics,FASTQ,etc.,false
+syn755081718,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_D,cell_type_A,true,etc.,etc.,RNAseq,false
+syn355486920,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_D,cell_type_C,false,metabolomics,etc.,scRNAseq,false
+syn694486825,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_D,cell_type_A,false,proteomics,processed counts,scRNAseq,false
+syn343519026,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_B,cell_type_C,false,metabolomics,FASTQ,etc.,false
+syn839870193,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_D,cell_type_C,true,proteomics,FASTQ,proteomics,true
+syn64811932,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_D,cell_type_D,false,metabolomics,FASTQ,RNAseq,false
+syn849558264,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_B,cell_type_A,true,transcriptomics,processed counts,RNAseq,false
+syn287402391,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_B,cell_type_D,true,proteomics,etc.,RNAseq,false
+syn881092684,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_B,cell_type_D,false,metabolomics,BAM,metabolomics,false
+syn587316381,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_A,cell_type_D,true,metabolomics,BAM,scRNAseq,false
+syn101891993,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_B,cell_type_C,false,etc.,FASTQ,etc.,false
+syn851448085,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_A,cell_type_C,false,metabolomics,BAM,etc.,false
+syn896931488,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_C,cell_type_D,false,metabolomics,processed counts,WGS,false
+syn281316407,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_A,cell_type_A,false,Genomics,etc.,RNAseq,false
+syn555173922,specimen_type_A,organ_C,tissue_C,nucleic_acid_source_C,cell_type_A,false,etc.,etc.,scRNAseq,false
+syn567207460,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_A,cell_type_B,false,etc.,FASTQ,RNAseq,false
+syn232265453,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_C,cell_type_A,false,etc.,etc.,metabolomics,false
+syn861411837,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_B,cell_type_C,false,transcriptomics,etc.,metabolomics,false
+syn111314999,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_B,cell_type_D,true,Genomics,FASTQ,proteomics,false
+syn891306476,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_C,cell_type_C,false,etc.,FASTQ,scRNAseq,false
+syn232825486,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_D,cell_type_C,true,Genomics,BAM,scRNAseq,false
+syn370032046,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_C,cell_type_B,false,metabolomics,FASTQ,RNAseq,true
+syn344756601,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_D,cell_type_C,true,etc.,BAM,etc.,false
+syn496113669,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_D,false,etc.,FASTQ,etc.,false
+syn123807782,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_B,cell_type_B,false,etc.,BAM,proteomics,false
+syn794683414,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_B,cell_type_B,false,metabolomics,processed counts,WGS,false
+syn922994539,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_A,cell_type_C,true,transcriptomics,processed counts,etc.,false
+syn175155356,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_D,cell_type_B,true,transcriptomics,processed counts,scRNAseq,false
+syn239885340,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_B,cell_type_D,false,etc.,FASTQ,proteomics,false
+syn939720156,specimen_type_A,organ_C,tissue_A,nucleic_acid_source_C,cell_type_B,false,transcriptomics,FASTQ,metabolomics,false
+syn621809556,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_D,cell_type_D,false,proteomics,BAM,etc.,false
+syn67657224,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_D,cell_type_D,false,Genomics,etc.,RNAseq,false
+syn640921537,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_D,cell_type_A,false,etc.,etc.,WGS,false
+syn144035631,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_B,cell_type_A,false,Genomics,processed counts,etc.,false
+syn945369067,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_D,cell_type_A,false,transcriptomics,BAM,WGS,false
+syn115114598,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_C,cell_type_A,true,etc.,BAM,proteomics,false
+syn799106622,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,FASTQ,RNAseq,false
+syn311294774,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_B,cell_type_B,false,proteomics,FASTQ,metabolomics,false
+syn338691047,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_A,cell_type_C,false,proteomics,BAM,WGS,false
+syn679319333,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_B,cell_type_D,false,proteomics,processed counts,scRNAseq,true
+syn405687284,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_B,cell_type_D,false,metabolomics,FASTQ,WGS,false
+syn527586395,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_B,cell_type_A,true,etc.,processed counts,etc.,false
+syn504905963,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_B,cell_type_D,false,Genomics,BAM,metabolomics,false
+syn137914274,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_B,cell_type_B,true,Genomics,FASTQ,etc.,false
+syn474328954,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_B,cell_type_D,true,proteomics,processed counts,proteomics,false
+syn382017948,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_D,cell_type_C,false,etc.,FASTQ,metabolomics,true
+syn448385672,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_C,cell_type_C,false,proteomics,BAM,RNAseq,false
+syn377983136,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_A,cell_type_D,false,proteomics,etc.,RNAseq,true
+syn707944697,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_C,cell_type_D,false,proteomics,FASTQ,RNAseq,true
+syn365605344,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_D,cell_type_C,false,transcriptomics,etc.,WGS,false
+syn128428573,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_A,cell_type_C,false,Genomics,etc.,etc.,false
+syn621555859,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_B,cell_type_D,false,Genomics,FASTQ,WGS,true
+syn239664240,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_C,cell_type_A,false,etc.,etc.,proteomics,false
+syn661109783,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_C,cell_type_B,false,etc.,processed counts,WGS,false
+syn461073831,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_C,cell_type_D,false,Genomics,processed counts,etc.,false
+syn127861313,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_D,cell_type_B,false,proteomics,etc.,RNAseq,false
+syn747100816,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_C,cell_type_B,false,etc.,processed counts,scRNAseq,true
+syn994935262,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_B,cell_type_B,true,metabolomics,processed counts,WGS,false
+syn578615602,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_D,cell_type_C,true,proteomics,BAM,scRNAseq,false
+syn152515787,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_D,cell_type_D,false,metabolomics,BAM,scRNAseq,false
+syn433147958,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_D,cell_type_C,false,Genomics,FASTQ,scRNAseq,false
+syn544413872,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_C,cell_type_B,false,transcriptomics,processed counts,WGS,false
+syn516850916,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_B,false,proteomics,BAM,metabolomics,true
+syn592779433,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_A,cell_type_A,false,Genomics,FASTQ,WGS,false
+syn366652132,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_C,cell_type_C,false,proteomics,BAM,proteomics,false
+syn419061438,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_B,cell_type_D,false,etc.,BAM,WGS,false
+syn28261862,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,etc.,RNAseq,true
+syn921613469,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_B,cell_type_D,false,Genomics,BAM,WGS,false
+syn651834835,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_C,cell_type_D,false,Genomics,processed counts,WGS,false
+syn288134270,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_A,cell_type_D,true,proteomics,BAM,RNAseq,false
+syn1477326,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,etc.,metabolomics,false
+syn561104920,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_A,cell_type_B,false,Genomics,etc.,etc.,true
+syn844783379,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_A,cell_type_C,false,Genomics,FASTQ,scRNAseq,false
+syn263439013,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_A,cell_type_C,false,proteomics,BAM,scRNAseq,false
+syn578973428,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_B,cell_type_C,true,etc.,BAM,metabolomics,false
+syn431517063,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_A,cell_type_B,true,Genomics,BAM,WGS,true
+syn611881396,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_A,cell_type_D,true,transcriptomics,BAM,scRNAseq,false
+syn938693071,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_A,cell_type_C,true,metabolomics,etc.,metabolomics,false
+syn793290402,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_B,cell_type_C,false,metabolomics,BAM,RNAseq,false
+syn152566962,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_C,cell_type_D,true,proteomics,processed counts,etc.,false
+syn290543445,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_C,cell_type_C,false,metabolomics,etc.,proteomics,true
+syn493975471,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_C,cell_type_C,false,metabolomics,FASTQ,scRNAseq,false
+syn928026481,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_C,cell_type_D,false,transcriptomics,processed counts,RNAseq,false
+syn60739719,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_A,cell_type_D,true,Genomics,BAM,etc.,true
+syn753715740,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_D,cell_type_C,false,Genomics,etc.,RNAseq,false
+syn413046258,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_D,cell_type_B,false,etc.,FASTQ,metabolomics,false
+syn271395891,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_B,cell_type_B,false,Genomics,FASTQ,scRNAseq,false
+syn498072015,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_B,cell_type_A,true,metabolomics,FASTQ,metabolomics,false
+syn341587053,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_C,cell_type_B,false,Genomics,processed counts,WGS,false
+syn370543375,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_D,cell_type_D,false,etc.,etc.,etc.,false
+syn936203113,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_D,cell_type_A,false,proteomics,processed counts,etc.,false
+syn555473512,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_B,cell_type_C,false,Genomics,BAM,etc.,true
+syn470478860,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_C,cell_type_A,false,metabolomics,FASTQ,WGS,false
+syn877811994,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_A,cell_type_B,true,transcriptomics,etc.,metabolomics,true
+syn398541870,specimen_type_A,organ_C,tissue_C,nucleic_acid_source_D,cell_type_C,true,proteomics,FASTQ,WGS,false
+syn993371332,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_A,cell_type_A,true,proteomics,etc.,etc.,false
+syn924310207,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_C,cell_type_A,false,proteomics,BAM,RNAseq,false
+syn824794474,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_B,cell_type_B,true,transcriptomics,BAM,proteomics,false
+syn121296537,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_C,cell_type_D,true,transcriptomics,processed counts,RNAseq,true
+syn518087813,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_B,cell_type_D,true,Genomics,FASTQ,proteomics,true
+syn99261681,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_D,cell_type_A,false,metabolomics,processed counts,RNAseq,false
+syn277663908,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_D,cell_type_A,false,Genomics,FASTQ,etc.,true
+syn23631761,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_A,cell_type_A,false,Genomics,FASTQ,WGS,false
+syn720099327,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_B,cell_type_A,true,transcriptomics,etc.,metabolomics,false
+syn235519066,specimen_type_A,organ_D,tissue_C,nucleic_acid_source_A,cell_type_D,false,metabolomics,processed counts,RNAseq,false
+syn352696280,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_D,cell_type_D,false,etc.,FASTQ,proteomics,false
+syn382106564,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_A,cell_type_C,true,Genomics,processed counts,proteomics,false
+syn610429679,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_C,cell_type_D,false,proteomics,FASTQ,WGS,false
+syn14784950,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_C,cell_type_B,false,etc.,BAM,etc.,false
+syn681368087,specimen_type_C,organ_C,tissue_C,nucleic_acid_source_B,cell_type_B,false,metabolomics,processed counts,proteomics,false
+syn21391938,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_D,cell_type_C,false,metabolomics,etc.,proteomics,false
+syn277581255,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_B,cell_type_A,true,metabolomics,BAM,metabolomics,false
+syn356237584,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_D,cell_type_D,false,transcriptomics,BAM,WGS,false
+syn350640041,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_C,cell_type_D,false,Genomics,FASTQ,WGS,false
+syn904242739,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_A,cell_type_C,true,transcriptomics,etc.,proteomics,false
+syn742822657,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_C,cell_type_B,false,metabolomics,etc.,RNAseq,false
+syn877430252,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_C,cell_type_C,false,etc.,BAM,WGS,false
+syn874479825,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_B,cell_type_B,false,transcriptomics,FASTQ,RNAseq,false
+syn299361773,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_C,cell_type_A,true,metabolomics,etc.,metabolomics,false
+syn353777690,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_B,cell_type_B,false,transcriptomics,BAM,scRNAseq,false
+syn876752726,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_C,cell_type_B,false,transcriptomics,BAM,proteomics,false
+syn493161284,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_C,true,metabolomics,etc.,metabolomics,false
+syn144506822,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_C,cell_type_A,false,proteomics,etc.,RNAseq,false
+syn870439805,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_A,cell_type_A,false,etc.,processed counts,scRNAseq,true
+syn432062401,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_B,cell_type_B,false,transcriptomics,FASTQ,RNAseq,false
+syn849747649,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_A,cell_type_B,false,transcriptomics,etc.,proteomics,false
+syn406513539,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_D,cell_type_B,false,etc.,FASTQ,proteomics,false
+syn804574621,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_B,cell_type_C,false,metabolomics,processed counts,proteomics,false
+syn178692726,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_D,cell_type_B,true,metabolomics,etc.,scRNAseq,false
+syn322417960,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_A,cell_type_C,false,Genomics,processed counts,WGS,false
+syn34460193,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_C,cell_type_C,false,etc.,BAM,proteomics,false
+syn1052630,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_C,cell_type_A,false,etc.,processed counts,scRNAseq,false
+syn190466463,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_C,cell_type_A,false,proteomics,processed counts,WGS,false
+syn873716951,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_B,cell_type_D,true,Genomics,FASTQ,metabolomics,false
+syn616091825,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_B,cell_type_A,false,transcriptomics,processed counts,scRNAseq,false
+syn442246450,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_B,cell_type_A,false,transcriptomics,FASTQ,WGS,false
+syn943442094,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_C,cell_type_B,true,Genomics,BAM,etc.,false
+syn770638466,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_C,cell_type_B,false,transcriptomics,BAM,etc.,true
+syn827574250,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_B,cell_type_D,false,metabolomics,processed counts,etc.,false
+syn565331844,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_A,cell_type_C,true,metabolomics,BAM,metabolomics,false
+syn89258238,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_C,cell_type_C,false,transcriptomics,BAM,RNAseq,false
+syn586711964,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_A,cell_type_C,true,proteomics,etc.,RNAseq,false
+syn392222193,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_B,cell_type_B,false,Genomics,BAM,scRNAseq,false
+syn22582691,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_D,false,Genomics,etc.,RNAseq,false
+syn974475902,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_B,cell_type_B,false,Genomics,etc.,etc.,false
+syn681562462,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_B,cell_type_A,true,transcriptomics,BAM,WGS,false
+syn15111177,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_D,cell_type_C,false,etc.,etc.,scRNAseq,true
+syn996989690,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_A,cell_type_C,false,etc.,BAM,proteomics,false
+syn293479309,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_B,cell_type_D,true,transcriptomics,FASTQ,scRNAseq,false
+syn479755250,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_B,cell_type_C,false,Genomics,BAM,proteomics,false
+syn197371532,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_A,cell_type_D,false,Genomics,BAM,etc.,false
+syn407302504,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_D,cell_type_D,false,metabolomics,processed counts,scRNAseq,false
+syn343213514,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_B,cell_type_C,true,transcriptomics,processed counts,proteomics,false
+syn610724406,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_C,cell_type_B,false,transcriptomics,etc.,proteomics,true
+syn844194719,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_C,cell_type_C,false,transcriptomics,FASTQ,WGS,true
+syn742990568,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_A,cell_type_B,false,proteomics,BAM,WGS,false
+syn880111189,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_C,cell_type_B,true,Genomics,processed counts,RNAseq,false
+syn360009312,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_C,cell_type_B,false,etc.,etc.,scRNAseq,false
+syn536985378,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_D,cell_type_B,true,etc.,BAM,etc.,true
+syn773921086,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_C,cell_type_D,false,transcriptomics,BAM,RNAseq,true
+syn469642938,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_A,cell_type_A,true,proteomics,processed counts,scRNAseq,false
+syn707391274,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_C,cell_type_B,true,Genomics,FASTQ,proteomics,true
+syn81860846,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_D,cell_type_A,false,etc.,processed counts,RNAseq,true
+syn333759780,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_C,cell_type_D,true,Genomics,BAM,RNAseq,true
+syn629895836,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_D,cell_type_B,false,metabolomics,FASTQ,proteomics,false
+syn603347268,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_A,cell_type_C,false,etc.,BAM,proteomics,false
+syn619874817,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_C,cell_type_C,true,metabolomics,BAM,RNAseq,false
+syn804436533,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_A,cell_type_C,true,metabolomics,processed counts,WGS,false
+syn368561808,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_A,cell_type_A,false,proteomics,processed counts,metabolomics,false
+syn21623920,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_D,cell_type_C,false,metabolomics,FASTQ,proteomics,true
+syn427397075,specimen_type_C,organ_B,tissue_A,nucleic_acid_source_B,cell_type_D,true,transcriptomics,BAM,etc.,true
+syn966215112,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_D,cell_type_B,true,metabolomics,processed counts,RNAseq,false
+syn99814029,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_B,cell_type_B,true,Genomics,FASTQ,RNAseq,true
+syn205262061,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_D,cell_type_A,true,Genomics,FASTQ,RNAseq,false
+syn357243436,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_C,cell_type_C,false,metabolomics,processed counts,etc.,false
+syn786816636,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_A,cell_type_C,false,transcriptomics,processed counts,metabolomics,false
+syn44734328,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_A,cell_type_B,false,proteomics,BAM,RNAseq,false
+syn76229473,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_C,cell_type_A,false,transcriptomics,BAM,WGS,false
+syn761547121,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_D,cell_type_B,true,transcriptomics,etc.,proteomics,false
+syn358283286,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_C,cell_type_D,false,proteomics,etc.,RNAseq,false
+syn816274457,specimen_type_C,organ_B,tissue_A,nucleic_acid_source_C,cell_type_C,false,etc.,BAM,scRNAseq,false
+syn566109202,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_D,cell_type_D,false,transcriptomics,FASTQ,RNAseq,false
+syn838157575,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_B,cell_type_B,false,transcriptomics,processed counts,metabolomics,false
+syn936348672,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_B,cell_type_D,false,proteomics,etc.,etc.,false
+syn522625415,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_B,cell_type_C,false,transcriptomics,processed counts,etc.,true
+syn915437341,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_A,cell_type_A,true,transcriptomics,BAM,etc.,false
+syn485955740,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_B,cell_type_A,false,etc.,FASTQ,etc.,false
+syn173174891,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_A,cell_type_D,false,transcriptomics,BAM,proteomics,true
+syn563219924,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_A,cell_type_C,true,metabolomics,processed counts,RNAseq,false
+syn829638276,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_D,cell_type_A,false,etc.,processed counts,etc.,false
+syn416161880,specimen_type_C,organ_C,tissue_C,nucleic_acid_source_D,cell_type_A,true,transcriptomics,processed counts,metabolomics,false
+syn165864104,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_A,cell_type_C,false,proteomics,FASTQ,scRNAseq,false
+syn713739627,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_A,cell_type_B,false,etc.,etc.,WGS,false
+syn578378913,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_D,cell_type_D,false,transcriptomics,etc.,scRNAseq,false
+syn344183329,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_C,cell_type_B,false,metabolomics,BAM,metabolomics,false
+syn851104493,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_B,cell_type_A,false,proteomics,etc.,metabolomics,false
+syn125477677,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_B,cell_type_C,false,metabolomics,FASTQ,RNAseq,false
+syn233320083,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_B,cell_type_B,false,etc.,BAM,etc.,false
+syn611304297,specimen_type_B,organ_B,tissue_A,nucleic_acid_source_A,cell_type_A,false,metabolomics,processed counts,proteomics,false
+syn461040153,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_B,cell_type_D,true,etc.,FASTQ,scRNAseq,false
+syn450285807,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_B,cell_type_A,false,etc.,etc.,scRNAseq,false
+syn613699298,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_C,cell_type_B,false,Genomics,processed counts,WGS,false
+syn654167011,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_A,cell_type_B,true,etc.,etc.,scRNAseq,true
+syn646146188,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_C,cell_type_A,false,Genomics,etc.,proteomics,false
+syn623628107,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_B,cell_type_D,true,metabolomics,processed counts,metabolomics,true
+syn102336667,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_B,cell_type_D,false,transcriptomics,processed counts,metabolomics,false
+syn514131645,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_A,cell_type_A,false,etc.,FASTQ,etc.,false
+syn900221018,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_A,cell_type_A,false,transcriptomics,FASTQ,WGS,false
+syn144472604,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_A,cell_type_C,false,transcriptomics,FASTQ,etc.,false
+syn353387330,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_A,cell_type_A,false,proteomics,BAM,proteomics,false
+syn931150402,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_C,cell_type_B,false,proteomics,etc.,scRNAseq,false
+syn354557047,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_B,cell_type_A,true,metabolomics,FASTQ,RNAseq,true
+syn29448489,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_A,cell_type_B,false,transcriptomics,BAM,RNAseq,false
+syn560764409,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_D,cell_type_A,false,Genomics,FASTQ,metabolomics,false
+syn71255630,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_B,cell_type_C,false,transcriptomics,etc.,etc.,true
+syn529882352,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_C,cell_type_A,false,Genomics,etc.,proteomics,true
+syn403540056,specimen_type_C,organ_B,tissue_A,nucleic_acid_source_A,cell_type_C,false,transcriptomics,processed counts,WGS,false
+syn288336172,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_D,cell_type_A,false,metabolomics,processed counts,proteomics,false
+syn985572377,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_B,cell_type_C,false,etc.,etc.,RNAseq,true
+syn589140996,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_A,cell_type_A,false,etc.,etc.,scRNAseq,false
+syn891147189,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_A,true,proteomics,processed counts,etc.,false
+syn482233861,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_B,cell_type_B,true,proteomics,etc.,scRNAseq,false
+syn131269816,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_D,cell_type_C,false,transcriptomics,processed counts,etc.,false
+syn609831639,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_D,cell_type_A,true,Genomics,processed counts,scRNAseq,false
+syn550705620,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_B,cell_type_D,false,etc.,etc.,etc.,false
+syn759217338,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_C,cell_type_B,false,metabolomics,etc.,metabolomics,false
+syn963701765,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_B,cell_type_B,false,transcriptomics,etc.,metabolomics,false
+syn439770734,specimen_type_B,organ_B,tissue_A,nucleic_acid_source_C,cell_type_C,false,transcriptomics,processed counts,WGS,false
+syn771815680,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_B,cell_type_B,false,proteomics,etc.,proteomics,false
+syn190343969,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_D,cell_type_C,true,etc.,BAM,metabolomics,true
+syn369435966,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_C,cell_type_C,false,etc.,FASTQ,WGS,true
+syn895153495,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_B,cell_type_C,true,transcriptomics,BAM,metabolomics,false
+syn700817451,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_C,false,metabolomics,processed counts,RNAseq,false
+syn476645932,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_C,cell_type_B,true,Genomics,processed counts,scRNAseq,false
+syn435740929,specimen_type_A,organ_A,tissue_A,nucleic_acid_source_D,cell_type_B,false,proteomics,FASTQ,proteomics,false
+syn655657842,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_A,cell_type_A,false,transcriptomics,FASTQ,scRNAseq,true
+syn164800771,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_D,cell_type_C,false,etc.,BAM,RNAseq,false
+syn937788890,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_A,cell_type_C,true,proteomics,BAM,proteomics,false
+syn140833463,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_C,cell_type_A,false,metabolomics,processed counts,etc.,true
+syn568485698,specimen_type_A,organ_C,tissue_A,nucleic_acid_source_A,cell_type_D,false,metabolomics,processed counts,WGS,true
+syn794396552,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_A,cell_type_B,true,metabolomics,processed counts,RNAseq,false
+syn882027609,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_B,cell_type_C,true,transcriptomics,etc.,metabolomics,false
+syn855137269,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,false,etc.,FASTQ,RNAseq,false
+syn183553612,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_D,cell_type_B,true,etc.,processed counts,WGS,false
+syn806960332,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_D,cell_type_D,false,metabolomics,BAM,proteomics,false
+syn432793226,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_A,cell_type_D,false,transcriptomics,processed counts,etc.,false
+syn908776866,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_A,cell_type_A,true,transcriptomics,etc.,scRNAseq,false
+syn377791258,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_A,cell_type_C,false,metabolomics,processed counts,RNAseq,false
+syn842634051,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_B,cell_type_B,true,etc.,etc.,metabolomics,true
+syn777631141,specimen_type_A,organ_C,tissue_A,nucleic_acid_source_C,cell_type_C,false,proteomics,etc.,RNAseq,false
+syn622756509,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_B,cell_type_B,false,Genomics,BAM,metabolomics,false
+syn704837280,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_B,cell_type_D,false,metabolomics,FASTQ,etc.,false
+syn258713560,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_B,cell_type_B,false,proteomics,BAM,metabolomics,false
+syn2687142,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_D,cell_type_A,true,metabolomics,FASTQ,RNAseq,false
+syn253043020,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,false,proteomics,FASTQ,RNAseq,false
+syn422177131,specimen_type_A,organ_C,tissue_C,nucleic_acid_source_D,cell_type_D,false,metabolomics,processed counts,RNAseq,false
+syn796787062,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_D,cell_type_A,true,metabolomics,processed counts,RNAseq,false
+syn155671545,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_D,cell_type_D,true,etc.,BAM,etc.,true
+syn663013790,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_A,cell_type_D,true,Genomics,FASTQ,WGS,false
+syn932516015,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_A,cell_type_A,false,etc.,FASTQ,RNAseq,false
+syn33895391,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_D,cell_type_D,false,etc.,etc.,metabolomics,false
+syn432673490,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_C,cell_type_A,true,Genomics,FASTQ,etc.,false
+syn40975292,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_B,cell_type_B,true,proteomics,processed counts,proteomics,false
+syn788364855,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_D,cell_type_D,false,etc.,processed counts,etc.,false
+syn91123549,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_D,cell_type_C,true,proteomics,BAM,RNAseq,false
+syn403266514,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_A,cell_type_D,false,etc.,FASTQ,scRNAseq,false
+syn96339501,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_D,cell_type_C,false,metabolomics,processed counts,metabolomics,false
+syn266721549,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_D,cell_type_A,false,metabolomics,processed counts,metabolomics,false
+syn619806316,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_A,cell_type_D,false,transcriptomics,BAM,WGS,false
+syn809507269,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_B,cell_type_D,false,transcriptomics,processed counts,scRNAseq,false
+syn774981216,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_C,cell_type_B,false,proteomics,etc.,RNAseq,true
+syn390329991,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_B,cell_type_A,false,metabolomics,processed counts,RNAseq,true
+syn746164639,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,BAM,etc.,false
+syn349060763,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_B,cell_type_B,false,etc.,etc.,metabolomics,false
+syn461793372,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_C,cell_type_D,false,etc.,etc.,RNAseq,false
+syn580075389,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_A,cell_type_B,false,metabolomics,etc.,WGS,false
+syn872268375,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_D,cell_type_B,true,etc.,FASTQ,scRNAseq,false
+syn326966311,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_B,cell_type_D,true,etc.,processed counts,proteomics,true
+syn316726600,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,false,Genomics,BAM,proteomics,false
+syn214268925,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_A,cell_type_A,false,etc.,FASTQ,WGS,false
+syn156880278,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_A,cell_type_D,false,Genomics,FASTQ,WGS,false
+syn892441475,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_B,cell_type_B,false,transcriptomics,processed counts,scRNAseq,false
+syn731791171,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_A,cell_type_B,false,etc.,processed counts,proteomics,false
+syn503352,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_D,cell_type_A,true,etc.,etc.,metabolomics,false
+syn106545285,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_C,cell_type_A,false,Genomics,BAM,RNAseq,false
+syn338908847,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_D,cell_type_A,false,Genomics,BAM,metabolomics,false
+syn26631563,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_B,cell_type_B,true,Genomics,BAM,proteomics,true
+syn730497534,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_B,cell_type_B,false,transcriptomics,BAM,etc.,false
+syn324242493,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_A,cell_type_C,false,metabolomics,BAM,RNAseq,false
+syn619433354,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_C,cell_type_D,true,metabolomics,etc.,WGS,false
+syn325273144,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_D,cell_type_B,false,Genomics,etc.,metabolomics,false
+syn822172606,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_C,cell_type_B,false,proteomics,processed counts,RNAseq,false
+syn314887580,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_B,cell_type_B,true,Genomics,processed counts,WGS,false
+syn247489606,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_B,cell_type_B,false,Genomics,FASTQ,RNAseq,false
+syn425693876,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,false,Genomics,FASTQ,proteomics,false
+syn561196041,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_D,cell_type_C,false,etc.,BAM,metabolomics,false
+syn977512891,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_D,cell_type_B,false,proteomics,FASTQ,proteomics,false
+syn572631403,specimen_type_A,organ_A,tissue_A,nucleic_acid_source_D,cell_type_B,true,metabolomics,processed counts,etc.,true
+syn672650671,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_D,cell_type_C,false,proteomics,FASTQ,etc.,true
+syn709692608,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_A,cell_type_C,false,Genomics,etc.,metabolomics,false
+syn493739630,specimen_type_A,organ_A,tissue_A,nucleic_acid_source_D,cell_type_D,false,etc.,processed counts,proteomics,false
+syn22951113,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_C,cell_type_B,false,etc.,BAM,metabolomics,true
+syn200798741,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_C,cell_type_B,false,transcriptomics,etc.,RNAseq,false
+syn395174316,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_D,cell_type_D,false,transcriptomics,FASTQ,WGS,false
+syn447823451,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_B,false,proteomics,FASTQ,WGS,false
+syn969768440,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_C,cell_type_A,false,metabolomics,FASTQ,etc.,false
+syn356115688,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_B,cell_type_B,false,Genomics,BAM,WGS,false
+syn50041670,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_C,cell_type_C,true,metabolomics,FASTQ,scRNAseq,false
+syn976007304,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_C,cell_type_C,false,proteomics,BAM,etc.,false
+syn257950844,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_C,cell_type_D,false,transcriptomics,etc.,proteomics,true
+syn792103996,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_A,cell_type_B,true,Genomics,processed counts,etc.,false
+syn750873498,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_D,cell_type_B,true,proteomics,processed counts,RNAseq,false
+syn189151110,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_C,cell_type_A,false,metabolomics,processed counts,RNAseq,false
+syn292300262,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_A,cell_type_D,false,transcriptomics,processed counts,scRNAseq,false
+syn844129487,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,false,Genomics,FASTQ,proteomics,false
+syn459860389,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_A,cell_type_D,false,metabolomics,FASTQ,metabolomics,false
+syn117256991,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_D,false,proteomics,etc.,WGS,false
+syn287345505,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_D,cell_type_B,false,etc.,processed counts,proteomics,true
+syn557359627,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_D,cell_type_B,false,proteomics,etc.,WGS,false
+syn544206163,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_B,cell_type_C,false,etc.,etc.,WGS,false
+syn183788160,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_C,cell_type_B,true,metabolomics,FASTQ,proteomics,false
+syn315725153,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_B,cell_type_A,false,metabolomics,etc.,RNAseq,false
+syn577920799,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_D,false,proteomics,FASTQ,proteomics,false
+syn51927343,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_D,cell_type_D,false,metabolomics,etc.,scRNAseq,false
+syn641069097,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_C,cell_type_B,false,etc.,FASTQ,RNAseq,false
+syn735692796,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_C,cell_type_A,false,etc.,FASTQ,scRNAseq,false
+syn987845320,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_C,cell_type_D,false,Genomics,etc.,metabolomics,false
+syn393017693,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_B,cell_type_C,true,proteomics,processed counts,proteomics,true
+syn675013903,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_B,cell_type_B,true,transcriptomics,FASTQ,etc.,false
+syn224674285,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_C,cell_type_D,false,proteomics,etc.,RNAseq,false
+syn501775283,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_A,cell_type_C,false,transcriptomics,BAM,etc.,false
+syn664611775,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_D,cell_type_B,false,proteomics,FASTQ,etc.,false
+syn374647429,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_D,cell_type_B,false,etc.,processed counts,WGS,true
+syn377745207,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_D,cell_type_A,true,metabolomics,processed counts,proteomics,false
+syn982984434,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_C,cell_type_C,false,Genomics,BAM,etc.,false
+syn6329922,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_B,cell_type_C,false,proteomics,BAM,RNAseq,false
+syn531996118,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_C,cell_type_D,false,proteomics,etc.,etc.,false
+syn789490591,specimen_type_B,organ_C,tissue_D,nucleic_acid_source_B,cell_type_A,false,etc.,BAM,RNAseq,false
+syn942164619,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_B,cell_type_C,true,etc.,FASTQ,etc.,false
+syn85622440,specimen_type_B,organ_C,tissue_D,nucleic_acid_source_A,cell_type_A,false,etc.,BAM,proteomics,false
+syn205102053,specimen_type_B,organ_B,tissue_A,nucleic_acid_source_C,cell_type_B,true,Genomics,processed counts,metabolomics,false
+syn371193452,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_B,cell_type_B,false,transcriptomics,etc.,etc.,true
+syn475484895,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_D,cell_type_D,true,etc.,BAM,WGS,false
+syn607689131,specimen_type_C,organ_B,tissue_A,nucleic_acid_source_D,cell_type_B,false,metabolomics,FASTQ,etc.,false
+syn169875253,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_C,cell_type_A,false,metabolomics,etc.,metabolomics,false
+syn573275274,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_A,cell_type_C,false,etc.,processed counts,etc.,false
+syn633536855,specimen_type_B,organ_C,tissue_D,nucleic_acid_source_A,cell_type_C,false,Genomics,etc.,metabolomics,false
+syn88579485,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_A,cell_type_C,true,etc.,etc.,WGS,false
+syn818971905,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_D,cell_type_D,false,etc.,FASTQ,scRNAseq,false
+syn659344216,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_B,cell_type_B,false,Genomics,BAM,etc.,false
+syn780094410,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_B,cell_type_B,true,proteomics,BAM,proteomics,false
+syn330291421,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_C,cell_type_D,false,Genomics,etc.,WGS,false
+syn609306120,specimen_type_A,organ_D,tissue_C,nucleic_acid_source_D,cell_type_B,true,metabolomics,processed counts,RNAseq,true
+syn603545560,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_D,cell_type_A,false,etc.,etc.,WGS,false
+syn630256057,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_A,cell_type_B,false,Genomics,BAM,proteomics,false
+syn253494541,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_A,cell_type_B,false,proteomics,etc.,WGS,false
+syn278653626,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_C,cell_type_C,false,transcriptomics,FASTQ,metabolomics,true
+syn877819831,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_C,cell_type_A,false,Genomics,processed counts,metabolomics,false
+syn804207064,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_C,cell_type_D,false,Genomics,processed counts,metabolomics,false
+syn349343334,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_B,cell_type_D,false,metabolomics,processed counts,etc.,false
+syn49263704,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_D,cell_type_B,false,transcriptomics,FASTQ,RNAseq,true
+syn205256887,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_C,cell_type_B,false,metabolomics,etc.,etc.,true
+syn557356039,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_D,cell_type_C,false,transcriptomics,etc.,metabolomics,false
+syn521791308,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_A,cell_type_B,false,transcriptomics,BAM,proteomics,false
+syn867629276,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_D,cell_type_C,false,metabolomics,FASTQ,scRNAseq,false
+syn189337310,specimen_type_A,organ_C,tissue_C,nucleic_acid_source_A,cell_type_D,false,proteomics,processed counts,etc.,false
+syn581428340,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_B,cell_type_D,false,etc.,processed counts,proteomics,false
+syn742328545,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_B,cell_type_D,false,etc.,BAM,WGS,false
+syn656548040,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_C,cell_type_A,false,proteomics,etc.,proteomics,false
+syn618481342,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_A,cell_type_B,false,metabolomics,FASTQ,metabolomics,false
+syn10917120,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_D,cell_type_B,false,proteomics,processed counts,proteomics,false
+syn698879068,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_D,cell_type_C,true,etc.,etc.,metabolomics,false
+syn342932857,specimen_type_A,organ_A,tissue_B,nucleic_acid_source_B,cell_type_A,true,proteomics,FASTQ,RNAseq,false
+syn78770354,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_C,cell_type_D,false,transcriptomics,etc.,proteomics,false
+syn539342567,specimen_type_B,organ_B,tissue_A,nucleic_acid_source_D,cell_type_A,false,transcriptomics,BAM,proteomics,false
+syn492879946,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_D,cell_type_D,false,metabolomics,processed counts,metabolomics,false
+syn4206174,specimen_type_A,organ_A,tissue_A,nucleic_acid_source_A,cell_type_A,false,etc.,FASTQ,proteomics,true
+syn20654151,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_A,cell_type_D,false,transcriptomics,etc.,proteomics,false
+syn412530457,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_A,cell_type_A,false,transcriptomics,BAM,RNAseq,false
+syn911506514,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_C,cell_type_D,false,transcriptomics,FASTQ,WGS,false
+syn336913994,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_C,cell_type_B,true,metabolomics,etc.,metabolomics,false
+syn201790984,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_B,cell_type_C,false,metabolomics,processed counts,RNAseq,false
+syn598460367,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_D,cell_type_A,false,metabolomics,BAM,scRNAseq,false
+syn439678771,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_D,cell_type_A,false,Genomics,FASTQ,RNAseq,true
+syn241059164,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_D,cell_type_D,false,metabolomics,processed counts,WGS,false
+syn104736740,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_B,cell_type_D,true,Genomics,FASTQ,etc.,true
+syn186379842,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_D,cell_type_D,true,Genomics,etc.,scRNAseq,false
+syn774732633,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_D,cell_type_A,false,proteomics,processed counts,scRNAseq,false
+syn473145274,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_C,cell_type_A,false,metabolomics,processed counts,etc.,false
+syn533561110,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_A,cell_type_C,false,Genomics,FASTQ,RNAseq,true
+syn370568009,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_D,cell_type_A,true,proteomics,BAM,proteomics,false
+syn916043720,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_C,cell_type_B,false,etc.,etc.,scRNAseq,true
+syn439466711,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_A,cell_type_C,false,etc.,FASTQ,scRNAseq,false
+syn143604462,specimen_type_A,organ_C,tissue_A,nucleic_acid_source_A,cell_type_C,false,transcriptomics,FASTQ,proteomics,true
+syn717448716,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_D,cell_type_B,true,etc.,processed counts,RNAseq,true
+syn399257245,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_C,cell_type_D,false,transcriptomics,FASTQ,RNAseq,false
+syn631435420,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_A,cell_type_B,true,metabolomics,processed counts,WGS,false
+syn681614356,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_A,cell_type_A,false,metabolomics,BAM,proteomics,true
+syn837184029,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_A,cell_type_D,false,etc.,BAM,proteomics,false
+syn817731548,specimen_type_A,organ_C,tissue_A,nucleic_acid_source_A,cell_type_C,false,etc.,etc.,RNAseq,false
+syn707016574,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_A,cell_type_B,false,metabolomics,processed counts,scRNAseq,false
+syn298077441,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_D,cell_type_C,true,transcriptomics,BAM,WGS,true
+syn941169211,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_D,cell_type_C,false,proteomics,processed counts,etc.,false
+syn54339636,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_A,cell_type_C,false,metabolomics,etc.,metabolomics,false
+syn349122012,specimen_type_C,organ_B,tissue_A,nucleic_acid_source_C,cell_type_D,false,metabolomics,FASTQ,RNAseq,false
+syn42286385,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_B,cell_type_C,true,proteomics,processed counts,scRNAseq,true
+syn890704180,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_B,cell_type_A,false,Genomics,BAM,scRNAseq,false
+syn792055806,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_A,cell_type_B,true,etc.,BAM,scRNAseq,false
+syn58566024,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_D,cell_type_A,false,metabolomics,processed counts,proteomics,false
+syn87235096,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_D,cell_type_C,false,transcriptomics,FASTQ,RNAseq,false
+syn396321552,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_B,cell_type_D,false,etc.,processed counts,WGS,false
+syn251852019,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_B,cell_type_A,false,Genomics,BAM,metabolomics,true
+syn239620606,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,true,etc.,processed counts,proteomics,false
+syn212001900,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_B,cell_type_D,false,transcriptomics,FASTQ,etc.,true
+syn909580822,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_C,cell_type_C,false,transcriptomics,processed counts,WGS,false
+syn448001914,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_D,cell_type_B,false,Genomics,etc.,proteomics,false
+syn466909984,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_C,cell_type_C,true,etc.,etc.,WGS,false
+syn340219846,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_A,cell_type_C,true,Genomics,processed counts,WGS,false
+syn629199449,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_A,cell_type_C,false,etc.,BAM,scRNAseq,false
+syn134954351,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_A,cell_type_D,false,etc.,processed counts,metabolomics,true
+syn250553677,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_B,true,proteomics,etc.,RNAseq,true
+syn275430230,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_B,cell_type_D,false,proteomics,processed counts,etc.,true
+syn389236040,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_B,cell_type_A,true,transcriptomics,FASTQ,scRNAseq,false
+syn860479204,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_A,cell_type_D,true,Genomics,etc.,proteomics,false
+syn114721457,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_B,cell_type_B,false,proteomics,etc.,RNAseq,false
+syn865225202,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_B,cell_type_A,false,Genomics,processed counts,proteomics,false
+syn608022298,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,processed counts,etc.,false
+syn185144124,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_A,cell_type_A,true,transcriptomics,BAM,metabolomics,false
+syn289199324,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_C,cell_type_C,false,transcriptomics,BAM,etc.,false
+syn681744679,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_A,cell_type_C,true,transcriptomics,etc.,proteomics,false
+syn593211261,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,false,proteomics,etc.,proteomics,false
+syn480691792,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_D,cell_type_D,false,etc.,processed counts,scRNAseq,false
+syn220655304,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_C,cell_type_C,false,etc.,BAM,WGS,false
+syn340950169,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_B,cell_type_D,true,Genomics,etc.,scRNAseq,true
+syn350030697,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_C,cell_type_D,false,transcriptomics,etc.,proteomics,false
+syn723451415,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_B,cell_type_D,true,metabolomics,FASTQ,proteomics,false
+syn817513350,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_C,cell_type_B,true,proteomics,etc.,proteomics,false
+syn293679388,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_A,cell_type_D,false,Genomics,processed counts,proteomics,false
+syn585685751,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_D,cell_type_B,false,Genomics,etc.,proteomics,false
+syn156765825,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_A,cell_type_A,false,metabolomics,BAM,etc.,false
+syn46084893,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_A,cell_type_D,false,Genomics,FASTQ,scRNAseq,false
+syn342332044,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_C,cell_type_C,true,transcriptomics,BAM,RNAseq,false
+syn956090155,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_C,cell_type_B,false,metabolomics,FASTQ,RNAseq,false
+syn4695779,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_B,cell_type_A,false,Genomics,etc.,scRNAseq,true
+syn970577524,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_D,cell_type_B,false,etc.,etc.,metabolomics,false
+syn181548375,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_D,cell_type_D,false,proteomics,etc.,etc.,false
+syn39911804,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_D,cell_type_C,false,transcriptomics,processed counts,WGS,true
+syn768303330,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_C,cell_type_A,false,Genomics,FASTQ,WGS,false
+syn864333385,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_D,cell_type_B,true,etc.,BAM,RNAseq,false
+syn957267328,specimen_type_C,organ_B,tissue_A,nucleic_acid_source_B,cell_type_C,false,Genomics,etc.,etc.,false
+syn762354877,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_B,cell_type_B,true,Genomics,BAM,RNAseq,false
+syn854148012,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_C,cell_type_B,false,proteomics,processed counts,scRNAseq,true
+syn474513560,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_B,cell_type_D,false,etc.,etc.,scRNAseq,true
+syn430585688,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_D,cell_type_B,false,etc.,FASTQ,RNAseq,false
+syn342293619,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_C,cell_type_A,false,transcriptomics,etc.,etc.,false
+syn270195421,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_B,cell_type_C,false,transcriptomics,BAM,scRNAseq,true
+syn379758911,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_A,cell_type_A,false,proteomics,processed counts,scRNAseq,true
+syn104016889,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_C,cell_type_B,false,Genomics,processed counts,RNAseq,false
+syn112596472,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_B,cell_type_C,true,etc.,etc.,RNAseq,false
+syn981525397,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_C,cell_type_C,true,Genomics,processed counts,proteomics,false
+syn148334406,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_C,false,Genomics,processed counts,RNAseq,false
+syn396096320,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_A,cell_type_D,false,etc.,FASTQ,WGS,false
+syn254966373,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_A,cell_type_B,true,transcriptomics,BAM,proteomics,false
+syn111409151,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_B,cell_type_D,false,etc.,FASTQ,proteomics,false
+syn456468563,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_C,cell_type_A,false,Genomics,BAM,WGS,false
+syn897402861,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_D,cell_type_A,true,metabolomics,processed counts,RNAseq,false
+syn427743242,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_C,cell_type_C,false,etc.,processed counts,etc.,false
+syn493162968,specimen_type_C,organ_C,tissue_C,nucleic_acid_source_B,cell_type_C,false,proteomics,etc.,WGS,false
+syn771262997,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_A,cell_type_C,false,proteomics,etc.,etc.,true
+syn597573464,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_A,cell_type_D,false,transcriptomics,etc.,scRNAseq,false
+syn319585357,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_C,cell_type_A,false,Genomics,etc.,RNAseq,false
+syn354319,specimen_type_A,organ_D,tissue_C,nucleic_acid_source_A,cell_type_A,false,metabolomics,BAM,proteomics,false
+syn556569642,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_C,cell_type_D,false,proteomics,processed counts,metabolomics,false
+syn328140539,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_C,cell_type_B,false,proteomics,BAM,scRNAseq,false
+syn149891352,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_D,cell_type_D,false,metabolomics,BAM,proteomics,false
+syn112766144,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_A,cell_type_D,false,metabolomics,processed counts,scRNAseq,false
+syn139012215,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_C,cell_type_C,false,Genomics,processed counts,etc.,false
+syn946640805,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_C,cell_type_C,false,Genomics,processed counts,RNAseq,false
+syn343650244,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_B,cell_type_C,true,transcriptomics,FASTQ,etc.,false
+syn926540796,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_D,cell_type_D,false,transcriptomics,processed counts,RNAseq,false
+syn963836558,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_B,cell_type_B,false,transcriptomics,processed counts,proteomics,false
+syn626924588,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_A,cell_type_B,false,proteomics,etc.,proteomics,false
+syn339697987,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_C,cell_type_A,false,proteomics,FASTQ,proteomics,false
+syn463820572,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_D,cell_type_D,true,proteomics,BAM,WGS,false
+syn815835281,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_A,cell_type_B,false,Genomics,processed counts,metabolomics,false
+syn491591375,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_B,cell_type_A,true,proteomics,BAM,scRNAseq,false
+syn471994058,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_A,cell_type_A,true,transcriptomics,processed counts,scRNAseq,true
+syn737374499,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_B,cell_type_C,false,metabolomics,BAM,etc.,false
+syn831107331,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_A,cell_type_D,true,Genomics,BAM,metabolomics,false
+syn506477256,specimen_type_A,organ_A,tissue_B,nucleic_acid_source_A,cell_type_D,true,proteomics,BAM,proteomics,false
+syn186729118,specimen_type_A,organ_D,tissue_C,nucleic_acid_source_B,cell_type_B,false,etc.,processed counts,RNAseq,false
+syn53382776,specimen_type_D,organ_D,tissue_D,nucleic_acid_source_D,cell_type_A,true,etc.,FASTQ,metabolomics,false
+syn6924452,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_B,cell_type_C,false,etc.,FASTQ,etc.,false
+syn394652931,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_D,cell_type_C,false,metabolomics,processed counts,WGS,false
+syn89678003,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_B,cell_type_B,false,etc.,BAM,etc.,false
+syn739877869,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_D,cell_type_D,true,transcriptomics,processed counts,RNAseq,false
+syn443627878,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_C,cell_type_C,false,etc.,BAM,WGS,false
+syn212999093,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_A,cell_type_D,false,transcriptomics,processed counts,scRNAseq,false
+syn889528756,specimen_type_A,organ_C,tissue_A,nucleic_acid_source_C,cell_type_D,false,Genomics,FASTQ,RNAseq,false
+syn856075199,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_D,cell_type_C,false,etc.,processed counts,RNAseq,false
+syn288128974,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_C,cell_type_A,false,transcriptomics,processed counts,etc.,false
+syn395944745,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_C,cell_type_B,false,Genomics,BAM,WGS,false
+syn782855842,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_C,false,metabolomics,processed counts,metabolomics,false
+syn768203137,specimen_type_A,organ_D,tissue_C,nucleic_acid_source_B,cell_type_A,false,metabolomics,etc.,scRNAseq,false
+syn982792665,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_A,cell_type_A,true,proteomics,FASTQ,etc.,false
+syn763329708,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_C,cell_type_D,false,Genomics,etc.,WGS,false
+syn478753301,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_B,cell_type_B,false,Genomics,processed counts,RNAseq,false
+syn226830202,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_A,cell_type_D,false,proteomics,processed counts,etc.,false
+syn788411439,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_C,cell_type_B,true,Genomics,BAM,scRNAseq,true
+syn434679902,specimen_type_A,organ_A,tissue_B,nucleic_acid_source_A,cell_type_A,false,transcriptomics,FASTQ,metabolomics,false
+syn437349370,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_D,cell_type_A,true,Genomics,FASTQ,metabolomics,false
+syn524335457,specimen_type_C,organ_B,tissue_A,nucleic_acid_source_A,cell_type_A,true,Genomics,etc.,proteomics,false
+syn806865218,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_C,cell_type_C,false,etc.,etc.,etc.,false
+syn430476831,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,FASTQ,WGS,true
+syn886201653,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_D,cell_type_B,false,etc.,etc.,metabolomics,false
+syn685325207,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_B,cell_type_B,false,etc.,etc.,WGS,false
+syn935136789,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_B,cell_type_C,false,etc.,etc.,proteomics,false
+syn74235254,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_D,cell_type_C,true,metabolomics,etc.,metabolomics,false
+syn792060328,specimen_type_B,organ_B,tissue_A,nucleic_acid_source_C,cell_type_A,true,proteomics,FASTQ,scRNAseq,false
+syn943347287,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_A,cell_type_B,false,Genomics,processed counts,WGS,false
+syn115793910,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_C,cell_type_D,true,Genomics,processed counts,etc.,false
+syn959751073,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_D,cell_type_C,false,etc.,BAM,metabolomics,false
+syn240026214,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_D,cell_type_A,true,metabolomics,FASTQ,metabolomics,false
+syn26309122,specimen_type_B,organ_B,tissue_A,nucleic_acid_source_A,cell_type_C,false,proteomics,processed counts,RNAseq,true
+syn102689062,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_D,true,metabolomics,BAM,WGS,false
+syn238168181,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_B,cell_type_B,false,metabolomics,etc.,WGS,true
+syn58135248,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_A,cell_type_B,false,proteomics,FASTQ,metabolomics,false
+syn66640925,specimen_type_A,organ_C,tissue_C,nucleic_acid_source_A,cell_type_C,false,proteomics,processed counts,scRNAseq,true
+syn893972985,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_C,cell_type_A,true,Genomics,etc.,metabolomics,false
+syn672691053,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_D,cell_type_A,true,etc.,FASTQ,WGS,false
+syn401191275,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_D,cell_type_B,false,etc.,BAM,etc.,true
+syn876129890,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_A,cell_type_D,true,Genomics,FASTQ,RNAseq,false
+syn814377493,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_B,cell_type_A,true,transcriptomics,processed counts,scRNAseq,false
+syn993821471,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_A,cell_type_B,false,proteomics,etc.,RNAseq,false
+syn794217913,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,false,proteomics,BAM,WGS,false
+syn734819849,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_B,cell_type_A,false,transcriptomics,etc.,metabolomics,true
+syn619600446,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_D,cell_type_A,false,metabolomics,processed counts,metabolomics,false
+syn125077310,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_D,cell_type_B,true,metabolomics,BAM,etc.,false
+syn756864264,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_D,false,proteomics,processed counts,RNAseq,true
+syn99680567,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_C,cell_type_D,true,metabolomics,processed counts,RNAseq,false
+syn540088553,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_A,cell_type_A,false,metabolomics,BAM,scRNAseq,false
+syn505175678,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_D,cell_type_B,false,Genomics,etc.,metabolomics,false
+syn724783583,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_B,cell_type_B,false,transcriptomics,FASTQ,scRNAseq,false
+syn781779988,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_A,cell_type_D,false,Genomics,FASTQ,WGS,true
+syn520593481,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_B,cell_type_A,false,proteomics,etc.,WGS,false
+syn428250032,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_C,cell_type_B,false,metabolomics,etc.,etc.,true
+syn797177355,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_B,cell_type_B,true,proteomics,FASTQ,scRNAseq,true
+syn780310369,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_D,cell_type_B,false,etc.,etc.,proteomics,false
+syn402605733,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_A,cell_type_D,false,Genomics,BAM,proteomics,false
+syn440196635,specimen_type_C,organ_B,tissue_B,nucleic_acid_source_D,cell_type_A,false,metabolomics,processed counts,proteomics,false
+syn313411513,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_B,cell_type_B,false,proteomics,BAM,proteomics,false
+syn297105081,specimen_type_C,organ_B,tissue_D,nucleic_acid_source_C,cell_type_C,true,etc.,etc.,RNAseq,true
+syn782986,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_B,cell_type_D,false,proteomics,etc.,etc.,false
+syn321543734,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_B,cell_type_A,false,proteomics,etc.,scRNAseq,false
+syn208750772,specimen_type_C,organ_C,tissue_C,nucleic_acid_source_C,cell_type_C,false,proteomics,BAM,proteomics,false
+syn376600782,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_A,cell_type_B,false,proteomics,BAM,WGS,false
+syn777192746,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_A,cell_type_A,true,Genomics,FASTQ,RNAseq,false
+syn678243734,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_A,cell_type_C,true,transcriptomics,BAM,RNAseq,true
+syn279059547,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_A,cell_type_B,true,proteomics,etc.,etc.,false
+syn490664700,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_A,cell_type_D,false,proteomics,BAM,proteomics,false
+syn618620435,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_C,cell_type_C,false,transcriptomics,etc.,proteomics,false
+syn415089817,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_B,cell_type_A,false,metabolomics,etc.,WGS,false
+syn539200870,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_D,cell_type_D,false,Genomics,FASTQ,proteomics,false
+syn315813130,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_C,cell_type_B,false,metabolomics,processed counts,metabolomics,false
+syn378116425,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,true,transcriptomics,etc.,WGS,false
+syn348622918,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,false,etc.,FASTQ,scRNAseq,true
+syn906407341,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_A,cell_type_C,true,transcriptomics,processed counts,proteomics,false
+syn835421104,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_D,cell_type_D,false,Genomics,etc.,etc.,false
+syn19480787,specimen_type_A,organ_D,tissue_D,nucleic_acid_source_A,cell_type_B,false,metabolomics,FASTQ,etc.,false
+syn666820680,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_C,cell_type_B,false,etc.,FASTQ,etc.,false
+syn395991771,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_A,cell_type_A,true,proteomics,etc.,etc.,false
+syn527875683,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_D,cell_type_B,true,etc.,BAM,metabolomics,false
+syn369295897,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_B,cell_type_D,true,metabolomics,FASTQ,WGS,false
+syn250246861,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_A,cell_type_A,false,metabolomics,etc.,etc.,false
+syn717825437,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_C,cell_type_C,false,Genomics,BAM,metabolomics,false
+syn170485109,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_A,cell_type_A,false,proteomics,processed counts,etc.,false
+syn497300153,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_C,cell_type_A,true,transcriptomics,BAM,etc.,false
+syn605730135,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_A,cell_type_D,false,proteomics,processed counts,etc.,false
+syn157488132,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_D,cell_type_B,true,metabolomics,etc.,WGS,true
+syn620011470,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_C,cell_type_B,false,metabolomics,processed counts,metabolomics,false
+syn617870637,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_A,cell_type_D,true,etc.,processed counts,etc.,false
+syn849774865,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_C,cell_type_C,false,Genomics,etc.,WGS,false
+syn642888888,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_D,cell_type_A,true,proteomics,etc.,etc.,false
+syn766658516,specimen_type_A,organ_D,tissue_C,nucleic_acid_source_D,cell_type_A,false,metabolomics,BAM,metabolomics,false
+syn612764445,specimen_type_C,organ_C,tissue_C,nucleic_acid_source_C,cell_type_D,false,transcriptomics,processed counts,RNAseq,false
+syn79134546,specimen_type_B,organ_B,tissue_A,nucleic_acid_source_C,cell_type_B,false,proteomics,FASTQ,RNAseq,false
+syn850723707,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_C,cell_type_B,true,transcriptomics,processed counts,etc.,false
+syn906713712,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_C,cell_type_A,true,Genomics,processed counts,etc.,false
+syn880504082,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_A,cell_type_C,false,Genomics,FASTQ,WGS,false
+syn956865855,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_A,cell_type_C,false,metabolomics,BAM,scRNAseq,false
+syn621355686,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_C,cell_type_D,false,proteomics,FASTQ,metabolomics,false
+syn115797235,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_C,false,Genomics,FASTQ,metabolomics,true
+syn718910362,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_A,cell_type_B,false,metabolomics,etc.,proteomics,false
+syn701516666,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_D,cell_type_C,false,proteomics,etc.,scRNAseq,true
+syn942606133,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_A,cell_type_C,false,Genomics,FASTQ,metabolomics,true
+syn554722938,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_C,cell_type_C,true,Genomics,FASTQ,scRNAseq,true
+syn196907935,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_D,cell_type_A,false,Genomics,etc.,metabolomics,false
+syn228058204,specimen_type_A,organ_A,tissue_A,nucleic_acid_source_B,cell_type_B,true,etc.,etc.,etc.,true
+syn592017771,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_D,cell_type_B,true,metabolomics,etc.,scRNAseq,true
+syn191985324,specimen_type_C,organ_D,tissue_B,nucleic_acid_source_B,cell_type_B,false,transcriptomics,etc.,metabolomics,false
+syn862907891,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_A,cell_type_C,false,metabolomics,processed counts,etc.,false
+syn469519699,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_D,cell_type_B,true,proteomics,processed counts,scRNAseq,false
+syn965091984,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_C,cell_type_C,true,etc.,etc.,etc.,false
+syn507438914,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_B,cell_type_B,false,transcriptomics,processed counts,WGS,false
+syn58466340,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_D,cell_type_D,true,Genomics,FASTQ,etc.,false
+syn548425221,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_B,cell_type_D,false,transcriptomics,FASTQ,etc.,false
+syn941229828,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_D,cell_type_D,false,metabolomics,processed counts,scRNAseq,false
+syn283872891,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_C,cell_type_C,false,proteomics,FASTQ,WGS,false
+syn709023039,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_B,cell_type_B,true,transcriptomics,processed counts,etc.,true
+syn589725926,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_A,cell_type_C,false,proteomics,FASTQ,metabolomics,false
+syn626742344,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_D,cell_type_B,false,Genomics,FASTQ,proteomics,true
+syn174041129,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_A,cell_type_B,true,transcriptomics,BAM,metabolomics,false
+syn169165222,specimen_type_D,organ_C,tissue_C,nucleic_acid_source_D,cell_type_B,true,Genomics,etc.,WGS,false
+syn867719612,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_A,cell_type_B,false,Genomics,processed counts,proteomics,false
+syn31616814,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_A,cell_type_A,false,proteomics,FASTQ,RNAseq,false
+syn564677542,specimen_type_A,organ_C,tissue_B,nucleic_acid_source_A,cell_type_A,false,Genomics,etc.,proteomics,true
+syn212568791,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_D,cell_type_C,true,proteomics,BAM,proteomics,true
+syn187645923,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_D,cell_type_D,false,Genomics,processed counts,scRNAseq,false
+syn63607767,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_B,cell_type_D,false,metabolomics,BAM,etc.,false
+syn569934220,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_D,cell_type_D,false,Genomics,processed counts,WGS,false
+syn747527293,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_C,cell_type_B,false,Genomics,etc.,WGS,false
+syn474797928,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_A,cell_type_D,false,Genomics,processed counts,scRNAseq,false
+syn553355553,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_D,cell_type_D,false,transcriptomics,processed counts,metabolomics,false
+syn363610902,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_A,cell_type_B,false,proteomics,BAM,scRNAseq,true
+syn943297083,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_B,true,metabolomics,processed counts,etc.,false
+syn586465021,specimen_type_A,organ_A,tissue_A,nucleic_acid_source_C,cell_type_C,false,proteomics,FASTQ,proteomics,false
+syn335487837,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_C,cell_type_D,true,metabolomics,FASTQ,RNAseq,false
+syn248070064,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_A,cell_type_B,false,etc.,processed counts,WGS,false
+syn975156802,specimen_type_B,organ_B,tissue_B,nucleic_acid_source_D,cell_type_A,true,metabolomics,etc.,WGS,false
+syn628863120,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_B,cell_type_D,false,Genomics,etc.,proteomics,false
+syn25913276,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_D,cell_type_C,false,transcriptomics,etc.,scRNAseq,false
+syn787327731,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_D,cell_type_C,false,Genomics,FASTQ,WGS,false
+syn886020020,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_C,cell_type_C,false,metabolomics,BAM,RNAseq,true
+syn983756771,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_B,cell_type_A,false,proteomics,BAM,metabolomics,false
+syn252110512,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_A,cell_type_B,false,Genomics,etc.,metabolomics,false
+syn336580702,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_D,cell_type_C,true,transcriptomics,BAM,RNAseq,false
+syn552620134,specimen_type_C,organ_B,tissue_A,nucleic_acid_source_D,cell_type_C,false,etc.,FASTQ,scRNAseq,false
+syn747569798,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_B,cell_type_D,false,metabolomics,BAM,WGS,false
+syn163459418,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_D,cell_type_B,true,proteomics,BAM,scRNAseq,false
+syn703628500,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_B,cell_type_C,true,proteomics,FASTQ,etc.,false
+syn883638635,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_A,cell_type_A,false,proteomics,processed counts,etc.,false
+syn735947974,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_A,cell_type_D,true,transcriptomics,processed counts,WGS,false
+syn504657411,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_A,cell_type_B,false,etc.,BAM,RNAseq,false
+syn119875260,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_B,cell_type_C,true,etc.,processed counts,RNAseq,true
+syn110737422,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_D,cell_type_A,true,transcriptomics,processed counts,etc.,false
+syn815886180,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_B,cell_type_B,false,metabolomics,processed counts,scRNAseq,true
+syn129878811,specimen_type_A,organ_A,tissue_B,nucleic_acid_source_B,cell_type_D,false,etc.,FASTQ,etc.,false
+syn911041520,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_D,cell_type_D,false,Genomics,BAM,metabolomics,false
+syn73546848,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_C,cell_type_D,false,transcriptomics,BAM,scRNAseq,true
+syn777615583,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_C,cell_type_C,true,etc.,BAM,RNAseq,true
+syn263822273,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_D,cell_type_C,true,transcriptomics,etc.,RNAseq,false
+syn628681688,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_D,cell_type_D,true,etc.,FASTQ,metabolomics,true
+syn745196625,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_C,cell_type_C,false,etc.,processed counts,etc.,false
+syn792421719,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_A,cell_type_B,false,proteomics,BAM,etc.,false
+syn397527891,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_D,cell_type_A,false,etc.,processed counts,proteomics,false
+syn723509545,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_C,cell_type_C,false,etc.,etc.,metabolomics,false
+syn765710949,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_A,cell_type_A,false,Genomics,processed counts,proteomics,false
+syn71821314,specimen_type_A,organ_D,tissue_C,nucleic_acid_source_A,cell_type_D,false,proteomics,processed counts,RNAseq,false
+syn170756616,specimen_type_A,organ_B,tissue_C,nucleic_acid_source_B,cell_type_C,false,etc.,processed counts,proteomics,false
+syn513033668,specimen_type_B,organ_D,tissue_A,nucleic_acid_source_B,cell_type_D,true,Genomics,BAM,RNAseq,false
+syn301348484,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_C,cell_type_B,false,metabolomics,FASTQ,metabolomics,false
+syn866441941,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_B,cell_type_A,false,etc.,FASTQ,metabolomics,false
+syn542111576,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_B,cell_type_B,false,metabolomics,BAM,proteomics,false
+syn657204266,specimen_type_A,organ_C,tissue_D,nucleic_acid_source_B,cell_type_A,true,Genomics,processed counts,proteomics,true
+syn298553856,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_A,cell_type_A,false,Genomics,BAM,etc.,false
+syn497407870,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_D,cell_type_A,true,Genomics,FASTQ,proteomics,false
+syn393237202,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_B,cell_type_C,false,proteomics,FASTQ,metabolomics,false
+syn892107687,specimen_type_B,organ_B,tissue_C,nucleic_acid_source_B,cell_type_B,true,proteomics,BAM,proteomics,false
+syn163890101,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_D,cell_type_B,false,transcriptomics,BAM,etc.,false
+syn403846552,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_C,cell_type_A,true,transcriptomics,BAM,scRNAseq,false
+syn271527171,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_D,cell_type_A,false,proteomics,BAM,metabolomics,false
+syn509843666,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_A,cell_type_B,false,metabolomics,FASTQ,scRNAseq,false
+syn252532554,specimen_type_A,organ_D,tissue_C,nucleic_acid_source_A,cell_type_C,false,metabolomics,FASTQ,etc.,false
+syn92900227,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_A,cell_type_D,true,proteomics,etc.,proteomics,true
+syn505158546,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_C,cell_type_A,false,transcriptomics,etc.,WGS,false
+syn367916876,specimen_type_B,organ_B,tissue_A,nucleic_acid_source_C,cell_type_C,true,Genomics,etc.,etc.,false
+syn709363766,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_A,cell_type_B,false,proteomics,etc.,scRNAseq,false
+syn832609647,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_B,cell_type_A,true,proteomics,BAM,etc.,false
+syn79676398,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_C,cell_type_B,false,transcriptomics,etc.,scRNAseq,false
+syn668141221,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_B,cell_type_C,false,transcriptomics,BAM,scRNAseq,false
+syn861040453,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_B,cell_type_D,false,metabolomics,FASTQ,RNAseq,false
+syn571955587,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_B,cell_type_A,true,etc.,processed counts,proteomics,true
+syn26451230,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_B,cell_type_B,false,proteomics,FASTQ,etc.,false
+syn7859926,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_D,cell_type_C,false,Genomics,processed counts,WGS,false
+syn547404658,specimen_type_A,organ_A,tissue_D,nucleic_acid_source_D,cell_type_A,false,proteomics,FASTQ,scRNAseq,false
+syn204761122,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_B,cell_type_A,false,proteomics,etc.,WGS,false
+syn647832373,specimen_type_B,organ_A,tissue_D,nucleic_acid_source_B,cell_type_C,true,proteomics,FASTQ,proteomics,false
+syn586393517,specimen_type_A,organ_B,tissue_B,nucleic_acid_source_D,cell_type_D,true,Genomics,processed counts,RNAseq,false
+syn285178329,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_B,cell_type_A,false,transcriptomics,etc.,RNAseq,true
+syn608226598,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_B,cell_type_C,false,transcriptomics,BAM,metabolomics,true
+syn146973510,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,false,proteomics,processed counts,metabolomics,false
+syn563194669,specimen_type_D,organ_A,tissue_B,nucleic_acid_source_D,cell_type_B,false,transcriptomics,etc.,scRNAseq,false
+syn142646867,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_A,cell_type_C,false,Genomics,FASTQ,proteomics,false
+syn336364694,specimen_type_D,organ_C,tissue_D,nucleic_acid_source_C,cell_type_B,false,proteomics,processed counts,WGS,false
+syn897694866,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_B,cell_type_C,false,etc.,etc.,etc.,false
+syn564299560,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_A,cell_type_C,false,Genomics,etc.,metabolomics,false
+syn491156767,specimen_type_D,organ_D,tissue_A,nucleic_acid_source_D,cell_type_C,false,transcriptomics,FASTQ,proteomics,false
+syn614350766,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_A,cell_type_D,false,etc.,etc.,RNAseq,false
+syn473079004,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_C,cell_type_C,true,etc.,BAM,proteomics,false
+syn968027157,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_B,cell_type_D,false,proteomics,FASTQ,metabolomics,false
+syn907092002,specimen_type_C,organ_C,tissue_C,nucleic_acid_source_B,cell_type_B,false,metabolomics,BAM,RNAseq,false
+syn892645573,specimen_type_D,organ_B,tissue_B,nucleic_acid_source_C,cell_type_C,true,metabolomics,FASTQ,scRNAseq,false
+syn140739662,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,false,Genomics,etc.,scRNAseq,false
+syn632271612,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_B,cell_type_A,false,etc.,processed counts,proteomics,false
+syn217995448,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_D,cell_type_C,false,etc.,FASTQ,scRNAseq,false
+syn81181865,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,BAM,RNAseq,false
+syn519153386,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_A,cell_type_B,true,transcriptomics,BAM,etc.,true
+syn38484231,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_B,cell_type_D,true,metabolomics,FASTQ,WGS,true
+syn985393757,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_B,cell_type_D,false,proteomics,processed counts,metabolomics,false
+syn381287333,specimen_type_D,organ_B,tissue_D,nucleic_acid_source_B,cell_type_C,true,proteomics,etc.,proteomics,false
+syn14203119,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_C,cell_type_D,false,Genomics,FASTQ,RNAseq,true
+syn884893925,specimen_type_B,organ_B,tissue_D,nucleic_acid_source_D,cell_type_A,false,etc.,FASTQ,WGS,false
+syn947353670,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_C,cell_type_A,true,transcriptomics,FASTQ,etc.,false
+syn708195643,specimen_type_D,organ_B,tissue_A,nucleic_acid_source_D,cell_type_A,false,transcriptomics,etc.,RNAseq,false
+syn380463863,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_D,cell_type_B,true,metabolomics,BAM,proteomics,false
+syn795575073,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_A,cell_type_D,true,transcriptomics,processed counts,metabolomics,false
+syn832604536,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_C,cell_type_B,true,metabolomics,processed counts,RNAseq,true
+syn787712547,specimen_type_B,organ_A,tissue_B,nucleic_acid_source_B,cell_type_A,false,metabolomics,processed counts,metabolomics,false
+syn744300963,specimen_type_D,organ_A,tissue_A,nucleic_acid_source_A,cell_type_B,false,etc.,BAM,proteomics,false
+syn219894248,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_C,cell_type_D,false,transcriptomics,FASTQ,proteomics,true
+syn214673909,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_B,cell_type_B,false,metabolomics,FASTQ,proteomics,false
+syn876685354,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_D,cell_type_C,false,proteomics,processed counts,proteomics,false
+syn359629360,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_C,cell_type_D,true,etc.,processed counts,RNAseq,false
+syn769028564,specimen_type_C,organ_B,tissue_C,nucleic_acid_source_A,cell_type_D,false,etc.,FASTQ,RNAseq,false
+syn289104741,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_D,cell_type_B,false,metabolomics,FASTQ,proteomics,true
+syn459011213,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_C,cell_type_B,false,proteomics,FASTQ,etc.,true
+syn130301606,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_D,cell_type_B,false,proteomics,processed counts,etc.,false
+syn514818537,specimen_type_C,organ_C,tissue_C,nucleic_acid_source_B,cell_type_C,false,transcriptomics,processed counts,WGS,false
+syn313553375,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_C,cell_type_C,false,Genomics,processed counts,metabolomics,false
+syn274658349,specimen_type_C,organ_D,tissue_C,nucleic_acid_source_D,cell_type_A,false,transcriptomics,processed counts,proteomics,false
+syn661874550,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_A,false,transcriptomics,BAM,metabolomics,false
+syn430436467,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_C,cell_type_C,true,transcriptomics,FASTQ,proteomics,true
+syn281146726,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_D,cell_type_D,true,metabolomics,BAM,proteomics,false
+syn310680197,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_D,cell_type_B,true,Genomics,FASTQ,proteomics,true
+syn733379428,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_D,cell_type_A,false,Genomics,FASTQ,proteomics,false
+syn729257819,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_B,cell_type_B,false,Genomics,FASTQ,RNAseq,false
+syn142525917,specimen_type_C,organ_C,tissue_D,nucleic_acid_source_C,cell_type_B,true,transcriptomics,processed counts,WGS,true
+syn637462319,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_A,cell_type_A,false,Genomics,processed counts,metabolomics,true
+syn56355656,specimen_type_D,organ_D,tissue_B,nucleic_acid_source_C,cell_type_C,false,Genomics,etc.,RNAseq,false
+syn461994517,specimen_type_D,organ_C,tissue_A,nucleic_acid_source_B,cell_type_C,false,transcriptomics,BAM,scRNAseq,false
+syn684745227,specimen_type_D,organ_A,tissue_C,nucleic_acid_source_A,cell_type_D,false,proteomics,etc.,WGS,false
+syn651800170,specimen_type_A,organ_D,tissue_A,nucleic_acid_source_D,cell_type_C,true,etc.,etc.,RNAseq,false
+syn480885182,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_C,cell_type_B,true,metabolomics,FASTQ,metabolomics,false
+syn648904137,specimen_type_A,organ_C,tissue_C,nucleic_acid_source_C,cell_type_B,true,Genomics,FASTQ,proteomics,false
+syn925630123,specimen_type_C,organ_C,tissue_A,nucleic_acid_source_C,cell_type_D,false,proteomics,FASTQ,RNAseq,false
+syn976052355,specimen_type_C,organ_A,tissue_B,nucleic_acid_source_C,cell_type_D,false,Genomics,processed counts,scRNAseq,false
+syn552776230,specimen_type_B,organ_A,tissue_C,nucleic_acid_source_C,cell_type_D,false,transcriptomics,etc.,etc.,false
+syn577996753,specimen_type_C,organ_A,tissue_D,nucleic_acid_source_A,cell_type_B,false,metabolomics,etc.,RNAseq,false
+syn943240217,specimen_type_D,organ_B,tissue_C,nucleic_acid_source_B,cell_type_A,false,Genomics,BAM,metabolomics,false
+syn553799917,specimen_type_C,organ_C,tissue_B,nucleic_acid_source_D,cell_type_B,false,Genomics,processed counts,scRNAseq,false
+syn654301217,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_A,cell_type_A,false,transcriptomics,processed counts,WGS,false
+syn573794653,specimen_type_A,organ_B,tissue_A,nucleic_acid_source_D,cell_type_D,false,Genomics,etc.,RNAseq,true
+syn557314924,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_D,cell_type_B,false,metabolomics,BAM,proteomics,true
+syn9962260,specimen_type_B,organ_A,tissue_A,nucleic_acid_source_C,cell_type_B,false,etc.,processed counts,RNAseq,false
+syn845734643,specimen_type_C,organ_D,tissue_A,nucleic_acid_source_B,cell_type_D,false,etc.,etc.,WGS,true
+syn318698328,specimen_type_B,organ_C,tissue_B,nucleic_acid_source_A,cell_type_B,true,transcriptomics,etc.,RNAseq,true
+syn807720653,specimen_type_A,organ_D,tissue_B,nucleic_acid_source_B,cell_type_A,false,transcriptomics,etc.,etc.,false
+syn722823579,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_C,cell_type_D,false,etc.,processed counts,WGS,false
+syn861979990,specimen_type_B,organ_C,tissue_A,nucleic_acid_source_D,cell_type_C,false,transcriptomics,processed counts,etc.,true
+syn126703847,specimen_type_D,organ_D,tissue_C,nucleic_acid_source_A,cell_type_C,false,etc.,BAM,RNAseq,false
+syn22310129,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_B,cell_type_D,false,transcriptomics,FASTQ,metabolomics,false
+syn853713888,specimen_type_C,organ_A,tissue_A,nucleic_acid_source_C,cell_type_A,false,Genomics,etc.,proteomics,true
+syn821556315,specimen_type_D,organ_A,tissue_D,nucleic_acid_source_D,cell_type_C,false,transcriptomics,processed counts,etc.,false
+syn730827764,specimen_type_B,organ_D,tissue_C,nucleic_acid_source_B,cell_type_A,true,metabolomics,processed counts,metabolomics,false
+syn316661971,specimen_type_B,organ_D,tissue_D,nucleic_acid_source_D,cell_type_A,true,transcriptomics,FASTQ,WGS,false
+syn764867720,specimen_type_A,organ_A,tissue_C,nucleic_acid_source_B,cell_type_C,false,metabolomics,etc.,proteomics,false
+syn15606263,specimen_type_B,organ_C,tissue_C,nucleic_acid_source_D,cell_type_B,false,transcriptomics,etc.,proteomics,false
+syn42598645,specimen_type_C,organ_A,tissue_C,nucleic_acid_source_D,cell_type_D,false,metabolomics,FASTQ,scRNAseq,false
+syn568785924,specimen_type_A,organ_B,tissue_D,nucleic_acid_source_C,cell_type_B,false,proteomics,etc.,WGS,false
+syn751041870,specimen_type_D,organ_C,tissue_B,nucleic_acid_source_C,cell_type_D,false,etc.,etc.,RNAseq,false
+syn848602682,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_D,cell_type_D,false,transcriptomics,etc.,metabolomics,false
+syn207898058,specimen_type_C,organ_D,tissue_D,nucleic_acid_source_D,cell_type_C,false,etc.,FASTQ,metabolomics,false
+syn885939594,specimen_type_B,organ_D,tissue_B,nucleic_acid_source_B,cell_type_B,false,Genomics,FASTQ,metabolomics,false

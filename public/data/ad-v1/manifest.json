@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "spec_id": "ad-v1",
+  "spec_title": "AD Knowledge Portal - v1.0 Variable Set",
+  "generated_at": "2026-06-10T11:56:22.677337+00:00",
+  "row_counts": {
+    "subjects": 4000,
+    "files": 800,
+    "subject_files": 47241
+  },
+  "subjects_per_assay_type": {
+    "10x multiome": 2229,
+    "rnaSeq": 2304,
+    "snATACSeq": 2244,
+    "snrnaSeq": 2267
+  },
+  "file_cardinality": {
+    "subjects_per_file_min": 1,
+    "subjects_per_file_median": 1,
+    "subjects_per_file_max": 400,
+    "files_per_subject_min": 1,
+    "files_per_subject_median": 11,
+    "files_per_subject_avg": 11.8,
+    "files_per_subject_max": 36
+  }
+}

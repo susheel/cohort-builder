@@ -1,0 +1,909 @@
+[
+  {
+    "name": "age",
+    "label": "Age",
+    "category": "Demographic & Clinical",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "age",
+    "widget": "bins",
+    "vizNote": "Primary axis in sex × age band cross-tabulation. Shown as distribution in characterization panel using binned categories only. Exact age available post-extraction only.",
+    "bins": [
+      {
+        "label": "<70",
+        "min": 0,
+        "max": 69
+      },
+      {
+        "label": "70-74",
+        "min": 70,
+        "max": 74
+      },
+      {
+        "label": "75-79",
+        "min": 75,
+        "max": 79
+      },
+      {
+        "label": "80-84",
+        "min": 80,
+        "max": 84
+      },
+      {
+        "label": "85-89",
+        "min": 85,
+        "max": 89
+      },
+      {
+        "label": "90+",
+        "min": 90,
+        "max": 200
+      }
+    ]
+  },
+  {
+    "name": "diagnosis",
+    "label": "Diagnosis",
+    "category": "Demographic & Clinical",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "diagnosis",
+    "widget": "multiselect",
+    "vizNote": "Primary axis in diagnosis × assay type cross-tabulation. Count distribution across diagnosis categories shown in characterization panel. Suppression applied cell-by-cell.",
+    "values": [
+      "Control",
+      "Longevity / Centenarian",
+      "Alzheimer's Disease",
+      "Mild Cognitive Impairment",
+      "Vascular Dementia",
+      "Frontotemporal Dementia",
+      "Lewy Body Dementia",
+      "Parkinson's Disease",
+      "Major Depressive Disorder",
+      "Anxiety Disorder",
+      "Breast Cancer",
+      "Prostate Cancer",
+      "Lung Cancer",
+      "Colorectal Cancer",
+      "Other"
+    ],
+    "macro": {
+      "Control": "Control",
+      "Longevity / Centenarian": "Control",
+      "Alzheimer's Disease": "Neurodegenerative",
+      "Mild Cognitive Impairment": "Cognitive",
+      "Vascular Dementia": "Neurodegenerative",
+      "Frontotemporal Dementia": "Neurodegenerative",
+      "Lewy Body Dementia": "Neurodegenerative",
+      "Parkinson's Disease": "Neurodegenerative",
+      "Major Depressive Disorder": "Psychiatric",
+      "Anxiety Disorder": "Psychiatric",
+      "Breast Cancer": "Cancer",
+      "Prostate Cancer": "Cancer",
+      "Lung Cancer": "Cancer",
+      "Colorectal Cancer": "Cancer",
+      "Other": "Other"
+    }
+  },
+  {
+    "name": "diagnosisStatus",
+    "label": "Diagnosis Status",
+    "category": "Demographic & Clinical",
+    "sensitivity": "Medium",
+    "sensitive": true,
+    "priority": "Should Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "diagnosis_status",
+    "widget": "boolean",
+    "vizNote": null,
+    "booleanLabels": {
+      "yes": "Has diagnosis",
+      "no": "No diagnosis"
+    }
+  },
+  {
+    "name": "ethnicGroupCode",
+    "label": "Ethnic Group Code",
+    "category": "Demographic & Clinical",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Don't Need",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "ethnic_group_code",
+    "widget": "multiselect",
+    "vizNote": null,
+    "values": [
+      "Northern European",
+      "Southern European",
+      "Ashkenazi",
+      "East Asian",
+      "African",
+      "Admixed",
+      "Unknown"
+    ]
+  },
+  {
+    "name": "ethnicity",
+    "label": "Ethnicity",
+    "category": "Demographic & Clinical",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "ethnicity",
+    "widget": "multiselect",
+    "vizNote": "Count breakdown in characterization panel where data available. Study-level availability indicator required.",
+    "values": [
+      "Hispanic or Latino",
+      "Not Hispanic or Latino",
+      "Unknown"
+    ]
+  },
+  {
+    "name": "mortalityStatus",
+    "label": "Mortality Status",
+    "category": "Demographic & Clinical",
+    "sensitivity": "Medium",
+    "sensitive": true,
+    "priority": "Don't Need",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "mortality_status",
+    "widget": "boolean",
+    "vizNote": "Count breakdown (alive vs. deceased) in characterization panel.",
+    "booleanLabels": {
+      "yes": "Deceased",
+      "no": "Alive"
+    }
+  },
+  {
+    "name": "race",
+    "label": "Race",
+    "category": "Demographic & Clinical",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "race",
+    "widget": "multiselect",
+    "vizNote": "Count breakdown in characterization panel using controlled vocab categories. Not used as axis in cross-tabulations due to combination risk with age and sex.",
+    "values": [
+      "White",
+      "Black or African American",
+      "Asian",
+      "American Indian or Alaska Native",
+      "Native Hawaiian or Pacific Islander",
+      "Ashkenazi Jewish",
+      "Multiracial",
+      "Other",
+      "Unknown"
+    ]
+  },
+  {
+    "name": "sex",
+    "label": "Sex",
+    "category": "Demographic & Clinical",
+    "sensitivity": "Medium",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "sex",
+    "widget": "multiselect",
+    "vizNote": "Primary stratification axis in sex × age band and sex × diagnosis cross-tabulations. Shown as count breakdown in characterization panel.",
+    "values": [
+      "Female",
+      "Male",
+      "Unknown"
+    ]
+  },
+  {
+    "name": "yearsOfEducation",
+    "label": "Years Of Education",
+    "category": "Demographic & Clinical",
+    "sensitivity": "Low",
+    "sensitive": false,
+    "priority": "Should Have",
+    "buildVersion": "4.0",
+    "entity": "subject",
+    "column": "years_of_education",
+    "widget": "boolean",
+    "vizNote": "Study coverage indicator in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasAnxiety",
+    "label": "Has Anxiety",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_anxiety",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasArthritis",
+    "label": "Has Arthritis",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_arthritis",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasAsthma",
+    "label": "Has Asthma",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_asthma",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasAtrialFibrillation",
+    "label": "Has Atrial Fibrillation",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_atrial_fibrillation",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasCABG",
+    "label": "Has C A B G",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_c_a_b_g",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasCHF",
+    "label": "Has C H F",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_c_h_f",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasCOPD",
+    "label": "Has C O P D",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_c_o_p_d",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasCVD",
+    "label": "Has C V D",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "3.0",
+    "entity": "subject",
+    "column": "has_c_v_d",
+    "widget": "boolean",
+    "vizNote": "Count of participants with CVD diagnosis in characterization panel. Not used as cross-tabulation axis without combination risk warning.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasCancer",
+    "label": "Has Cancer",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_cancer",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasDVT",
+    "label": "Has D V T",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_d_v_t",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasDementia",
+    "label": "Has Dementia",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "3.0",
+    "entity": "subject",
+    "column": "has_dementia",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasDepression",
+    "label": "Has Depression",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_depression",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasDiabetes",
+    "label": "Has Diabetes",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "3.0",
+    "entity": "subject",
+    "column": "has_diabetes",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasGlaucoma",
+    "label": "Has Glaucoma",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_glaucoma",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasHypertension",
+    "label": "Has Hypertension",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "3.0",
+    "entity": "subject",
+    "column": "has_hypertension",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasMI",
+    "label": "Has M I",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_m_i",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasOsteoporosis",
+    "label": "Has Osteoporosis",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_osteoporosis",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasParkinsons",
+    "label": "Has Parkinsons",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_parkinsons",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasPeripheralArteryDisease",
+    "label": "Has Peripheral Artery Disease",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_peripheral_artery_disease",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasStroke",
+    "label": "Has Stroke",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_stroke",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasTIA",
+    "label": "Has T I A",
+    "category": "Comorbidity",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Might Have",
+    "buildVersion": "N/A",
+    "entity": "subject",
+    "column": "has_t_i_a",
+    "widget": "boolean",
+    "vizNote": "Count in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "cohort",
+    "label": "Cohort",
+    "category": "Study & Cohort Design",
+    "sensitivity": "Low",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "cohort",
+    "widget": "multiselect",
+    "vizNote": "Count breakdown per cohort in characterization panel.",
+    "values": [
+      "CHS",
+      "Centenarian",
+      "Denmark Family",
+      "SOF",
+      "LLFS",
+      "Arivale"
+    ]
+  },
+  {
+    "name": "countryCode",
+    "label": "Country Code",
+    "category": "Study & Cohort Design",
+    "sensitivity": "Low",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "3.0",
+    "entity": "subject",
+    "column": "country_code",
+    "widget": "multiselect",
+    "vizNote": "Count breakdown per country in characterization panel.",
+    "values": [
+      "US",
+      "Denmark"
+    ]
+  },
+  {
+    "name": "familyID",
+    "label": "Family I D",
+    "category": "Study & Cohort Design",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "3.0",
+    "entity": "subject",
+    "column": "family_i_d",
+    "widget": "internal",
+    "vizNote": "Surfaces only in summary count display: 'N participants across X families'. Never shown as a filter value or in cross-tabulations."
+  },
+  {
+    "name": "familyStudyParticipant",
+    "label": "Family Study Participant",
+    "category": "Study & Cohort Design",
+    "sensitivity": "Low",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "family_study_participant",
+    "widget": "boolean",
+    "vizNote": "When familyStudyParticipant filter is active: participant count display augmented to show family count ('N participants across X families'). Used in family count × assay type characterization.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "fieldCenterCode",
+    "label": "Field Center Code",
+    "category": "Study & Cohort Design",
+    "sensitivity": "Low",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "3.0",
+    "entity": "subject",
+    "column": "field_center_code",
+    "widget": "multiselect",
+    "vizNote": "Count breakdown per field center in characterization panel. Relevant for batch effect assessment.",
+    "values": [
+      "BU",
+      "DK",
+      "NY",
+      "PT"
+    ]
+  },
+  {
+    "name": "hasMZTwinData",
+    "label": "Has M Z Twin Data",
+    "category": "Study & Cohort Design",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Must Have",
+    "buildVersion": "3.0",
+    "entity": "subject",
+    "column": "has_m_z_twin_data",
+    "widget": "boolean",
+    "vizNote": "Surfaces only in summary characterization. Never shown as a cross-tabulation axis.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "studyCode",
+    "label": "Study Code",
+    "category": "Study & Cohort Design",
+    "sensitivity": "None",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "study_code",
+    "widget": "multiselect",
+    "vizNote": "Primary axis in study × data type cross-tabulation. Shown as count breakdown per study in characterization panel.",
+    "values": [
+      "CDCP",
+      "ILO",
+      "LC",
+      "LG",
+      "LLFS",
+      "ASDOEL",
+      "HSDOA"
+    ]
+  },
+  {
+    "name": "visitCode",
+    "label": "Visit Code",
+    "category": "Study & Cohort Design",
+    "sensitivity": "None",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "visit_count",
+    "widget": "minCount",
+    "vizNote": "Visit count distribution shown in characterization panel (e.g. histogram of participants by number of visits). Axis in visit count × assay type cross-tabulation (R-16).",
+    "options": [
+      {
+        "label": "1+ visit",
+        "min": 1
+      },
+      {
+        "label": "2+ visits",
+        "min": 2
+      },
+      {
+        "label": "3+ visits",
+        "min": 3
+      }
+    ]
+  },
+  {
+    "name": "apoeGenotype",
+    "label": "Apoe Genotype",
+    "category": "Genetic Stratification",
+    "sensitivity": "High",
+    "sensitive": true,
+    "priority": "Should Have",
+    "buildVersion": "3 - certified users only",
+    "entity": "subject",
+    "column": "apoe_genotype",
+    "widget": "multiselect",
+    "vizNote": "Count breakdown by genotype category in characterization panel. Not used as axis in cross-tabulations with other quasi-identifiers without combination risk warning.",
+    "values": [
+      "e2/e2",
+      "e2/e3",
+      "e2/e4",
+      "e3/e3",
+      "e3/e4",
+      "e4/e4"
+    ]
+  },
+  {
+    "name": "hasAnthropometrics",
+    "label": "Has Anthropometrics",
+    "category": "Assessment Availability",
+    "sensitivity": "Low",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "has_anthropometrics",
+    "widget": "boolean",
+    "vizNote": "Availability flags per measure in characterization panel. Longitudinal availability (V1/V2) shown separately for LLFS where applicable.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasBiomarkerData",
+    "label": "Has Biomarker Data",
+    "category": "Assessment Availability",
+    "sensitivity": "Low",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "has_biomarker_data",
+    "widget": "boolean",
+    "vizNote": "Availability flags per biomarker type in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasCognitiveAssessment",
+    "label": "Has Cognitive Assessment",
+    "category": "Assessment Availability",
+    "sensitivity": "Low",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "has_cognitive_assessment",
+    "widget": "boolean",
+    "vizNote": "Availability flags shown per instrument type in characterization panel. Longitudinal availability (V1/V2) shown separately for LLFS.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "hasFunctionalAssessment",
+    "label": "Has Functional Assessment",
+    "category": "Assessment Availability",
+    "sensitivity": "Low",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "subject",
+    "column": "has_functional_assessment",
+    "widget": "boolean",
+    "vizNote": "Availability flags per instrument type in characterization panel.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  {
+    "name": "assayType",
+    "label": "Assay Type",
+    "category": "Data Modality",
+    "sensitivity": "None",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "file",
+    "column": "assay_type",
+    "widget": "multiselect",
+    "vizNote": "Primary axis in diagnosis × assay type and visit count × assay type cross-tabulations. Used in multi-omics intersection (upset plot).",
+    "values": [
+      "RNAseq",
+      "scRNAseq",
+      "WGS",
+      "WES",
+      "proteomics",
+      "metabolomics",
+      "methylation array"
+    ]
+  },
+  {
+    "name": "dataType",
+    "label": "Data Type",
+    "category": "Data Modality",
+    "sensitivity": "None",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "file",
+    "column": "data_type",
+    "widget": "multiselect",
+    "vizNote": "Shown in characterization panel alongside assayType.",
+    "values": [
+      "gene expression",
+      "variant calls",
+      "DNA methylation",
+      "protein abundance",
+      "metabolite levels",
+      "clinical"
+    ]
+  },
+  {
+    "name": "fileFormat",
+    "label": "File Format",
+    "category": "Data Modality",
+    "sensitivity": "None",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "file",
+    "column": "file_format",
+    "widget": "multiselect",
+    "vizNote": "Shown in characterization panel.",
+    "values": [
+      "FASTQ",
+      "BAM",
+      "CRAM",
+      "VCF",
+      "processed counts (CSV)",
+      "mzML",
+      "IDAT"
+    ]
+  },
+  {
+    "name": "isMultiSpecimen",
+    "label": "Is Multi Specimen",
+    "category": "Data Modality",
+    "sensitivity": "None",
+    "sensitive": false,
+    "priority": "Must Have",
+    "buildVersion": "2.0",
+    "entity": "file",
+    "column": "is_multi_specimen",
+    "widget": "boolean",
+    "vizNote": "Count of multi-specimen files shown in characterization panel with transparency message.",
+    "booleanLabels": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  }
+]
+

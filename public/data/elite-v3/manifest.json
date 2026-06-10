@@ -1,0 +1,27 @@
+{
+  "seed": 42,
+  "spec_id": "elite-v3",
+  "spec_title": "ELITE Cohort Builder - v3.0 Refined Variable Set",
+  "generated_at": "2026-06-10T11:56:19.146631+00:00",
+  "row_counts": {
+    "subjects": 4000,
+    "files": 800,
+    "subject_files": 44873
+  },
+  "subjects_per_assay_type": {
+    "Genomics": 2231,
+    "etc.": 2206,
+    "metabolomics": 2208,
+    "proteomics": 2086,
+    "transcriptomics": 2195
+  },
+  "file_cardinality": {
+    "subjects_per_file_min": 1,
+    "subjects_per_file_median": 1,
+    "subjects_per_file_max": 399,
+    "files_per_subject_min": 1,
+    "files_per_subject_median": 11,
+    "files_per_subject_avg": 11.2,
+    "files_per_subject_max": 35
+  }
+}

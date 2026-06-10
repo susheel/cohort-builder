@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "spec_id": "elite-v2",
+  "spec_title": "ELITE Cohort Builder - v2.0 Full Variable Set",
+  "generated_at": "2026-06-10T11:56:11.110376+00:00",
+  "row_counts": {
+    "subjects": 4000,
+    "files": 800,
+    "subject_files": 36216
+  },
+  "subjects_per_assay_type": {
+    "data_type_A": 2254,
+    "data_type_B": 2218,
+    "data_type_C": 2210,
+    "data_type_D": 2236
+  },
+  "file_cardinality": {
+    "subjects_per_file_min": 1,
+    "subjects_per_file_median": 1,
+    "subjects_per_file_max": 400,
+    "files_per_subject_min": 1,
+    "files_per_subject_median": 9,
+    "files_per_subject_avg": 9.1,
+    "files_per_subject_max": 28
+  }
+}

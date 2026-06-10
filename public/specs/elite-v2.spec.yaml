@@ -1,0 +1,1079 @@
+schemaVersion: "1.0"
+id: "elite-v2"
+title: "ELITE Cohort Builder - v2.0 Full Variable Set"
+description: "ELITE Cohort Builder - v2.0 Full Variable Set. Compiled from the 'v2.0' sheet of the ELITE Cohort Builder workbook. Sensitivity sourced from 'Sensitivity (Rank)' column (None/Low/Medium/High strings). Where Sensitivity (Rank) was absent, 'Sensitive (Binary)' was used: Yes maps to High, No maps to Low. Variable count: 121."
+primaryEntity: subjects
+relationships:
+  - from: subjects
+    to: files
+    via: subject_files
+    fromKey: subject_id
+    toKey: syn_id
+variables:
+  - name: specimenType
+    label: Specimen Type
+    category: Biological provenance
+    sensitivity: Low
+    sensitive: false
+    entity: files
+    column: specimen_type
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: organ
+    label: Organ
+    category: Biological provenance
+    sensitivity: Low
+    sensitive: false
+    entity: files
+    column: organ
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: tissue
+    label: Tissue
+    category: Biological provenance
+    sensitivity: Low
+    sensitive: false
+    entity: files
+    column: tissue
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: nucleicAcidSource
+    label: Nucleic Acid Source
+    category: Biological provenance
+    sensitivity: Low
+    sensitive: false
+    entity: files
+    column: nucleic_acid_source
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: cellType
+    label: Cell Type
+    category: Biological provenance
+    sensitivity: Low
+    sensitive: false
+    entity: files
+    column: cell_type
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: isPostMortem
+    label: Is Post Mortem
+    category: Biological provenance
+    sensitivity: Low
+    sensitive: false
+    entity: files
+    column: is_post_mortem
+    widget: boolean
+    note: Direct filter (BOOLEAN)
+  - name: hasCVD
+    label: Has Cvd
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_cvd
+    widget: boolean
+    note: "Boolean direct filter (CVD diagnosis: Yes / No / Unknown). Clinical status flag — not a data completeness flag. Suppression rules apply."
+  - name: hasHypertension
+    label: Has Hypertension
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_hypertension
+    widget: internal
+    visible: false
+    note: "Boolean direct filter (Hypertension diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasDementia
+    label: Has Dementia
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_dementia
+    widget: boolean
+    note: "Boolean direct filter (Dementia diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasDiabetes
+    label: Has Diabetes
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_diabetes
+    widget: boolean
+    note: "Boolean direct filter (Diabetes diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasStroke
+    label: Has Stroke
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_stroke
+    widget: boolean
+    note: "Boolean direct filter (Stroke diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasMI
+    label: Has Mi
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_mi
+    widget: boolean
+    note: "Boolean direct filter (MI diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasCHF
+    label: Has Chf
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_chf
+    widget: boolean
+    note: "Boolean direct filter (CHF diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasAtrialFibrillation
+    label: Has Atrial Fibrillation
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_atrial_fibrillation
+    widget: boolean
+    note: "Boolean direct filter (Atrial fibrillation diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasPeripheralArteryDisease
+    label: Has Peripheral Artery Disease
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_peripheral_artery_disease
+    widget: boolean
+    note: "Boolean direct filter (PAD diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasTIA
+    label: Has Tia
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_tia
+    widget: boolean
+    note: "Boolean direct filter (TIA diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasDVT
+    label: Has Dvt
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_dvt
+    widget: boolean
+    note: "Boolean direct filter (DVT diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasCABG
+    label: Has Cabg
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_cabg
+    widget: boolean
+    note: "Boolean direct filter (CABG history: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasCancer
+    label: Has Cancer
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_cancer
+    widget: boolean
+    note: "Boolean direct filter (Cancer diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasDepression
+    label: Has Depression
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_depression
+    widget: boolean
+    note: "Boolean direct filter (Depression diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasAnxiety
+    label: Has Anxiety
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_anxiety
+    widget: boolean
+    note: "Boolean direct filter (Anxiety diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasCOPD
+    label: Has Copd
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_copd
+    widget: boolean
+    note: "Boolean direct filter (COPD diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasAsthma
+    label: Has Asthma
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_asthma
+    widget: boolean
+    note: "Boolean direct filter (Asthma diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasArthritis
+    label: Has Arthritis
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_arthritis
+    widget: boolean
+    note: "Boolean direct filter (Arthritis diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasOsteoporosis
+    label: Has Osteoporosis
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_osteoporosis
+    widget: boolean
+    note: "Boolean direct filter (Osteoporosis diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasGlaucoma
+    label: Has Glaucoma
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_glaucoma
+    widget: boolean
+    note: "Boolean direct filter (Glaucoma diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasParkinsons
+    label: Has Parkinsons
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_parkinsons
+    widget: boolean
+    note: "Boolean direct filter (Parkinson's diagnosis: Yes / No / Unknown). Clinical status flag. Suppression rules apply."
+  - name: hasBMI
+    label: Has Bmi
+    category: Data Availability — Anthropometric
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_bmi
+    widget: boolean
+    note: "Consolidated variable for \"Has Anthropometric Measures\" with values of BMI, Waist Circumference"
+  - name: hasWaistCircumference
+    label: Has Waist Circumference
+    category: Data Availability — Anthropometric
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_waist_circumference
+    widget: boolean
+    note: See hasBMI
+  - name: hasClinicalChemistries
+    label: Has Clinical Chemistries
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_clinical_chemistries
+    widget: boolean
+  - name: hasCreatinine
+    label: Has Creatinine
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_creatinine
+    widget: boolean
+  - name: hasCystatinC
+    label: Has Cystatin C
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_cystatin_c
+    widget: boolean
+  - name: hasLipidPanel
+    label: Has Lipid Panel
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_lipid_panel
+    widget: boolean
+  - name: hasTotalCholesterol
+    label: Has Total Cholesterol
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_total_cholesterol
+    widget: boolean
+  - name: hasTriglycerides
+    label: Has Triglycerides
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_triglycerides
+    widget: boolean
+  - name: hasGlucose
+    label: Has Glucose
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_glucose
+    widget: boolean
+  - name: hasInsulin
+    label: Has Insulin
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_insulin
+    widget: boolean
+  - name: hasIGF1
+    label: Has Igf1
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_igf1
+    widget: boolean
+  - name: hasIL6
+    label: Has Il6
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_il6
+    widget: boolean
+  - name: hasCRP
+    label: Has Crp
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_crp
+    widget: boolean
+  - name: hasSalivaryCortisol
+    label: Has Salivary Cortisol
+    category: Data Availability — Biomarker
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_salivary_cortisol
+    widget: boolean
+  - name: hasMMSE
+    label: Has Mmse
+    category: Data Availability — Cognitive
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_mmse
+    widget: boolean
+    note: "Consolidated variable for \"Has Cognitive Assessment\" with values of MMSE, MoCA, CDR, CASI, Cognitive Score, Digit Span, Logical Memory, Category Fluency"
+  - name: hasMoCA
+    label: Has Mo Ca
+    category: Data Availability — Cognitive
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_mo_ca
+    widget: boolean
+    note: See hasMMSE
+  - name: hasCDR
+    label: Has Cdr
+    category: Data Availability — Cognitive
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_cdr
+    widget: boolean
+    note: See hasMMSE
+  - name: hasCASI
+    label: Has Casi
+    category: Data Availability — Cognitive
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_casi
+    widget: boolean
+    note: See hasMMSE
+  - name: hasCognitiveScore
+    label: Has Cognitive Score
+    category: Data Availability — Cognitive
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_cognitive_score
+    widget: boolean
+    note: See hasMMSE
+  - name: hasDigitSpan
+    label: Has Digit Span
+    category: Data Availability — Cognitive
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_digit_span
+    widget: boolean
+    note: See hasMMSE
+  - name: hasLogicalMemory
+    label: Has Logical Memory
+    category: Data Availability — Cognitive
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_logical_memory
+    widget: boolean
+    note: See hasMMSE
+  - name: hasCategoryFluency
+    label: Has Category Fluency
+    category: Data Availability — Cognitive
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_category_fluency
+    widget: boolean
+    note: See hasMMSE
+  - name: hasADLs
+    label: Has Ad Ls
+    category: Data Availability — Functional
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_ad_ls
+    widget: boolean
+    note: "Consolidated variable for \"Has Functional Assessment\" with values of ADLs, Grip Strength, Gait Speed, Pulmonary Function, Self Rated Health"
+  - name: hasGripStrength
+    label: Has Grip Strength
+    category: Data Availability — Functional
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_grip_strength
+    widget: boolean
+    note: See hasADLs
+  - name: hasGaitSpeed
+    label: Has Gait Speed
+    category: Data Availability — Functional
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_gait_speed
+    widget: boolean
+    note: See hasADLs
+  - name: hasPulmonaryFunction
+    label: Has Pulmonary Function
+    category: Data Availability — Functional
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_pulmonary_function
+    widget: boolean
+    note: See hasADLs
+  - name: hasSelfRatedHealth
+    label: Has Self Rated Health
+    category: Data Availability — Functional
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_self_rated_health
+    widget: boolean
+    note: See hasADLs
+  - name: apoeGenotype
+    label: Apoe Genotype
+    category: Data Availability — Genetic
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: apoe_genotype
+    widget: multiselect
+    note: "Direct filter using allele combination values (e2/e2 / e2/e3 / e2/e4 / e3/e3 / e3/e4 / e4/e4). Quasi-identifier warning (R-4) triggered when combined with age / sex / diagnosis filters."
+  - name: hasGeneticPCs
+    label: Has Genetic P Cs
+    category: Data Availability — Genetic
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_genetic_p_cs
+    widget: boolean
+  - name: hasGeneticAncestry
+    label: Has Genetic Ancestry
+    category: Data Availability — Genetic
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_genetic_ancestry
+    widget: boolean
+  - name: hasPRS
+    label: Has Prs
+    category: Data Availability — Genetic
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_prs
+    widget: boolean
+  - name: hasGenotyping
+    label: Has Genotyping
+    category: Data Availability — Genetic
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_genotyping
+    widget: boolean
+  - name: hasKinshipData
+    label: Has Kinship Data
+    category: Data Availability — Genetic
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_kinship_data
+    widget: boolean
+  - name: hasWGS
+    label: Has Wgs
+    category: Data Availability — Genetic
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_wgs
+    widget: boolean
+  - name: hasCarotidImaging
+    label: Has Carotid Imaging
+    category: Data Availability — Imaging
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_carotid_imaging
+    widget: boolean
+  - name: hasBloodPressure
+    label: Has Blood Pressure
+    category: Data Availability — Vitals
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_blood_pressure
+    widget: boolean
+  - name: hasHealthHistory
+    label: Has Health History
+    category: Clinical status
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_health_history
+    widget: internal
+    visible: false
+  - name: hasReproductiveData
+    label: Has Reproductive Data
+    category: Clinical status
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_reproductive_data
+    widget: boolean
+  - name: age
+    label: Age
+    category: Demographic
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: age
+    widget: bins
+    bins:
+      - label: "<70"
+        min: 0
+        max: 69
+      - label: "70-74"
+        min: 70
+        max: 74
+      - label: "75-79"
+        min: 75
+        max: 79
+      - label: "80-84"
+        min: 80
+        max: 84
+      - label: "85-89"
+        min: 85
+        max: 89
+      - label: 90+
+        min: 90
+        max: 200
+    note: "Binned filter (e.g. <70 / 70–74 / 75–79 / 80–84 / 85–89 / 90+). Ages ≥90 collapsed to single '90+' bucket per HIPAA/ADKP convention."
+  - name: sex
+    label: Sex
+    category: Demographic
+    sensitivity: Medium
+    sensitive: true
+    entity: subjects
+    column: sex
+    widget: multiselect
+    note: Direct filter using ELITE controlled vocab (Female / Male / Unknown).
+  - name: race
+    label: Race
+    category: Demographic
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: race
+    widget: multiselect
+    note: "Direct filter using ELITE controlled vocab. Suppression rule applies — filter values with <20 participants hidden."
+  - name: ethnicity
+    label: Ethnicity
+    category: Demographic
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: ethnicity
+    widget: multiselect
+    note: Direct filter using ELITE controlled vocab where available. Completeness badge required — significant data gap across studies. Suppression rules apply.
+  - name: mortalityStatus
+    label: Mortality Status
+    category: Clinical status
+    sensitivity: Medium
+    sensitive: true
+    entity: subjects
+    column: mortality_status
+    widget: boolean
+    note: Boolean direct filter (Alive / Deceased) after harmonization to ELITE controlled vocab.
+  - name: diagnosisStatus
+    label: Diagnosis Status
+    category: Clinical status
+    sensitivity: Medium
+    sensitive: true
+    entity: subjects
+    column: diagnosis_status
+    widget: boolean
+    note: "Boolean direct filter (Has diagnosis: Yes / No)."
+  - name: diagnosis
+    label: Diagnosis
+    category: Clinical status
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: diagnosis
+    widget: multiselect
+    note: "Direct filter using ELITE controlled vocab. Consider grouping into macro-categories (Cognitive / Neurodegenerative / Psychiatric / Cancer / Control / Other) with sub-filter drill-down. Suppression rules apply."
+  - name: yearsOfEducation
+    label: Years Of Education
+    category: Demographic
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: years_of_education
+    widget: boolean
+    note: "Boolean availability flag (hasEducation: Yes / No) for discovery only. Exact value available post-extraction only."
+  - name: hasFamilyHealthHistory
+    label: Has Family Health History
+    category: Family Structure
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_family_health_history
+    widget: boolean
+  - name: familyID
+    label: Family Id
+    category: Family Structure
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: family_id
+    widget: internal
+    visible: false
+    note: Not exposed as a direct filter. Used internally to compute family count for display.
+  - name: hasParentalData
+    label: Has Parental Data
+    category: Family Structure
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_parental_data
+    widget: boolean
+  - name: hasMZTwinData
+    label: Has Mz Twin Data
+    category: Family Structure
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_mz_twin_data
+    widget: boolean
+    note: "Boolean availability flag (MZ twin data available: Yes / No). Not a direct filter on twin status."
+  - name: familyStudyParticipant
+    label: Family Study Participant
+    category: Family Structure
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: family_study_participant
+    widget: boolean
+    note: "Boolean direct filter (Family study participant: Yes / No). Also displayed as statistical non-independence warning when active."
+  - name: dataType
+    label: Data Type
+    category: File characteristics
+    sensitivity: None
+    sensitive: false
+    entity: files
+    column: data_type
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: fileFormat
+    label: File Format
+    category: File characteristics
+    sensitivity: None
+    sensitive: false
+    entity: files
+    column: file_format
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: hasProteomics
+    label: Has Proteomics
+    category: File characteristics
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_proteomics
+    widget: boolean
+  - name: hasMetabolomics
+    label: Has Metabolomics
+    category: File characteristics
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_metabolomics
+    widget: boolean
+  - name: hasMicrobiome
+    label: Has Microbiome
+    category: File characteristics
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_microbiome
+    widget: boolean
+  - name: hasWearablesData
+    label: Has Wearables Data
+    category: File characteristics
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_wearables_data
+    widget: boolean
+  - name: fastingState
+    label: Fasting State
+    category: Lifestyle / Confounder
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: fasting_state
+    widget: multiselect
+  - name: hasSmokingHistory
+    label: Has Smoking History
+    category: Lifestyle / Confounder
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_smoking_history
+    widget: boolean
+  - name: hasAlcoholData
+    label: Has Alcohol Data
+    category: Lifestyle / Confounder
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_alcohol_data
+    widget: boolean
+  - name: hasPackYears
+    label: Has Pack Years
+    category: Lifestyle / Confounder
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_pack_years
+    widget: boolean
+  - name: hasMedicationData
+    label: Has Medication Data
+    category: Lifestyle / Confounder
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_medication_data
+    widget: boolean
+  - name: hasSupplementData
+    label: Has Supplement Data
+    category: Lifestyle / Confounder
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_supplement_data
+    widget: boolean
+  - name: hasDietaryData
+    label: Has Dietary Data
+    category: Lifestyle / Confounder
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_dietary_data
+    widget: boolean
+  - name: genotypeTechnology
+    label: Genotype Technology
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: genotype_technology
+    widget: multiselect
+  - name: hasImputation
+    label: Has Imputation
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_imputation
+    widget: boolean
+  - name: imputationPanel
+    label: Imputation Panel
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: imputation_panel
+    widget: multiselect
+  - name: genomeAssembly
+    label: Genome Assembly
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: genome_assembly
+    widget: multiselect
+  - name: arrayManufacturer
+    label: Array Manufacturer
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: array_manufacturer
+    widget: multiselect
+  - name: libraryPrep
+    label: Library Prep
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: library_prep
+    widget: multiselect
+  - name: runType
+    label: Run Type
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: run_type
+    widget: multiselect
+  - name: readLength
+    label: Read Length
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: read_length
+    widget: multiselect
+  - name: msAnalyteType
+    label: Ms Analyte Type
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: ms_analyte_type
+    widget: multiselect
+  - name: msAssayTechnique
+    label: Ms Assay Technique
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: ms_assay_technique
+    widget: multiselect
+  - name: assayType
+    label: Assay Type
+    category: Measurement process
+    sensitivity: None
+    sensitive: false
+    entity: files
+    column: assay_type
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: measurementTechnique
+    label: Measurement Technique
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: measurement_technique
+    widget: multiselect
+    note: Direct filter (STRING LIST)
+  - name: msTarget
+    label: Ms Target
+    category: Measurement process
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: ms_target
+    widget: boolean
+    note: "Direct filter (BOOLEAN), targeted vs. untargeted"
+  - name: sampleQuality
+    label: Sample Quality
+    category: "Data Availability - Patient-reported outcomes"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: sample_quality
+    widget: multiselect
+  - name: isMultiSpecimen
+    label: Is Multi Specimen
+    category: Sample Quality
+    sensitivity: None
+    sensitive: false
+    entity: files
+    column: is_multi_specimen
+    widget: boolean
+    note: "Boolean availability flag (Multi-specimen files in scope: Yes / No). Transparency message displayed when isMultiSpecimen = TRUE explaining many:many file exclusion limitations."
+  - name: hasMetabolomicsSampleQuality
+    label: Has Metabolomics Sample Quality
+    category: Sample Quality
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_metabolomics_sample_quality
+    widget: boolean
+  - name: hasProteomicsSampleQuality
+    label: Has Proteomics Sample Quality
+    category: Sample Quality
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_proteomics_sample_quality
+    widget: boolean
+  - name: hasAssayControl
+    label: Has Assay Control
+    category: Sample Quality
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_assay_control
+    widget: boolean
+  - name: meanCoverage
+    label: Mean Coverage
+    category: Sample Quality
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: mean_coverage
+    widget: multiselect
+  - name: speciesGroup
+    label: Species Group
+    category: Species / Model System
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: species_group
+    widget: multiselect
+  - name: ethnicGroupCode
+    label: Ethnic Group Code
+    category: "Study & Cohort Design"
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: ethnic_group_code
+    widget: multiselect
+    note: "Direct filter or post-extraction only — dependent on controlled vocab definition."
+  - name: longevityClass
+    label: Longevity Class
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: longevity_class
+    widget: multiselect
+  - name: visitCode
+    label: Visit Code
+    category: "Study & Cohort Design"
+    sensitivity: None
+    sensitive: false
+    entity: subjects
+    column: visit_code
+    widget: minCount
+    options:
+      - label: 1+ visit
+        min: 1
+      - label: 2+ visits
+        min: 2
+      - label: 3+ visits
+        min: 3
+    note: Not a direct filter. Used to compute visit count per participant — surfaced as minimum visit count filter (1 visit / 2+ visits / 3+ visits).
+  - name: cohort
+    label: Cohort
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: cohort
+    widget: multiselect
+    note: Direct filter using ELITE controlled vocab.
+  - name: studyCode
+    label: Study Code
+    category: "Study & Cohort Design"
+    sensitivity: None
+    sensitive: false
+    entity: subjects
+    column: study_code
+    widget: multiselect
+    note: Direct filter using ELITE controlled vocab.
+  - name: fieldCenterCode
+    label: Field Center Code
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: field_center_code
+    widget: multiselect
+    note: Direct filter or characterization panel display.
+  - name: countryCode
+    label: Country Code
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: country_code
+    widget: multiselect
+    note: Direct filter where available. Completeness badge required.
+  - name: consortium
+    label: Consortium
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: consortium
+    widget: multiselect
+  - name: platformLocation
+    label: Platform Location
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: platform_location
+    widget: multiselect
+  - name: consentGroupID
+    label: Consent Group Id
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: consent_group_id
+    widget: internal
+    visible: false
+
+defaultCharts:
+  - consortium

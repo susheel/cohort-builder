@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# local tooling / agent config (not part of the app)
+.claude/
+.agents/
+skills-lock.json
+skills/
+
+# internal source analysis (not for public publishing; specs are pre-compiled into public/specs)
+Cohort Builder output privacy analysis.xlsx
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# env
+.env
+.env.local
+.env.*.local
+
+# transient verification artefacts (keep screenshot-apoe-boolean.png; it is in the README)
+docs/research/.snap*.txt
+docs/research/.snap*.md

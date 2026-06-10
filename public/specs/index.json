@@ -1,0 +1,38 @@
+[
+  {
+    "id": "elite47",
+    "title": "ELITE Cohort Builder - Curated 47 Variables",
+    "slug": "elite47",
+    "yaml": "/specs/elite47.spec.yaml",
+    "json": "/specs/elite47.spec.json",
+    "variableCount": 47,
+    "sheet": "elite_cohort_builder_variables"
+  },
+  {
+    "id": "elite-v2",
+    "title": "ELITE Cohort Builder - v2.0 Full Variable Set",
+    "slug": "elite-v2",
+    "yaml": "/specs/elite-v2.spec.yaml",
+    "json": "/specs/elite-v2.spec.json",
+    "variableCount": 121,
+    "sheet": "v2.0"
+  },
+  {
+    "id": "elite-v3",
+    "title": "ELITE Cohort Builder - v3.0 Refined Variable Set",
+    "slug": "elite-v3",
+    "yaml": "/specs/elite-v3.spec.yaml",
+    "json": "/specs/elite-v3.spec.json",
+    "variableCount": 84,
+    "sheet": "ELITE v3.0"
+  },
+  {
+    "id": "ad-v1",
+    "title": "AD Knowledge Portal - v1.0 Variable Set",
+    "slug": "ad-v1",
+    "yaml": "/specs/ad-v1.spec.yaml",
+    "json": "/specs/ad-v1.spec.json",
+    "variableCount": 50,
+    "sheet": "AD v1.0"
+  }
+]

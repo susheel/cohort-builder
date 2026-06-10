@@ -1,0 +1,801 @@
+syn_id,assay,is_multi_specimen,species,data_type,data_subtype,file_formats,organ,tissues
+syn389765614,snATACSeq,false,human,geneExpression,dataMatrix,hdf,organ_C,caudate nucleus
+syn802807325,rnaSeq,true,human,geneExpression,raw,bam,organ_C,caudate nucleus
+syn938723087,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_C,angular gyrus
+syn210513556,snrnaSeq,false,human,epigenetics,processed,bam,organ_B,hippocampus
+syn222920566,snrnaSeq,false,human,epigenetics,raw,tbi...,organ_B,hippocampus
+syn783386267,rnaSeq,false,human,epigenetics,raw,tbi...,organ_D,hippocampus
+syn465896766,snATACSeq,true,human,epigenetics,processed,hdf,organ_A,angular gyrus
+syn382357026,rnaSeq,false,human,geneExpression,processed,hdf,organ_C,hippocampus
+syn230158287,snrnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_B,hippocampus
+syn462639179,snATACSeq,false,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn759827066,snATACSeq,false,human,epigenetics,processed,fastq,organ_A,caudate nucleus
+syn734490648,rnaSeq,false,human,epigenetics,dataMatrix,csv,organ_C,angular gyrus
+syn677200747,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_A,angular gyrus
+syn684156644,rnaSeq,false,human,geneExpression,dataMatrix,csv,organ_B,hippocampus
+syn878891873,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_B,hippocampus
+syn189010115,snrnaSeq,false,human,geneExpression,raw,bam,organ_C,angular gyrus
+syn567018406,10x multiome,false,human,geneExpression,raw,tbi...,organ_C,caudate nucleus
+syn567328493,snrnaSeq,true,human,epigenetics,raw,tbi...,organ_C,hippocampus
+syn228516412,10x multiome,false,human,epigenetics,raw,bam,organ_B,angular gyrus
+syn825066229,snATACSeq,false,human,geneExpression,processed,hdf,organ_C,angular gyrus
+syn881389892,snATACSeq,false,human,epigenetics,raw,csv,organ_A,angular gyrus
+syn200749160,snATACSeq,false,human,geneExpression,processed,hdf,organ_C,hippocampus
+syn320565693,snATACSeq,true,human,geneExpression,dataMatrix,hdf,organ_A,angular gyrus
+syn564266158,snrnaSeq,false,human,geneExpression,processed,hdf,organ_D,inferior temporal gyrus...
+syn8288142,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_B,caudate nucleus
+syn182860153,rnaSeq,false,human,epigenetics,raw,tbi...,organ_C,angular gyrus
+syn675419655,snATACSeq,false,human,geneExpression,processed,csv,organ_D,inferior temporal gyrus...
+syn609088340,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_D,inferior temporal gyrus...
+syn566711844,rnaSeq,false,human,epigenetics,processed,hdf,organ_D,angular gyrus
+syn123602255,snATACSeq,false,human,geneExpression,raw,fastq,organ_D,caudate nucleus
+syn821188945,snrnaSeq,true,human,geneExpression,raw,bam,organ_D,hippocampus
+syn111589964,snrnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_B,angular gyrus
+syn904837963,snATACSeq,false,human,geneExpression,raw,tbi...,organ_D,hippocampus
+syn11290332,snrnaSeq,false,human,geneExpression,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn972050876,10x multiome,false,human,geneExpression,processed,csv,organ_A,hippocampus
+syn717725222,10x multiome,false,human,geneExpression,raw,csv,organ_D,caudate nucleus
+syn143639655,rnaSeq,false,human,epigenetics,dataMatrix,bam,organ_A,angular gyrus
+syn222771160,10x multiome,false,human,geneExpression,raw,fastq,organ_C,inferior temporal gyrus...
+syn822285301,snrnaSeq,false,human,geneExpression,raw,bam,organ_B,caudate nucleus
+syn382967104,10x multiome,false,human,epigenetics,dataMatrix,bam,organ_B,hippocampus
+syn354527121,10x multiome,false,human,epigenetics,raw,fastq,organ_D,inferior temporal gyrus...
+syn48387160,rnaSeq,false,human,epigenetics,processed,fastq,organ_A,inferior temporal gyrus...
+syn966519586,rnaSeq,false,human,geneExpression,dataMatrix,hdf,organ_C,angular gyrus
+syn872991094,snrnaSeq,false,human,geneExpression,dataMatrix,hdf,organ_C,inferior temporal gyrus...
+syn682650612,snrnaSeq,false,human,epigenetics,processed,fastq,organ_A,inferior temporal gyrus...
+syn101811280,snrnaSeq,false,human,epigenetics,raw,hdf,organ_A,inferior temporal gyrus...
+syn862438378,10x multiome,true,human,geneExpression,processed,hdf,organ_C,angular gyrus
+syn705364323,rnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_B,angular gyrus
+syn708798452,rnaSeq,false,human,epigenetics,raw,hdf,organ_B,hippocampus
+syn19929133,rnaSeq,false,human,geneExpression,processed,hdf,organ_C,hippocampus
+syn492483613,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_D,angular gyrus
+syn620177642,snATACSeq,false,human,epigenetics,dataMatrix,tbi...,organ_B,angular gyrus
+syn210520442,10x multiome,false,human,geneExpression,processed,tbi...,organ_A,caudate nucleus
+syn362278745,10x multiome,false,human,geneExpression,processed,csv,organ_C,hippocampus
+syn189009801,snATACSeq,false,human,geneExpression,dataMatrix,csv,organ_B,hippocampus
+syn853127774,rnaSeq,false,human,epigenetics,raw,tbi...,organ_C,hippocampus
+syn898314831,10x multiome,true,human,geneExpression,processed,tbi...,organ_D,hippocampus
+syn632403892,snrnaSeq,false,human,epigenetics,dataMatrix,csv,organ_A,angular gyrus
+syn592986638,rnaSeq,false,human,geneExpression,processed,bam,organ_D,inferior temporal gyrus...
+syn117581361,rnaSeq,false,human,epigenetics,processed,hdf,organ_B,inferior temporal gyrus...
+syn166189584,snATACSeq,false,human,epigenetics,dataMatrix,bam,organ_A,hippocampus
+syn270615585,rnaSeq,false,human,epigenetics,processed,hdf,organ_A,angular gyrus
+syn803669829,rnaSeq,false,human,epigenetics,processed,hdf,organ_C,caudate nucleus
+syn560855644,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_D,angular gyrus
+syn768929929,10x multiome,false,human,epigenetics,raw,tbi...,organ_D,hippocampus
+syn873708568,snATACSeq,false,human,epigenetics,processed,bam,organ_D,caudate nucleus
+syn554416591,snrnaSeq,false,human,geneExpression,raw,hdf,organ_D,angular gyrus
+syn1383379,10x multiome,false,human,geneExpression,dataMatrix,hdf,organ_A,caudate nucleus
+syn426351451,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_A,angular gyrus
+syn24352173,rnaSeq,false,human,geneExpression,dataMatrix,bam,organ_A,hippocampus
+syn43304618,snATACSeq,false,human,epigenetics,raw,fastq,organ_B,caudate nucleus
+syn14886675,rnaSeq,true,human,epigenetics,raw,hdf,organ_A,inferior temporal gyrus...
+syn379782035,snrnaSeq,false,human,epigenetics,processed,hdf,organ_B,inferior temporal gyrus...
+syn49601488,10x multiome,false,human,geneExpression,processed,fastq,organ_A,hippocampus
+syn647553105,snATACSeq,true,human,epigenetics,processed,hdf,organ_B,caudate nucleus
+syn232108991,snrnaSeq,true,human,geneExpression,dataMatrix,tbi...,organ_C,inferior temporal gyrus...
+syn417011,snATACSeq,false,human,epigenetics,dataMatrix,hdf,organ_D,caudate nucleus
+syn105704714,snATACSeq,false,human,geneExpression,raw,bam,organ_B,hippocampus
+syn754301386,snATACSeq,true,human,geneExpression,dataMatrix,csv,organ_C,inferior temporal gyrus...
+syn564568612,snrnaSeq,false,human,geneExpression,raw,bam,organ_D,inferior temporal gyrus...
+syn890002311,snATACSeq,false,human,geneExpression,processed,csv,organ_D,hippocampus
+syn692686039,snATACSeq,true,human,geneExpression,raw,csv,organ_D,angular gyrus
+syn463914028,snrnaSeq,false,human,epigenetics,processed,hdf,organ_A,angular gyrus
+syn827661642,rnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_D,caudate nucleus
+syn542358290,snATACSeq,false,human,epigenetics,processed,csv,organ_D,hippocampus
+syn959629144,snrnaSeq,false,human,geneExpression,processed,fastq,organ_D,inferior temporal gyrus...
+syn477309587,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn500723101,snATACSeq,false,human,geneExpression,raw,csv,organ_B,hippocampus
+syn437884328,10x multiome,false,human,geneExpression,dataMatrix,bam,organ_B,hippocampus
+syn218504034,snrnaSeq,false,human,epigenetics,dataMatrix,csv,organ_C,hippocampus
+syn175728728,snrnaSeq,false,human,geneExpression,raw,bam,organ_C,inferior temporal gyrus...
+syn819116437,snrnaSeq,false,human,epigenetics,raw,hdf,organ_A,angular gyrus
+syn779474108,snATACSeq,false,human,epigenetics,raw,csv,organ_A,angular gyrus
+syn531307931,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_C,angular gyrus
+syn420115793,rnaSeq,false,human,geneExpression,dataMatrix,bam,organ_A,caudate nucleus
+syn992927025,snATACSeq,false,human,epigenetics,raw,tbi...,organ_A,caudate nucleus
+syn316258777,snATACSeq,false,human,geneExpression,raw,bam,organ_A,caudate nucleus
+syn80706835,snATACSeq,true,human,epigenetics,raw,fastq,organ_A,caudate nucleus
+syn411039184,10x multiome,false,human,geneExpression,processed,hdf,organ_B,inferior temporal gyrus...
+syn485451240,snATACSeq,false,human,geneExpression,processed,csv,organ_C,caudate nucleus
+syn386431132,10x multiome,false,human,epigenetics,processed,tbi...,organ_A,hippocampus
+syn979389302,rnaSeq,false,human,geneExpression,processed,fastq,organ_D,hippocampus
+syn739025678,rnaSeq,false,human,geneExpression,raw,hdf,organ_A,inferior temporal gyrus...
+syn479594834,snATACSeq,false,human,epigenetics,processed,tbi...,organ_D,hippocampus
+syn838428280,snATACSeq,false,human,geneExpression,dataMatrix,tbi...,organ_A,caudate nucleus
+syn54574087,snrnaSeq,false,human,epigenetics,dataMatrix,bam,organ_D,angular gyrus
+syn511376960,snrnaSeq,false,human,geneExpression,raw,bam,organ_C,inferior temporal gyrus...
+syn14424447,snATACSeq,false,human,geneExpression,processed,tbi...,organ_D,caudate nucleus
+syn791951892,snATACSeq,false,human,epigenetics,raw,tbi...,organ_B,inferior temporal gyrus...
+syn550761675,snATACSeq,false,human,epigenetics,dataMatrix,bam,organ_B,hippocampus
+syn223005448,rnaSeq,true,human,geneExpression,processed,fastq,organ_D,caudate nucleus
+syn994363124,snATACSeq,false,human,epigenetics,raw,tbi...,organ_A,caudate nucleus
+syn367506300,rnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_A,angular gyrus
+syn889479640,10x multiome,false,human,epigenetics,processed,hdf,organ_D,caudate nucleus
+syn21457446,10x multiome,false,human,geneExpression,dataMatrix,csv,organ_C,inferior temporal gyrus...
+syn396400663,10x multiome,false,human,geneExpression,dataMatrix,fastq,organ_D,caudate nucleus
+syn422306658,rnaSeq,true,human,geneExpression,raw,csv,organ_C,angular gyrus
+syn629851062,rnaSeq,false,human,epigenetics,processed,tbi...,organ_B,angular gyrus
+syn386295644,snATACSeq,false,human,geneExpression,raw,bam,organ_B,caudate nucleus
+syn138168209,snATACSeq,false,human,epigenetics,dataMatrix,tbi...,organ_B,angular gyrus
+syn807503666,snATACSeq,false,human,epigenetics,processed,fastq,organ_D,inferior temporal gyrus...
+syn123169538,snATACSeq,false,human,epigenetics,raw,csv,organ_A,hippocampus
+syn846681160,snrnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_B,hippocampus
+syn204162849,rnaSeq,true,human,epigenetics,dataMatrix,bam,organ_A,caudate nucleus
+syn827698875,snATACSeq,false,human,geneExpression,dataMatrix,hdf,organ_C,caudate nucleus
+syn648387778,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn217105634,snATACSeq,false,human,epigenetics,raw,csv,organ_B,hippocampus
+syn519776373,snrnaSeq,true,human,epigenetics,raw,csv,organ_C,caudate nucleus
+syn89585600,10x multiome,false,human,geneExpression,raw,csv,organ_A,angular gyrus
+syn665588373,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_D,hippocampus
+syn423261320,snrnaSeq,false,human,epigenetics,dataMatrix,csv,organ_B,hippocampus
+syn417994652,rnaSeq,false,human,epigenetics,processed,bam,organ_A,inferior temporal gyrus...
+syn297543607,10x multiome,true,human,epigenetics,dataMatrix,bam,organ_B,hippocampus
+syn73313398,10x multiome,false,human,geneExpression,dataMatrix,fastq,organ_B,angular gyrus
+syn119014345,rnaSeq,false,human,epigenetics,processed,hdf,organ_A,angular gyrus
+syn544745859,rnaSeq,false,human,geneExpression,raw,hdf,organ_B,caudate nucleus
+syn975635340,snATACSeq,false,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn607604904,10x multiome,true,human,geneExpression,processed,hdf,organ_C,caudate nucleus
+syn310267076,rnaSeq,false,human,epigenetics,raw,csv,organ_D,caudate nucleus
+syn884663584,snATACSeq,false,human,geneExpression,raw,bam,organ_C,caudate nucleus
+syn90967109,snrnaSeq,false,human,epigenetics,raw,bam,organ_B,inferior temporal gyrus...
+syn282764920,snATACSeq,false,human,epigenetics,dataMatrix,tbi...,organ_D,hippocampus
+syn284865665,snATACSeq,false,human,epigenetics,processed,fastq,organ_A,inferior temporal gyrus...
+syn168653082,snrnaSeq,true,human,epigenetics,dataMatrix,fastq,organ_D,caudate nucleus
+syn315822237,snrnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_D,inferior temporal gyrus...
+syn972279452,rnaSeq,false,human,geneExpression,dataMatrix,bam,organ_D,caudate nucleus
+syn157027708,snATACSeq,false,human,geneExpression,raw,tbi...,organ_D,inferior temporal gyrus...
+syn271122991,snrnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_B,inferior temporal gyrus...
+syn426102194,10x multiome,false,human,geneExpression,raw,bam,organ_A,inferior temporal gyrus...
+syn365055904,snATACSeq,false,human,geneExpression,processed,fastq,organ_D,inferior temporal gyrus...
+syn857212898,snrnaSeq,false,human,geneExpression,raw,hdf,organ_D,hippocampus
+syn616212411,snrnaSeq,false,human,epigenetics,raw,tbi...,organ_B,inferior temporal gyrus...
+syn504756145,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_B,angular gyrus
+syn313367184,10x multiome,false,human,epigenetics,processed,fastq,organ_C,hippocampus
+syn900787477,rnaSeq,false,human,geneExpression,raw,fastq,organ_A,inferior temporal gyrus...
+syn172559794,snATACSeq,true,human,geneExpression,processed,csv,organ_D,caudate nucleus
+syn451294606,10x multiome,true,human,geneExpression,processed,fastq,organ_D,caudate nucleus
+syn727520472,snATACSeq,false,human,geneExpression,dataMatrix,fastq,organ_D,angular gyrus
+syn521353155,snrnaSeq,true,human,epigenetics,dataMatrix,bam,organ_B,hippocampus
+syn248518088,rnaSeq,true,human,geneExpression,raw,fastq,organ_B,inferior temporal gyrus...
+syn945034236,snrnaSeq,false,human,geneExpression,dataMatrix,bam,organ_D,angular gyrus
+syn832033310,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn915171210,rnaSeq,false,human,epigenetics,processed,csv,organ_B,caudate nucleus
+syn57996884,snATACSeq,false,human,geneExpression,raw,tbi...,organ_A,caudate nucleus
+syn400743304,10x multiome,false,human,geneExpression,dataMatrix,tbi...,organ_B,inferior temporal gyrus...
+syn168785402,snATACSeq,false,human,geneExpression,processed,fastq,organ_C,hippocampus
+syn956902728,snATACSeq,false,human,geneExpression,dataMatrix,tbi...,organ_A,inferior temporal gyrus...
+syn641368970,snrnaSeq,true,human,geneExpression,dataMatrix,fastq,organ_B,caudate nucleus
+syn603188433,rnaSeq,false,human,geneExpression,raw,fastq,organ_A,caudate nucleus
+syn926317434,snATACSeq,false,human,epigenetics,raw,tbi...,organ_B,inferior temporal gyrus...
+syn320378787,snrnaSeq,false,human,geneExpression,raw,bam,organ_A,hippocampus
+syn122826557,snATACSeq,false,human,geneExpression,dataMatrix,fastq,organ_B,hippocampus
+syn118216312,snATACSeq,false,human,geneExpression,raw,csv,organ_A,hippocampus
+syn344143892,snATACSeq,false,human,geneExpression,processed,hdf,organ_A,caudate nucleus
+syn519185681,10x multiome,false,human,geneExpression,raw,tbi...,organ_B,hippocampus
+syn99742279,rnaSeq,false,human,geneExpression,processed,hdf,organ_D,angular gyrus
+syn370200498,rnaSeq,false,human,epigenetics,raw,csv,organ_C,inferior temporal gyrus...
+syn514887679,10x multiome,false,human,geneExpression,dataMatrix,fastq,organ_D,angular gyrus
+syn371932959,snATACSeq,false,human,geneExpression,processed,hdf,organ_C,angular gyrus
+syn80571213,rnaSeq,true,human,geneExpression,raw,csv,organ_C,caudate nucleus
+syn638633477,snATACSeq,false,human,geneExpression,processed,hdf,organ_D,angular gyrus
+syn343698663,snrnaSeq,false,human,epigenetics,processed,fastq,organ_A,angular gyrus
+syn938701921,10x multiome,false,human,geneExpression,dataMatrix,bam,organ_D,inferior temporal gyrus...
+syn860784178,10x multiome,false,human,epigenetics,raw,hdf,organ_C,caudate nucleus
+syn881423219,rnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_A,inferior temporal gyrus...
+syn298940330,snATACSeq,true,human,epigenetics,dataMatrix,bam,organ_A,hippocampus
+syn949061003,snATACSeq,false,human,geneExpression,dataMatrix,csv,organ_B,angular gyrus
+syn746462178,snrnaSeq,false,human,epigenetics,raw,bam,organ_B,caudate nucleus
+syn34902608,snATACSeq,false,human,epigenetics,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn228723163,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_B,inferior temporal gyrus...
+syn134112557,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_C,hippocampus
+syn70084143,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_C,inferior temporal gyrus...
+syn107364969,snrnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_B,caudate nucleus
+syn181388694,snATACSeq,false,human,epigenetics,raw,bam,organ_D,angular gyrus
+syn652039583,snrnaSeq,true,human,geneExpression,dataMatrix,fastq,organ_B,angular gyrus
+syn962211484,rnaSeq,false,human,geneExpression,dataMatrix,bam,organ_B,angular gyrus
+syn793018709,10x multiome,false,human,epigenetics,processed,csv,organ_B,inferior temporal gyrus...
+syn820546982,snrnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_B,inferior temporal gyrus...
+syn844102717,10x multiome,false,human,geneExpression,processed,fastq,organ_A,inferior temporal gyrus...
+syn570584100,snATACSeq,false,human,geneExpression,dataMatrix,csv,organ_B,caudate nucleus
+syn793691535,rnaSeq,false,human,epigenetics,processed,fastq,organ_A,angular gyrus
+syn713095616,snATACSeq,true,human,epigenetics,dataMatrix,fastq,organ_C,caudate nucleus
+syn841425096,10x multiome,false,human,geneExpression,raw,hdf,organ_B,caudate nucleus
+syn104249228,snATACSeq,false,human,geneExpression,raw,bam,organ_C,hippocampus
+syn595276240,10x multiome,false,human,epigenetics,processed,tbi...,organ_B,caudate nucleus
+syn479296199,10x multiome,false,human,epigenetics,dataMatrix,tbi...,organ_D,caudate nucleus
+syn843447402,snATACSeq,true,human,epigenetics,processed,csv,organ_B,hippocampus
+syn602820213,snrnaSeq,false,human,geneExpression,raw,hdf,organ_C,angular gyrus
+syn454466952,snATACSeq,false,human,geneExpression,dataMatrix,fastq,organ_A,hippocampus
+syn618841275,rnaSeq,false,human,geneExpression,processed,hdf,organ_D,hippocampus
+syn5384586,rnaSeq,false,human,epigenetics,processed,tbi...,organ_C,angular gyrus
+syn209888732,10x multiome,false,human,epigenetics,raw,fastq,organ_B,inferior temporal gyrus...
+syn868811069,10x multiome,true,human,geneExpression,dataMatrix,bam,organ_B,hippocampus
+syn317169583,10x multiome,false,human,geneExpression,processed,tbi...,organ_A,caudate nucleus
+syn65696235,10x multiome,false,human,geneExpression,raw,tbi...,organ_D,inferior temporal gyrus...
+syn685152880,snATACSeq,false,human,geneExpression,dataMatrix,hdf,organ_C,inferior temporal gyrus...
+syn197447980,snATACSeq,false,human,geneExpression,processed,bam,organ_C,hippocampus
+syn449107670,snATACSeq,false,human,epigenetics,processed,fastq,organ_C,caudate nucleus
+syn581277696,snATACSeq,false,human,geneExpression,dataMatrix,tbi...,organ_D,angular gyrus
+syn936887415,10x multiome,false,human,geneExpression,raw,hdf,organ_A,caudate nucleus
+syn539467037,snrnaSeq,false,human,geneExpression,dataMatrix,bam,organ_D,caudate nucleus
+syn662223211,snrnaSeq,false,human,geneExpression,processed,tbi...,organ_C,angular gyrus
+syn155013298,snrnaSeq,false,human,geneExpression,processed,fastq,organ_A,hippocampus
+syn272852390,rnaSeq,false,human,epigenetics,raw,bam,organ_A,inferior temporal gyrus...
+syn442026023,snrnaSeq,false,human,epigenetics,raw,csv,organ_B,inferior temporal gyrus...
+syn178530906,10x multiome,true,human,geneExpression,dataMatrix,csv,organ_B,angular gyrus
+syn554343096,snrnaSeq,true,human,epigenetics,raw,fastq,organ_D,caudate nucleus
+syn657600942,rnaSeq,false,human,epigenetics,processed,tbi...,organ_A,caudate nucleus
+syn102730231,10x multiome,true,human,epigenetics,processed,csv,organ_A,angular gyrus
+syn820975097,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_D,angular gyrus
+syn333939029,snrnaSeq,true,human,geneExpression,processed,tbi...,organ_B,inferior temporal gyrus...
+syn702392237,10x multiome,false,human,epigenetics,processed,tbi...,organ_B,caudate nucleus
+syn969332132,10x multiome,false,human,geneExpression,processed,hdf,organ_A,inferior temporal gyrus...
+syn688103479,rnaSeq,false,human,epigenetics,processed,tbi...,organ_B,caudate nucleus
+syn967926331,10x multiome,false,human,epigenetics,processed,hdf,organ_C,hippocampus
+syn998035800,snATACSeq,true,human,epigenetics,processed,csv,organ_A,inferior temporal gyrus...
+syn457084035,snATACSeq,true,human,geneExpression,dataMatrix,hdf,organ_C,hippocampus
+syn459996878,rnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_D,hippocampus
+syn180938955,snATACSeq,false,human,geneExpression,dataMatrix,fastq,organ_A,inferior temporal gyrus...
+syn715648183,rnaSeq,false,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn595765805,10x multiome,false,human,geneExpression,dataMatrix,hdf,organ_B,caudate nucleus
+syn508645392,rnaSeq,false,human,geneExpression,processed,tbi...,organ_D,angular gyrus
+syn689976015,snrnaSeq,false,human,epigenetics,raw,hdf,organ_B,inferior temporal gyrus...
+syn700553847,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_B,caudate nucleus
+syn381650445,10x multiome,false,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn494900912,10x multiome,true,human,epigenetics,dataMatrix,hdf,organ_D,angular gyrus
+syn649067690,rnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_D,caudate nucleus
+syn163051236,rnaSeq,true,human,epigenetics,processed,fastq,organ_A,inferior temporal gyrus...
+syn43336533,rnaSeq,false,human,geneExpression,processed,fastq,organ_A,hippocampus
+syn891175867,snrnaSeq,false,human,epigenetics,raw,hdf,organ_D,hippocampus
+syn180695657,snATACSeq,true,human,geneExpression,processed,hdf,organ_A,hippocampus
+syn574810382,10x multiome,true,human,geneExpression,dataMatrix,fastq,organ_B,hippocampus
+syn603015815,snATACSeq,false,human,geneExpression,raw,hdf,organ_C,caudate nucleus
+syn677322112,10x multiome,false,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn447218458,10x multiome,false,human,geneExpression,dataMatrix,hdf,organ_C,caudate nucleus
+syn341517910,10x multiome,false,human,epigenetics,processed,bam,organ_C,caudate nucleus
+syn968291432,snATACSeq,false,human,geneExpression,raw,csv,organ_B,hippocampus
+syn476932544,snrnaSeq,false,human,geneExpression,processed,hdf,organ_A,caudate nucleus
+syn396606866,rnaSeq,false,human,geneExpression,processed,csv,organ_A,hippocampus
+syn959265698,snrnaSeq,false,human,epigenetics,raw,hdf,organ_C,caudate nucleus
+syn517340829,10x multiome,true,human,epigenetics,raw,hdf,organ_B,angular gyrus
+syn731081146,snATACSeq,true,human,geneExpression,raw,tbi...,organ_A,hippocampus
+syn76202515,snrnaSeq,false,human,epigenetics,processed,fastq,organ_C,inferior temporal gyrus...
+syn279355225,rnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_A,angular gyrus
+syn219914448,snATACSeq,false,human,geneExpression,processed,csv,organ_C,hippocampus
+syn788346973,rnaSeq,false,human,epigenetics,raw,hdf,organ_B,angular gyrus
+syn525299028,snrnaSeq,false,human,epigenetics,raw,hdf,organ_A,caudate nucleus
+syn889775251,snrnaSeq,false,human,epigenetics,raw,bam,organ_B,angular gyrus
+syn246268710,10x multiome,false,human,epigenetics,raw,tbi...,organ_A,inferior temporal gyrus...
+syn318537096,snATACSeq,false,human,epigenetics,raw,fastq,organ_D,caudate nucleus
+syn994669322,rnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_A,inferior temporal gyrus...
+syn631530947,10x multiome,false,human,geneExpression,dataMatrix,csv,organ_C,hippocampus
+syn676935649,snrnaSeq,true,human,geneExpression,processed,hdf,organ_C,hippocampus
+syn222295443,snrnaSeq,false,human,epigenetics,dataMatrix,csv,organ_A,angular gyrus
+syn392463641,rnaSeq,false,human,epigenetics,processed,tbi...,organ_C,hippocampus
+syn626452445,rnaSeq,false,human,epigenetics,raw,tbi...,organ_C,inferior temporal gyrus...
+syn752005596,rnaSeq,false,human,epigenetics,raw,fastq,organ_D,caudate nucleus
+syn107149444,snrnaSeq,true,human,epigenetics,dataMatrix,bam,organ_D,angular gyrus
+syn508964767,snrnaSeq,false,human,geneExpression,processed,hdf,organ_A,inferior temporal gyrus...
+syn745747195,snrnaSeq,true,human,geneExpression,raw,tbi...,organ_B,angular gyrus
+syn471401785,rnaSeq,false,human,geneExpression,processed,csv,organ_B,caudate nucleus
+syn24582974,rnaSeq,false,human,geneExpression,processed,fastq,organ_C,caudate nucleus
+syn131769661,snrnaSeq,true,human,geneExpression,dataMatrix,csv,organ_D,angular gyrus
+syn128526768,10x multiome,false,human,epigenetics,processed,fastq,organ_A,inferior temporal gyrus...
+syn499516933,snATACSeq,true,human,geneExpression,raw,bam,organ_D,angular gyrus
+syn410949899,snrnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_A,hippocampus
+syn245254959,snrnaSeq,false,human,geneExpression,processed,hdf,organ_C,angular gyrus
+syn99333394,10x multiome,false,human,epigenetics,raw,tbi...,organ_B,angular gyrus
+syn584988699,10x multiome,false,human,geneExpression,raw,fastq,organ_D,angular gyrus
+syn243124379,10x multiome,false,human,epigenetics,processed,fastq,organ_A,caudate nucleus
+syn325031382,rnaSeq,false,human,epigenetics,raw,bam,organ_A,inferior temporal gyrus...
+syn740802972,snATACSeq,false,human,geneExpression,raw,fastq,organ_B,inferior temporal gyrus...
+syn557125814,rnaSeq,false,human,epigenetics,processed,hdf,organ_B,inferior temporal gyrus...
+syn732894543,rnaSeq,false,human,epigenetics,processed,csv,organ_D,angular gyrus
+syn362679751,10x multiome,true,human,geneExpression,dataMatrix,csv,organ_C,caudate nucleus
+syn620716091,snrnaSeq,true,human,epigenetics,raw,csv,organ_D,angular gyrus
+syn75508326,snrnaSeq,false,human,geneExpression,raw,hdf,organ_A,inferior temporal gyrus...
+syn386847251,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_D,caudate nucleus
+syn827452803,10x multiome,false,human,geneExpression,dataMatrix,bam,organ_D,inferior temporal gyrus...
+syn26377111,snATACSeq,false,human,epigenetics,dataMatrix,fastq,organ_A,angular gyrus
+syn478093323,rnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_D,caudate nucleus
+syn360147179,10x multiome,false,human,epigenetics,raw,hdf,organ_D,caudate nucleus
+syn422683476,snATACSeq,true,human,epigenetics,dataMatrix,tbi...,organ_D,hippocampus
+syn139399039,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_A,hippocampus
+syn679855410,10x multiome,false,human,geneExpression,raw,hdf,organ_A,angular gyrus
+syn860574364,snATACSeq,false,human,epigenetics,raw,csv,organ_C,angular gyrus
+syn442265524,rnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_A,angular gyrus
+syn653567459,rnaSeq,true,human,geneExpression,dataMatrix,bam,organ_C,angular gyrus
+syn642900824,snATACSeq,false,human,epigenetics,dataMatrix,tbi...,organ_C,inferior temporal gyrus...
+syn138276862,10x multiome,false,human,geneExpression,dataMatrix,csv,organ_A,angular gyrus
+syn592873684,snrnaSeq,false,human,geneExpression,processed,tbi...,organ_B,inferior temporal gyrus...
+syn255414897,10x multiome,true,human,geneExpression,dataMatrix,csv,organ_A,angular gyrus
+syn275129474,snATACSeq,true,human,geneExpression,dataMatrix,fastq,organ_B,hippocampus
+syn649367509,rnaSeq,false,human,geneExpression,processed,hdf,organ_A,angular gyrus
+syn770656389,rnaSeq,false,human,geneExpression,raw,tbi...,organ_B,hippocampus
+syn413070115,rnaSeq,false,human,epigenetics,processed,csv,organ_D,caudate nucleus
+syn107838062,10x multiome,true,human,epigenetics,processed,fastq,organ_C,caudate nucleus
+syn168532229,rnaSeq,false,human,epigenetics,dataMatrix,fastq,organ_D,angular gyrus
+syn640145544,10x multiome,false,human,epigenetics,raw,hdf,organ_A,hippocampus
+syn500857608,snATACSeq,false,human,geneExpression,dataMatrix,csv,organ_B,inferior temporal gyrus...
+syn396302079,snrnaSeq,false,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn630773127,rnaSeq,false,human,epigenetics,processed,fastq,organ_D,angular gyrus
+syn391729860,rnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_B,caudate nucleus
+syn665166863,snrnaSeq,false,human,geneExpression,processed,bam,organ_C,hippocampus
+syn95050793,10x multiome,true,human,epigenetics,raw,hdf,organ_A,angular gyrus
+syn206664734,10x multiome,false,human,epigenetics,processed,fastq,organ_D,angular gyrus
+syn229329576,snATACSeq,false,human,geneExpression,processed,hdf,organ_A,inferior temporal gyrus...
+syn387190345,10x multiome,false,human,epigenetics,raw,tbi...,organ_A,caudate nucleus
+syn919900622,10x multiome,false,human,geneExpression,raw,bam,organ_D,caudate nucleus
+syn946314231,snATACSeq,false,human,geneExpression,raw,fastq,organ_D,inferior temporal gyrus...
+syn528029550,10x multiome,false,human,epigenetics,dataMatrix,tbi...,organ_A,hippocampus
+syn328438997,snrnaSeq,false,human,epigenetics,processed,tbi...,organ_B,angular gyrus
+syn254659177,rnaSeq,true,human,geneExpression,dataMatrix,tbi...,organ_B,angular gyrus
+syn642395523,10x multiome,false,human,epigenetics,raw,tbi...,organ_A,inferior temporal gyrus...
+syn208742499,rnaSeq,false,human,epigenetics,processed,bam,organ_D,angular gyrus
+syn671877880,snATACSeq,false,human,epigenetics,processed,csv,organ_A,hippocampus
+syn429927697,snATACSeq,false,human,geneExpression,processed,tbi...,organ_A,caudate nucleus
+syn444589243,10x multiome,false,human,epigenetics,processed,tbi...,organ_B,inferior temporal gyrus...
+syn685675787,rnaSeq,true,human,epigenetics,raw,csv,organ_C,angular gyrus
+syn432443594,snrnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_C,inferior temporal gyrus...
+syn443185767,snrnaSeq,false,human,epigenetics,dataMatrix,bam,organ_A,angular gyrus
+syn897293693,10x multiome,false,human,geneExpression,dataMatrix,bam,organ_B,caudate nucleus
+syn902819089,snATACSeq,false,human,epigenetics,processed,hdf,organ_C,hippocampus
+syn339641425,10x multiome,false,human,geneExpression,dataMatrix,tbi...,organ_C,hippocampus
+syn784452917,rnaSeq,true,human,geneExpression,dataMatrix,tbi...,organ_C,caudate nucleus
+syn294034448,snATACSeq,false,human,epigenetics,raw,bam,organ_A,hippocampus
+syn710946306,rnaSeq,true,human,geneExpression,raw,hdf,organ_B,angular gyrus
+syn928716614,snATACSeq,false,human,geneExpression,raw,fastq,organ_D,caudate nucleus
+syn27974408,rnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_C,inferior temporal gyrus...
+syn272844915,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_B,hippocampus
+syn695810126,10x multiome,false,human,geneExpression,raw,tbi...,organ_C,caudate nucleus
+syn397127196,snrnaSeq,false,human,geneExpression,raw,tbi...,organ_C,inferior temporal gyrus...
+syn283773600,snATACSeq,true,human,geneExpression,dataMatrix,fastq,organ_B,angular gyrus
+syn988549351,snrnaSeq,false,human,geneExpression,processed,fastq,organ_D,angular gyrus
+syn166233733,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_D,caudate nucleus
+syn390884762,snATACSeq,false,human,epigenetics,raw,hdf,organ_B,angular gyrus
+syn154749304,snATACSeq,false,human,epigenetics,raw,tbi...,organ_D,hippocampus
+syn939198813,10x multiome,false,human,geneExpression,processed,bam,organ_D,hippocampus
+syn824130526,10x multiome,false,human,epigenetics,raw,fastq,organ_D,angular gyrus
+syn485244914,snrnaSeq,false,human,geneExpression,dataMatrix,hdf,organ_C,caudate nucleus
+syn610898813,snATACSeq,false,human,epigenetics,raw,csv,organ_D,caudate nucleus
+syn83206209,snATACSeq,false,human,epigenetics,dataMatrix,hdf,organ_A,angular gyrus
+syn725814965,10x multiome,true,human,epigenetics,raw,bam,organ_C,angular gyrus
+syn124330588,snrnaSeq,false,human,geneExpression,dataMatrix,hdf,organ_A,hippocampus
+syn476938121,10x multiome,true,human,geneExpression,dataMatrix,fastq,organ_D,angular gyrus
+syn814567699,snrnaSeq,false,human,geneExpression,dataMatrix,hdf,organ_D,inferior temporal gyrus...
+syn896380841,snrnaSeq,true,human,geneExpression,raw,csv,organ_C,inferior temporal gyrus...
+syn885477184,10x multiome,true,human,epigenetics,dataMatrix,csv,organ_B,hippocampus
+syn954252929,rnaSeq,false,human,epigenetics,raw,bam,organ_D,angular gyrus
+syn369481452,snATACSeq,false,human,epigenetics,processed,csv,organ_B,inferior temporal gyrus...
+syn739479745,snrnaSeq,false,human,geneExpression,raw,bam,organ_C,hippocampus
+syn407478098,rnaSeq,true,human,geneExpression,raw,tbi...,organ_C,angular gyrus
+syn959757859,rnaSeq,false,human,epigenetics,raw,fastq,organ_D,inferior temporal gyrus...
+syn988576956,10x multiome,false,human,geneExpression,raw,bam,organ_B,hippocampus
+syn944168567,snrnaSeq,true,human,epigenetics,raw,tbi...,organ_C,inferior temporal gyrus...
+syn638223065,rnaSeq,false,human,geneExpression,raw,tbi...,organ_D,inferior temporal gyrus...
+syn143511210,rnaSeq,false,human,epigenetics,processed,fastq,organ_B,inferior temporal gyrus...
+syn814691905,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_C,caudate nucleus
+syn564701283,10x multiome,false,human,geneExpression,dataMatrix,hdf,organ_C,inferior temporal gyrus...
+syn52339561,10x multiome,true,human,geneExpression,processed,tbi...,organ_B,angular gyrus
+syn714227090,rnaSeq,false,human,geneExpression,raw,hdf,organ_A,caudate nucleus
+syn329432741,10x multiome,false,human,geneExpression,processed,fastq,organ_C,caudate nucleus
+syn305426736,snrnaSeq,false,human,epigenetics,raw,hdf,organ_A,angular gyrus
+syn759126195,snrnaSeq,true,human,geneExpression,processed,csv,organ_D,inferior temporal gyrus...
+syn569189161,snrnaSeq,true,human,geneExpression,raw,hdf,organ_C,caudate nucleus
+syn13019683,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_B,caudate nucleus
+syn234733236,snATACSeq,false,human,epigenetics,dataMatrix,bam,organ_D,hippocampus
+syn73347238,snrnaSeq,false,human,epigenetics,raw,csv,organ_A,inferior temporal gyrus...
+syn773862134,snrnaSeq,true,human,geneExpression,dataMatrix,tbi...,organ_B,inferior temporal gyrus...
+syn252050039,rnaSeq,false,human,geneExpression,processed,bam,organ_A,inferior temporal gyrus...
+syn216948194,snrnaSeq,false,human,epigenetics,raw,fastq,organ_B,hippocampus
+syn958944361,snATACSeq,false,human,geneExpression,dataMatrix,fastq,organ_B,caudate nucleus
+syn592704442,snATACSeq,false,human,geneExpression,raw,fastq,organ_B,inferior temporal gyrus...
+syn651157270,snATACSeq,false,human,geneExpression,raw,csv,organ_B,caudate nucleus
+syn868962174,rnaSeq,false,human,geneExpression,raw,bam,organ_D,angular gyrus
+syn296782701,snrnaSeq,false,human,epigenetics,raw,hdf,organ_C,hippocampus
+syn903798004,snrnaSeq,false,human,geneExpression,raw,tbi...,organ_C,caudate nucleus
+syn785298204,10x multiome,false,human,geneExpression,processed,csv,organ_C,inferior temporal gyrus...
+syn312769721,rnaSeq,false,human,epigenetics,processed,tbi...,organ_D,inferior temporal gyrus...
+syn820706658,10x multiome,true,human,epigenetics,processed,bam,organ_C,inferior temporal gyrus...
+syn306318497,snATACSeq,true,human,epigenetics,raw,csv,organ_A,caudate nucleus
+syn467826571,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_D,inferior temporal gyrus...
+syn155778512,10x multiome,false,human,epigenetics,processed,bam,organ_A,angular gyrus
+syn675277357,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_B,caudate nucleus
+syn421892312,snATACSeq,false,human,epigenetics,raw,hdf,organ_C,inferior temporal gyrus...
+syn96835049,10x multiome,false,human,epigenetics,raw,tbi...,organ_B,inferior temporal gyrus...
+syn871853605,rnaSeq,false,human,epigenetics,dataMatrix,csv,organ_D,hippocampus
+syn355443746,snATACSeq,true,human,epigenetics,dataMatrix,fastq,organ_C,inferior temporal gyrus...
+syn27158926,snATACSeq,false,human,geneExpression,dataMatrix,csv,organ_A,caudate nucleus
+syn407007935,10x multiome,false,human,epigenetics,processed,tbi...,organ_C,hippocampus
+syn480810070,snATACSeq,false,human,geneExpression,processed,hdf,organ_A,inferior temporal gyrus...
+syn460677235,rnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_D,angular gyrus
+syn883490197,10x multiome,false,human,epigenetics,processed,tbi...,organ_B,angular gyrus
+syn326055330,10x multiome,false,human,geneExpression,raw,tbi...,organ_D,hippocampus
+syn412436581,snATACSeq,false,human,geneExpression,raw,tbi...,organ_B,hippocampus
+syn464767020,snrnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_D,inferior temporal gyrus...
+syn581567837,rnaSeq,false,human,geneExpression,raw,csv,organ_B,angular gyrus
+syn82478487,snATACSeq,false,human,geneExpression,raw,bam,organ_D,caudate nucleus
+syn927799874,rnaSeq,false,human,epigenetics,processed,bam,organ_A,caudate nucleus
+syn816524124,rnaSeq,false,human,epigenetics,processed,bam,organ_B,caudate nucleus
+syn847145530,snrnaSeq,false,human,epigenetics,processed,fastq,organ_D,angular gyrus
+syn403730954,snATACSeq,true,human,geneExpression,dataMatrix,fastq,organ_A,inferior temporal gyrus...
+syn778633864,10x multiome,false,human,geneExpression,raw,csv,organ_C,caudate nucleus
+syn545810640,snrnaSeq,false,human,geneExpression,processed,hdf,organ_A,inferior temporal gyrus...
+syn557217919,10x multiome,false,human,epigenetics,processed,hdf,organ_A,hippocampus
+syn550934715,rnaSeq,false,human,geneExpression,dataMatrix,bam,organ_D,hippocampus
+syn265108546,snATACSeq,false,human,epigenetics,raw,fastq,organ_C,hippocampus
+syn191703300,10x multiome,false,human,geneExpression,dataMatrix,bam,organ_B,caudate nucleus
+syn684165298,10x multiome,false,human,epigenetics,raw,fastq,organ_A,inferior temporal gyrus...
+syn581461915,rnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_D,hippocampus
+syn417343850,snATACSeq,false,human,epigenetics,raw,hdf,organ_D,caudate nucleus
+syn983992339,rnaSeq,false,human,geneExpression,raw,hdf,organ_B,inferior temporal gyrus...
+syn861257485,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_C,angular gyrus
+syn46650036,snrnaSeq,false,human,epigenetics,processed,fastq,organ_B,hippocampus
+syn476024818,snrnaSeq,true,human,epigenetics,raw,bam,organ_D,angular gyrus
+syn746953457,snATACSeq,false,human,epigenetics,raw,bam,organ_A,hippocampus
+syn941081585,snrnaSeq,true,human,epigenetics,dataMatrix,bam,organ_A,caudate nucleus
+syn280615514,10x multiome,false,human,geneExpression,raw,tbi...,organ_D,inferior temporal gyrus...
+syn897313094,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_C,caudate nucleus
+syn859428367,snATACSeq,false,human,geneExpression,raw,fastq,organ_A,caudate nucleus
+syn818642383,10x multiome,true,human,geneExpression,processed,bam,organ_B,inferior temporal gyrus...
+syn485741520,rnaSeq,true,human,geneExpression,processed,csv,organ_C,inferior temporal gyrus...
+syn442487101,snATACSeq,false,human,epigenetics,dataMatrix,hdf,organ_B,angular gyrus
+syn863561524,10x multiome,false,human,geneExpression,processed,bam,organ_B,angular gyrus
+syn568091379,rnaSeq,false,human,epigenetics,processed,fastq,organ_A,angular gyrus
+syn460926746,rnaSeq,false,human,epigenetics,dataMatrix,bam,organ_D,inferior temporal gyrus...
+syn253996668,10x multiome,false,human,geneExpression,processed,tbi...,organ_C,inferior temporal gyrus...
+syn308303743,snATACSeq,false,human,epigenetics,dataMatrix,tbi...,organ_D,caudate nucleus
+syn691136440,snATACSeq,false,human,geneExpression,dataMatrix,csv,organ_A,inferior temporal gyrus...
+syn582471629,10x multiome,false,human,geneExpression,dataMatrix,bam,organ_C,inferior temporal gyrus...
+syn165953003,rnaSeq,true,human,epigenetics,dataMatrix,bam,organ_D,caudate nucleus
+syn549707628,10x multiome,false,human,epigenetics,processed,bam,organ_B,inferior temporal gyrus...
+syn39696515,rnaSeq,false,human,epigenetics,dataMatrix,csv,organ_B,inferior temporal gyrus...
+syn587168985,snrnaSeq,false,human,geneExpression,processed,csv,organ_B,hippocampus
+syn483960316,snATACSeq,false,human,epigenetics,dataMatrix,hdf,organ_A,inferior temporal gyrus...
+syn789811118,10x multiome,false,human,geneExpression,raw,csv,organ_C,inferior temporal gyrus...
+syn68381222,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_C,angular gyrus
+syn24608318,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_D,caudate nucleus
+syn20668675,10x multiome,false,human,geneExpression,dataMatrix,hdf,organ_B,hippocampus
+syn627612463,10x multiome,false,human,epigenetics,raw,csv,organ_C,hippocampus
+syn855980416,rnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_D,inferior temporal gyrus...
+syn97478452,snrnaSeq,false,human,geneExpression,processed,hdf,organ_D,caudate nucleus
+syn28189688,rnaSeq,false,human,epigenetics,raw,fastq,organ_D,angular gyrus
+syn618224907,10x multiome,false,human,geneExpression,raw,hdf,organ_B,inferior temporal gyrus...
+syn733031379,snATACSeq,false,human,geneExpression,dataMatrix,csv,organ_C,inferior temporal gyrus...
+syn162441556,snATACSeq,false,human,epigenetics,dataMatrix,fastq,organ_A,angular gyrus
+syn126473747,10x multiome,false,human,epigenetics,raw,tbi...,organ_D,caudate nucleus
+syn930537053,10x multiome,false,human,epigenetics,raw,bam,organ_B,hippocampus
+syn735454461,rnaSeq,true,human,epigenetics,raw,bam,organ_B,angular gyrus
+syn900017851,rnaSeq,true,human,geneExpression,dataMatrix,fastq,organ_B,angular gyrus
+syn990821253,snrnaSeq,false,human,epigenetics,dataMatrix,fastq,organ_D,inferior temporal gyrus...
+syn443080266,snATACSeq,false,human,epigenetics,raw,tbi...,organ_C,angular gyrus
+syn337377303,snrnaSeq,false,human,epigenetics,processed,tbi...,organ_C,hippocampus
+syn933636627,snATACSeq,false,human,epigenetics,dataMatrix,hdf,organ_C,inferior temporal gyrus...
+syn972420688,snrnaSeq,false,human,geneExpression,processed,tbi...,organ_C,angular gyrus
+syn87908391,snrnaSeq,false,human,geneExpression,raw,csv,organ_C,angular gyrus
+syn186680488,10x multiome,false,human,epigenetics,raw,hdf,organ_C,hippocampus
+syn548586245,rnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_B,angular gyrus
+syn611742741,10x multiome,false,human,geneExpression,dataMatrix,bam,organ_D,inferior temporal gyrus...
+syn647464863,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_C,angular gyrus
+syn174839683,10x multiome,true,human,geneExpression,raw,fastq,organ_D,caudate nucleus
+syn522710570,10x multiome,false,human,geneExpression,processed,tbi...,organ_B,caudate nucleus
+syn100186631,snrnaSeq,false,human,epigenetics,dataMatrix,bam,organ_D,caudate nucleus
+syn442029797,snATACSeq,false,human,geneExpression,raw,bam,organ_A,caudate nucleus
+syn383272477,10x multiome,false,human,geneExpression,raw,csv,organ_A,hippocampus
+syn995113790,rnaSeq,false,human,geneExpression,processed,hdf,organ_C,caudate nucleus
+syn702140053,rnaSeq,false,human,geneExpression,processed,fastq,organ_C,caudate nucleus
+syn110228423,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_C,inferior temporal gyrus...
+syn480194690,snATACSeq,false,human,geneExpression,processed,fastq,organ_C,angular gyrus
+syn347681187,10x multiome,false,human,epigenetics,dataMatrix,bam,organ_A,inferior temporal gyrus...
+syn657071427,rnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_C,caudate nucleus
+syn451017373,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_A,hippocampus
+syn76131799,rnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_C,caudate nucleus
+syn331800170,snATACSeq,true,human,geneExpression,dataMatrix,tbi...,organ_B,caudate nucleus
+syn3841566,snATACSeq,false,human,epigenetics,raw,fastq,organ_D,hippocampus
+syn892781549,10x multiome,false,human,epigenetics,raw,bam,organ_C,hippocampus
+syn159521941,snATACSeq,true,human,epigenetics,processed,hdf,organ_B,inferior temporal gyrus...
+syn55743141,snATACSeq,false,human,geneExpression,dataMatrix,tbi...,organ_C,angular gyrus
+syn182544773,snATACSeq,false,human,geneExpression,raw,hdf,organ_C,angular gyrus
+syn344060214,snATACSeq,false,human,epigenetics,processed,bam,organ_B,hippocampus
+syn115090374,snATACSeq,true,human,geneExpression,processed,tbi...,organ_C,caudate nucleus
+syn670664668,10x multiome,false,human,geneExpression,raw,fastq,organ_A,hippocampus
+syn731290027,rnaSeq,false,human,geneExpression,processed,hdf,organ_D,angular gyrus
+syn120256804,snATACSeq,false,human,epigenetics,processed,tbi...,organ_D,inferior temporal gyrus...
+syn217117601,snrnaSeq,false,human,epigenetics,processed,csv,organ_C,caudate nucleus
+syn55588410,rnaSeq,true,human,geneExpression,dataMatrix,csv,organ_A,angular gyrus
+syn414586779,snATACSeq,false,human,geneExpression,processed,bam,organ_A,hippocampus
+syn913549482,snrnaSeq,false,human,geneExpression,raw,tbi...,organ_D,angular gyrus
+syn671928174,snrnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_C,angular gyrus
+syn864032811,10x multiome,true,human,epigenetics,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn47111229,snATACSeq,false,human,geneExpression,raw,tbi...,organ_B,hippocampus
+syn54960973,snATACSeq,true,human,geneExpression,dataMatrix,csv,organ_A,inferior temporal gyrus...
+syn149060045,snrnaSeq,false,human,geneExpression,processed,bam,organ_D,inferior temporal gyrus...
+syn372776986,snATACSeq,true,human,geneExpression,raw,fastq,organ_A,angular gyrus
+syn307528400,snATACSeq,false,human,geneExpression,raw,csv,organ_D,caudate nucleus
+syn767782220,rnaSeq,false,human,epigenetics,processed,csv,organ_A,caudate nucleus
+syn240188245,rnaSeq,false,human,epigenetics,raw,hdf,organ_A,angular gyrus
+syn296063398,snrnaSeq,false,human,geneExpression,raw,csv,organ_B,angular gyrus
+syn302031036,snrnaSeq,false,human,geneExpression,raw,bam,organ_B,inferior temporal gyrus...
+syn541740132,rnaSeq,false,human,geneExpression,raw,tbi...,organ_C,caudate nucleus
+syn463118834,snrnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_C,caudate nucleus
+syn849512795,snrnaSeq,false,human,geneExpression,raw,bam,organ_B,hippocampus
+syn698554252,rnaSeq,false,human,epigenetics,processed,csv,organ_C,hippocampus
+syn161000046,snATACSeq,false,human,geneExpression,dataMatrix,hdf,organ_B,angular gyrus
+syn306269351,rnaSeq,false,human,epigenetics,dataMatrix,bam,organ_B,angular gyrus
+syn724499082,snATACSeq,false,human,epigenetics,dataMatrix,bam,organ_D,caudate nucleus
+syn711526863,rnaSeq,false,human,epigenetics,processed,fastq,organ_C,caudate nucleus
+syn59852994,snrnaSeq,false,human,epigenetics,dataMatrix,csv,organ_A,caudate nucleus
+syn198279311,snATACSeq,true,human,epigenetics,dataMatrix,fastq,organ_A,hippocampus
+syn946568565,rnaSeq,false,human,epigenetics,raw,fastq,organ_A,hippocampus
+syn964983729,rnaSeq,false,human,geneExpression,processed,bam,organ_C,inferior temporal gyrus...
+syn289389789,snATACSeq,false,human,epigenetics,raw,fastq,organ_C,angular gyrus
+syn130874257,snATACSeq,false,human,geneExpression,raw,fastq,organ_C,angular gyrus
+syn243609074,rnaSeq,false,human,geneExpression,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn421898909,rnaSeq,false,human,geneExpression,raw,csv,organ_A,angular gyrus
+syn795210779,snrnaSeq,true,human,epigenetics,dataMatrix,fastq,organ_D,inferior temporal gyrus...
+syn515932379,rnaSeq,false,human,geneExpression,processed,csv,organ_A,inferior temporal gyrus...
+syn773749910,snATACSeq,true,human,geneExpression,raw,csv,organ_C,inferior temporal gyrus...
+syn777603042,snATACSeq,false,human,geneExpression,processed,hdf,organ_A,caudate nucleus
+syn330247516,10x multiome,false,human,geneExpression,raw,bam,organ_B,hippocampus
+syn549026350,snrnaSeq,false,human,epigenetics,raw,csv,organ_C,angular gyrus
+syn910383912,snATACSeq,false,human,epigenetics,processed,tbi...,organ_A,hippocampus
+syn640222883,snrnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_D,inferior temporal gyrus...
+syn146832936,10x multiome,false,human,epigenetics,raw,bam,organ_C,angular gyrus
+syn429261239,snATACSeq,false,human,epigenetics,processed,bam,organ_B,caudate nucleus
+syn374697489,10x multiome,false,human,epigenetics,dataMatrix,tbi...,organ_A,caudate nucleus
+syn547832168,snATACSeq,true,human,geneExpression,raw,hdf,organ_C,angular gyrus
+syn248705708,snrnaSeq,true,human,epigenetics,raw,hdf,organ_C,angular gyrus
+syn697665564,snATACSeq,false,human,geneExpression,raw,csv,organ_A,angular gyrus
+syn859025067,rnaSeq,false,human,epigenetics,processed,fastq,organ_B,caudate nucleus
+syn902519591,snrnaSeq,false,human,geneExpression,processed,bam,organ_C,hippocampus
+syn524418968,snrnaSeq,true,human,epigenetics,dataMatrix,csv,organ_D,caudate nucleus
+syn689650393,10x multiome,false,human,geneExpression,processed,fastq,organ_D,angular gyrus
+syn722358396,rnaSeq,true,human,epigenetics,dataMatrix,bam,organ_D,hippocampus
+syn854251376,10x multiome,false,human,epigenetics,dataMatrix,bam,organ_B,inferior temporal gyrus...
+syn795062683,10x multiome,false,human,epigenetics,raw,tbi...,organ_D,hippocampus
+syn633204898,rnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn798107966,snATACSeq,false,human,geneExpression,dataMatrix,tbi...,organ_A,caudate nucleus
+syn17981540,rnaSeq,true,human,epigenetics,processed,csv,organ_A,inferior temporal gyrus...
+syn12973072,rnaSeq,false,human,geneExpression,processed,bam,organ_C,inferior temporal gyrus...
+syn510174578,snrnaSeq,true,human,epigenetics,dataMatrix,bam,organ_C,caudate nucleus
+syn934856450,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_B,caudate nucleus
+syn345402494,10x multiome,false,human,geneExpression,raw,bam,organ_D,hippocampus
+syn369397476,snrnaSeq,false,human,epigenetics,dataMatrix,csv,organ_A,inferior temporal gyrus...
+syn959377323,snATACSeq,false,human,epigenetics,dataMatrix,bam,organ_D,inferior temporal gyrus...
+syn411591684,10x multiome,false,human,epigenetics,processed,hdf,organ_D,hippocampus
+syn773123906,10x multiome,true,human,geneExpression,dataMatrix,hdf,organ_C,angular gyrus
+syn185720758,snrnaSeq,false,human,geneExpression,processed,fastq,organ_A,hippocampus
+syn894803938,rnaSeq,true,human,geneExpression,dataMatrix,tbi...,organ_D,angular gyrus
+syn303136071,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_D,inferior temporal gyrus...
+syn546396725,snrnaSeq,false,human,epigenetics,raw,tbi...,organ_A,inferior temporal gyrus...
+syn309951247,rnaSeq,true,human,geneExpression,dataMatrix,fastq,organ_A,inferior temporal gyrus...
+syn926875283,rnaSeq,false,human,geneExpression,raw,csv,organ_A,angular gyrus
+syn764736393,snrnaSeq,false,human,geneExpression,raw,fastq,organ_B,inferior temporal gyrus...
+syn864040065,10x multiome,false,human,epigenetics,processed,hdf,organ_A,caudate nucleus
+syn768310583,rnaSeq,false,human,epigenetics,raw,fastq,organ_D,hippocampus
+syn339055170,rnaSeq,true,human,geneExpression,raw,tbi...,organ_A,caudate nucleus
+syn409861818,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_A,hippocampus
+syn922860082,snATACSeq,true,human,epigenetics,processed,hdf,organ_C,angular gyrus
+syn635299828,10x multiome,false,human,epigenetics,raw,hdf,organ_D,inferior temporal gyrus...
+syn342901872,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_D,hippocampus
+syn588543516,snrnaSeq,false,human,geneExpression,dataMatrix,csv,organ_B,hippocampus
+syn681291360,snATACSeq,false,human,geneExpression,dataMatrix,csv,organ_C,angular gyrus
+syn426741573,rnaSeq,false,human,epigenetics,raw,tbi...,organ_D,caudate nucleus
+syn658839463,snATACSeq,true,human,epigenetics,processed,tbi...,organ_C,caudate nucleus
+syn761759899,snrnaSeq,true,human,epigenetics,dataMatrix,hdf,organ_D,angular gyrus
+syn236296483,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_D,hippocampus
+syn52647365,snATACSeq,false,human,geneExpression,processed,fastq,organ_C,hippocampus
+syn991278836,snrnaSeq,false,human,geneExpression,processed,bam,organ_C,hippocampus
+syn929240097,10x multiome,false,human,geneExpression,dataMatrix,tbi...,organ_A,caudate nucleus
+syn758559046,rnaSeq,false,human,epigenetics,raw,tbi...,organ_D,angular gyrus
+syn362907927,snATACSeq,false,human,epigenetics,processed,bam,organ_B,hippocampus
+syn884116791,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_B,caudate nucleus
+syn463803274,10x multiome,false,human,epigenetics,processed,fastq,organ_C,hippocampus
+syn370340857,10x multiome,true,human,epigenetics,processed,csv,organ_B,angular gyrus
+syn753371086,snATACSeq,false,human,epigenetics,raw,bam,organ_B,caudate nucleus
+syn959076011,snATACSeq,false,human,epigenetics,raw,csv,organ_C,inferior temporal gyrus...
+syn874246422,rnaSeq,false,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn273669161,snrnaSeq,false,human,geneExpression,raw,tbi...,organ_B,angular gyrus
+syn337771641,10x multiome,false,human,geneExpression,dataMatrix,hdf,organ_B,hippocampus
+syn510846406,snrnaSeq,true,human,geneExpression,raw,bam,organ_D,inferior temporal gyrus...
+syn325360014,10x multiome,false,human,geneExpression,processed,csv,organ_D,angular gyrus
+syn447033727,rnaSeq,false,human,geneExpression,processed,fastq,organ_C,hippocampus
+syn573187194,rnaSeq,true,human,epigenetics,raw,tbi...,organ_C,inferior temporal gyrus...
+syn59944773,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_C,angular gyrus
+syn849025288,10x multiome,false,human,epigenetics,raw,hdf,organ_A,inferior temporal gyrus...
+syn847284608,rnaSeq,false,human,epigenetics,raw,csv,organ_B,inferior temporal gyrus...
+syn204400246,rnaSeq,false,human,epigenetics,dataMatrix,csv,organ_D,inferior temporal gyrus...
+syn579442772,snATACSeq,false,human,epigenetics,raw,csv,organ_C,inferior temporal gyrus...
+syn91116210,rnaSeq,true,human,geneExpression,processed,bam,organ_A,caudate nucleus
+syn257048132,snrnaSeq,false,human,epigenetics,dataMatrix,csv,organ_C,caudate nucleus
+syn789753364,rnaSeq,false,human,geneExpression,processed,csv,organ_D,inferior temporal gyrus...
+syn29296154,10x multiome,false,human,epigenetics,raw,csv,organ_C,hippocampus
+syn496716424,snrnaSeq,false,human,geneExpression,processed,bam,organ_D,angular gyrus
+syn898199798,rnaSeq,false,human,geneExpression,raw,fastq,organ_C,caudate nucleus
+syn788189288,10x multiome,false,human,geneExpression,dataMatrix,tbi...,organ_D,hippocampus
+syn70966520,rnaSeq,false,human,epigenetics,raw,hdf,organ_A,hippocampus
+syn520771047,rnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_D,inferior temporal gyrus...
+syn280745237,snATACSeq,false,human,epigenetics,raw,csv,organ_D,caudate nucleus
+syn26997973,10x multiome,false,human,epigenetics,processed,tbi...,organ_A,hippocampus
+syn113796467,snATACSeq,false,human,geneExpression,dataMatrix,bam,organ_A,inferior temporal gyrus...
+syn329749884,snATACSeq,false,human,epigenetics,processed,tbi...,organ_B,hippocampus
+syn432091019,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_C,inferior temporal gyrus...
+syn857566768,snrnaSeq,false,human,epigenetics,raw,fastq,organ_C,angular gyrus
+syn944135730,10x multiome,false,human,epigenetics,raw,bam,organ_A,inferior temporal gyrus...
+syn150336713,rnaSeq,false,human,geneExpression,dataMatrix,bam,organ_C,hippocampus
+syn470986779,rnaSeq,false,human,geneExpression,processed,csv,organ_C,inferior temporal gyrus...
+syn284974685,snrnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_C,inferior temporal gyrus...
+syn762216748,snATACSeq,false,human,geneExpression,processed,tbi...,organ_C,caudate nucleus
+syn203927468,10x multiome,true,human,geneExpression,dataMatrix,csv,organ_B,hippocampus
+syn226786922,snATACSeq,true,human,epigenetics,raw,tbi...,organ_B,hippocampus
+syn378076771,rnaSeq,false,human,geneExpression,dataMatrix,csv,organ_B,inferior temporal gyrus...
+syn888936777,snrnaSeq,false,human,geneExpression,raw,tbi...,organ_B,caudate nucleus
+syn961815312,10x multiome,true,human,epigenetics,raw,hdf,organ_A,hippocampus
+syn18071229,snrnaSeq,false,human,epigenetics,raw,csv,organ_A,hippocampus
+syn662534949,10x multiome,false,human,epigenetics,dataMatrix,csv,organ_C,caudate nucleus
+syn212948477,snATACSeq,true,human,geneExpression,processed,hdf,organ_C,hippocampus
+syn43499196,10x multiome,false,human,geneExpression,raw,hdf,organ_D,hippocampus
+syn558300595,snrnaSeq,false,human,epigenetics,raw,hdf,organ_C,inferior temporal gyrus...
+syn414390487,rnaSeq,false,human,epigenetics,processed,bam,organ_C,caudate nucleus
+syn852266393,10x multiome,false,human,epigenetics,processed,bam,organ_D,caudate nucleus
+syn265643588,snATACSeq,false,human,geneExpression,raw,fastq,organ_C,caudate nucleus
+syn799111714,snrnaSeq,true,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn652440273,rnaSeq,false,human,epigenetics,processed,tbi...,organ_C,hippocampus
+syn39572970,snrnaSeq,true,human,epigenetics,processed,fastq,organ_C,inferior temporal gyrus...
+syn988325407,10x multiome,true,human,geneExpression,processed,csv,organ_A,angular gyrus
+syn376407722,10x multiome,true,human,epigenetics,raw,hdf,organ_C,caudate nucleus
+syn356383124,snATACSeq,true,human,epigenetics,raw,bam,organ_A,caudate nucleus
+syn217678569,snrnaSeq,true,human,geneExpression,raw,tbi...,organ_A,angular gyrus
+syn910498586,snrnaSeq,false,human,epigenetics,raw,fastq,organ_D,angular gyrus
+syn897588732,snATACSeq,true,human,geneExpression,dataMatrix,tbi...,organ_B,hippocampus
+syn610330201,rnaSeq,false,human,geneExpression,raw,hdf,organ_C,angular gyrus
+syn702472650,snATACSeq,false,human,geneExpression,processed,bam,organ_B,hippocampus
+syn877576714,rnaSeq,false,human,epigenetics,raw,hdf,organ_D,inferior temporal gyrus...
+syn455801828,snATACSeq,false,human,geneExpression,processed,fastq,organ_A,inferior temporal gyrus...
+syn368844399,rnaSeq,true,human,epigenetics,raw,bam,organ_B,caudate nucleus
+syn341577291,snATACSeq,false,human,geneExpression,processed,bam,organ_A,inferior temporal gyrus...
+syn515177819,snrnaSeq,false,human,geneExpression,processed,bam,organ_D,angular gyrus
+syn661875998,snATACSeq,false,human,epigenetics,processed,csv,organ_A,hippocampus
+syn79877880,snrnaSeq,false,human,epigenetics,dataMatrix,bam,organ_D,angular gyrus
+syn227064354,10x multiome,false,human,epigenetics,dataMatrix,tbi...,organ_D,caudate nucleus
+syn47704826,snATACSeq,false,human,geneExpression,raw,csv,organ_C,caudate nucleus
+syn107276383,snATACSeq,false,human,epigenetics,processed,hdf,organ_D,inferior temporal gyrus...
+syn396674317,rnaSeq,false,human,geneExpression,raw,bam,organ_B,hippocampus
+syn227067605,snrnaSeq,false,human,geneExpression,raw,hdf,organ_B,caudate nucleus
+syn648923165,10x multiome,false,human,epigenetics,dataMatrix,bam,organ_A,caudate nucleus
+syn839782550,10x multiome,false,human,geneExpression,processed,csv,organ_C,inferior temporal gyrus...
+syn635517596,snrnaSeq,false,human,geneExpression,raw,bam,organ_B,inferior temporal gyrus...
+syn525749553,snrnaSeq,true,human,epigenetics,raw,tbi...,organ_D,caudate nucleus
+syn290185457,rnaSeq,false,human,epigenetics,processed,fastq,organ_D,angular gyrus
+syn386740045,rnaSeq,false,human,epigenetics,raw,fastq,organ_B,inferior temporal gyrus...
+syn392180233,rnaSeq,true,human,epigenetics,raw,hdf,organ_A,hippocampus
+syn56043698,snrnaSeq,false,human,epigenetics,processed,bam,organ_A,hippocampus
+syn959878998,10x multiome,false,human,geneExpression,raw,fastq,organ_A,angular gyrus
+syn463175530,snATACSeq,false,human,epigenetics,dataMatrix,bam,organ_A,inferior temporal gyrus...
+syn305001808,10x multiome,false,human,epigenetics,dataMatrix,tbi...,organ_A,caudate nucleus
+syn443725661,snrnaSeq,false,human,geneExpression,processed,fastq,organ_A,angular gyrus
+syn225586124,rnaSeq,true,human,geneExpression,processed,tbi...,organ_D,caudate nucleus
+syn110790589,snrnaSeq,false,human,epigenetics,processed,hdf,organ_B,hippocampus
+syn400082746,snrnaSeq,false,human,epigenetics,processed,csv,organ_C,inferior temporal gyrus...
+syn871132644,10x multiome,true,human,geneExpression,dataMatrix,hdf,organ_B,angular gyrus
+syn137631024,snATACSeq,false,human,geneExpression,raw,bam,organ_D,inferior temporal gyrus...
+syn93414972,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_A,hippocampus
+syn650824500,rnaSeq,true,human,geneExpression,raw,csv,organ_A,caudate nucleus
+syn157003309,snrnaSeq,false,human,geneExpression,raw,csv,organ_C,angular gyrus
+syn369204778,rnaSeq,false,human,epigenetics,processed,hdf,organ_A,angular gyrus
+syn422815685,rnaSeq,true,human,geneExpression,raw,bam,organ_B,caudate nucleus
+syn366973178,snATACSeq,false,human,geneExpression,raw,bam,organ_C,inferior temporal gyrus...
+syn9554316,10x multiome,true,human,geneExpression,raw,hdf,organ_D,caudate nucleus
+syn171579183,rnaSeq,false,human,geneExpression,processed,tbi...,organ_A,caudate nucleus
+syn651299401,10x multiome,false,human,epigenetics,dataMatrix,bam,organ_C,hippocampus
+syn416445297,snrnaSeq,false,human,epigenetics,raw,fastq,organ_A,caudate nucleus
+syn181386378,snrnaSeq,false,human,epigenetics,processed,bam,organ_C,inferior temporal gyrus...
+syn195950967,10x multiome,false,human,geneExpression,raw,hdf,organ_C,angular gyrus
+syn414961289,rnaSeq,true,human,geneExpression,processed,tbi...,organ_D,hippocampus
+syn216523932,snrnaSeq,false,human,geneExpression,processed,fastq,organ_D,angular gyrus
+syn214755474,snrnaSeq,true,human,epigenetics,raw,hdf,organ_A,inferior temporal gyrus...
+syn293353979,10x multiome,false,human,epigenetics,raw,hdf,organ_A,angular gyrus
+syn656039231,snATACSeq,false,human,epigenetics,dataMatrix,hdf,organ_C,caudate nucleus
+syn192364868,10x multiome,false,human,geneExpression,dataMatrix,fastq,organ_B,angular gyrus
+syn41779097,snrnaSeq,false,human,epigenetics,dataMatrix,csv,organ_B,inferior temporal gyrus...
+syn899862059,snATACSeq,false,human,epigenetics,dataMatrix,tbi...,organ_D,angular gyrus
+syn892966119,snrnaSeq,false,human,epigenetics,processed,hdf,organ_B,angular gyrus
+syn611859400,snrnaSeq,true,human,geneExpression,raw,hdf,organ_B,inferior temporal gyrus...
+syn447223259,snrnaSeq,false,human,epigenetics,dataMatrix,hdf,organ_A,caudate nucleus
+syn411736245,snrnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_D,hippocampus
+syn130220594,rnaSeq,false,human,epigenetics,dataMatrix,fastq,organ_B,inferior temporal gyrus...
+syn296725061,snrnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_D,caudate nucleus
+syn980390595,10x multiome,false,human,geneExpression,processed,tbi...,organ_D,angular gyrus
+syn549403087,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_C,caudate nucleus
+syn447934779,snrnaSeq,true,human,epigenetics,dataMatrix,csv,organ_B,hippocampus
+syn449610321,snATACSeq,false,human,epigenetics,raw,csv,organ_B,angular gyrus
+syn663870576,rnaSeq,false,human,geneExpression,raw,bam,organ_D,inferior temporal gyrus...
+syn634437867,rnaSeq,false,human,geneExpression,raw,fastq,organ_C,caudate nucleus
+syn970969154,snrnaSeq,false,human,geneExpression,raw,csv,organ_A,caudate nucleus
+syn810842422,snATACSeq,true,human,epigenetics,raw,csv,organ_B,caudate nucleus
+syn752980395,rnaSeq,true,human,epigenetics,dataMatrix,fastq,organ_A,hippocampus
+syn240402966,rnaSeq,false,human,epigenetics,raw,bam,organ_A,angular gyrus
+syn241340637,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_C,caudate nucleus
+syn887182141,rnaSeq,false,human,geneExpression,raw,csv,organ_A,angular gyrus
+syn559421797,snATACSeq,false,human,geneExpression,processed,hdf,organ_B,angular gyrus
+syn679342265,10x multiome,true,human,epigenetics,dataMatrix,bam,organ_A,inferior temporal gyrus...
+syn390086272,snrnaSeq,false,human,epigenetics,raw,csv,organ_A,inferior temporal gyrus...
+syn335872357,10x multiome,false,human,geneExpression,dataMatrix,fastq,organ_B,angular gyrus
+syn658095276,rnaSeq,true,human,epigenetics,dataMatrix,bam,organ_B,caudate nucleus
+syn498267086,10x multiome,false,human,geneExpression,processed,bam,organ_B,angular gyrus
+syn556698590,snATACSeq,false,human,geneExpression,processed,fastq,organ_C,caudate nucleus
+syn315148170,rnaSeq,true,human,geneExpression,raw,fastq,organ_C,inferior temporal gyrus...
+syn44823673,rnaSeq,false,human,epigenetics,raw,fastq,organ_B,angular gyrus
+syn222879199,snATACSeq,false,human,geneExpression,processed,tbi...,organ_B,hippocampus
+syn78467775,snrnaSeq,true,human,epigenetics,raw,fastq,organ_A,angular gyrus
+syn810274253,snrnaSeq,false,human,geneExpression,raw,tbi...,organ_A,caudate nucleus
+syn329244606,snATACSeq,true,human,epigenetics,raw,fastq,organ_D,angular gyrus
+syn857157528,10x multiome,false,human,epigenetics,dataMatrix,hdf,organ_D,caudate nucleus
+syn912627776,snATACSeq,false,human,geneExpression,raw,hdf,organ_A,caudate nucleus
+syn55771342,10x multiome,false,human,epigenetics,raw,csv,organ_C,hippocampus
+syn28102036,rnaSeq,false,human,epigenetics,processed,csv,organ_A,caudate nucleus
+syn34943249,snATACSeq,false,human,epigenetics,dataMatrix,csv,organ_A,hippocampus
+syn876618527,snATACSeq,false,human,geneExpression,processed,fastq,organ_D,inferior temporal gyrus...
+syn842869836,rnaSeq,false,human,epigenetics,dataMatrix,fastq,organ_C,inferior temporal gyrus...
+syn617179034,snATACSeq,true,human,epigenetics,dataMatrix,hdf,organ_C,hippocampus
+syn175509234,rnaSeq,false,human,geneExpression,processed,bam,organ_A,caudate nucleus
+syn841981747,snrnaSeq,false,human,epigenetics,dataMatrix,bam,organ_B,inferior temporal gyrus...
+syn708376627,snATACSeq,false,human,epigenetics,processed,bam,organ_B,angular gyrus
+syn763350687,snrnaSeq,true,human,epigenetics,raw,hdf,organ_C,caudate nucleus
+syn852492439,snATACSeq,false,human,epigenetics,dataMatrix,tbi...,organ_C,angular gyrus
+syn504477061,10x multiome,true,human,geneExpression,processed,csv,organ_B,hippocampus
+syn491475714,10x multiome,false,human,geneExpression,processed,fastq,organ_D,angular gyrus
+syn13794452,snrnaSeq,true,human,geneExpression,dataMatrix,bam,organ_A,inferior temporal gyrus...
+syn778843876,10x multiome,false,human,epigenetics,raw,bam,organ_A,angular gyrus
+syn395480913,snATACSeq,true,human,epigenetics,raw,hdf,organ_A,inferior temporal gyrus...
+syn661826263,10x multiome,false,human,geneExpression,dataMatrix,fastq,organ_D,caudate nucleus
+syn798719730,10x multiome,false,human,epigenetics,processed,hdf,organ_A,angular gyrus
+syn781346290,10x multiome,false,human,geneExpression,raw,fastq,organ_C,angular gyrus
+syn839979678,rnaSeq,false,human,geneExpression,raw,hdf,organ_C,angular gyrus
+syn826383418,10x multiome,true,human,epigenetics,processed,tbi...,organ_D,inferior temporal gyrus...
+syn775770432,snATACSeq,false,human,epigenetics,processed,csv,organ_C,inferior temporal gyrus...
+syn61392471,snrnaSeq,true,human,geneExpression,dataMatrix,csv,organ_B,caudate nucleus
+syn306602852,snrnaSeq,false,human,geneExpression,dataMatrix,fastq,organ_B,inferior temporal gyrus...
+syn420478020,snrnaSeq,false,human,epigenetics,processed,fastq,organ_C,caudate nucleus
+syn330275649,snATACSeq,false,human,epigenetics,dataMatrix,tbi...,organ_A,inferior temporal gyrus...
+syn567278034,snrnaSeq,false,human,geneExpression,raw,bam,organ_A,hippocampus
+syn506226914,snATACSeq,false,human,geneExpression,dataMatrix,hdf,organ_D,caudate nucleus
+syn892122139,10x multiome,false,human,epigenetics,raw,bam,organ_D,caudate nucleus
+syn349519613,snATACSeq,false,human,epigenetics,dataMatrix,bam,organ_B,angular gyrus
+syn771634048,snATACSeq,false,human,epigenetics,processed,tbi...,organ_D,caudate nucleus
+syn582206816,snATACSeq,true,human,epigenetics,processed,csv,organ_C,angular gyrus
+syn738902293,snATACSeq,false,human,epigenetics,raw,csv,organ_C,hippocampus
+syn492955329,snATACSeq,false,human,epigenetics,processed,tbi...,organ_C,hippocampus
+syn233360464,snrnaSeq,true,human,epigenetics,raw,bam,organ_D,caudate nucleus
+syn407324032,snrnaSeq,false,human,epigenetics,raw,bam,organ_B,hippocampus
+syn488569921,snATACSeq,false,human,geneExpression,processed,tbi...,organ_B,caudate nucleus
+syn155930791,rnaSeq,true,human,geneExpression,processed,csv,organ_D,angular gyrus
+syn747852348,10x multiome,false,human,geneExpression,dataMatrix,hdf,organ_B,angular gyrus
+syn66846204,snATACSeq,true,human,epigenetics,dataMatrix,hdf,organ_D,inferior temporal gyrus...
+syn475502455,snrnaSeq,false,human,geneExpression,raw,tbi...,organ_B,inferior temporal gyrus...
+syn438180269,snrnaSeq,true,human,geneExpression,processed,csv,organ_D,inferior temporal gyrus...
+syn669307825,rnaSeq,true,human,epigenetics,processed,csv,organ_D,inferior temporal gyrus...
+syn582711858,snrnaSeq,false,human,epigenetics,raw,tbi...,organ_D,hippocampus
+syn572055387,snrnaSeq,true,human,epigenetics,raw,hdf,organ_C,caudate nucleus
+syn288155416,snrnaSeq,false,human,geneExpression,processed,csv,organ_D,inferior temporal gyrus...
+syn738810427,10x multiome,false,human,geneExpression,processed,hdf,organ_B,caudate nucleus
+syn316604474,10x multiome,false,human,geneExpression,processed,hdf,organ_C,hippocampus
+syn449821553,rnaSeq,true,human,epigenetics,dataMatrix,fastq,organ_C,caudate nucleus
+syn796738916,rnaSeq,false,human,epigenetics,dataMatrix,fastq,organ_D,caudate nucleus
+syn933301439,snATACSeq,false,human,geneExpression,processed,tbi...,organ_C,hippocampus
+syn299273399,snrnaSeq,false,human,geneExpression,raw,tbi...,organ_D,caudate nucleus
+syn779930252,snrnaSeq,false,human,epigenetics,raw,hdf,organ_C,hippocampus
+syn493235907,snATACSeq,false,human,geneExpression,processed,bam,organ_A,inferior temporal gyrus...
+syn426779033,rnaSeq,true,human,geneExpression,dataMatrix,hdf,organ_B,inferior temporal gyrus...
+syn968688054,10x multiome,false,human,geneExpression,dataMatrix,csv,organ_A,hippocampus
+syn500666153,10x multiome,false,human,geneExpression,raw,csv,organ_A,inferior temporal gyrus...
+syn234966166,10x multiome,false,human,epigenetics,raw,tbi...,organ_C,hippocampus
+syn317727964,10x multiome,false,human,geneExpression,dataMatrix,csv,organ_C,angular gyrus
+syn203520206,10x multiome,false,human,epigenetics,dataMatrix,fastq,organ_B,angular gyrus
+syn964890590,10x multiome,false,human,epigenetics,processed,csv,organ_C,caudate nucleus
+syn836063795,rnaSeq,false,human,epigenetics,dataMatrix,tbi...,organ_A,inferior temporal gyrus...
+syn583944212,snrnaSeq,false,human,epigenetics,raw,hdf,organ_A,angular gyrus
+syn330520840,rnaSeq,false,human,geneExpression,dataMatrix,tbi...,organ_C,inferior temporal gyrus...
+syn606238800,snrnaSeq,false,human,epigenetics,processed,csv,organ_B,angular gyrus

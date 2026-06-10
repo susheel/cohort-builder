@@ -1,0 +1,56 @@
+{
+  "datasets": [
+    {
+      "id": "elite47",
+      "title": "ELITE - Curated 47 (privacy analysis)",
+      "description": "The 47-variable privacy-analysis sheet with full sensitivity metadata. Rich, correlated synthetic data (25k subjects / 6k files).",
+      "overrideUrl": "/specs/elite47.spec.json",
+      "tables": [
+        { "name": "subjects", "url": "/data/elite/subjects.parquet" },
+        { "name": "files", "url": "/data/elite/files.parquet" },
+        { "name": "subject_files", "url": "/data/elite/subject_files.parquet" }
+      ],
+      "primaryEntity": "subjects",
+      "variableCount": 47
+    },
+    {
+      "id": "elite-v2",
+      "title": "ELITE - v2.0 Full (121 variables)",
+      "description": "The full v2.0 harmonisation library. Structurally-valid synthetic data; sensitivity from the sheet's rank column.",
+      "overrideUrl": "/specs/elite-v2.spec.json",
+      "tables": [
+        { "name": "subjects", "url": "/data/elite-v2/subjects.parquet" },
+        { "name": "files", "url": "/data/elite-v2/files.parquet" },
+        { "name": "subject_files", "url": "/data/elite-v2/subject_files.parquet" }
+      ],
+      "primaryEntity": "subjects",
+      "variableCount": 121
+    },
+    {
+      "id": "elite-v3",
+      "title": "ELITE - v3.0 Refined (84 variables)",
+      "description": "The v3.0 refined library. Structurally-valid synthetic data.",
+      "overrideUrl": "/specs/elite-v3.spec.json",
+      "tables": [
+        { "name": "subjects", "url": "/data/elite-v3/subjects.parquet" },
+        { "name": "files", "url": "/data/elite-v3/files.parquet" },
+        { "name": "subject_files", "url": "/data/elite-v3/subject_files.parquet" }
+      ],
+      "primaryEntity": "subjects",
+      "variableCount": 84
+    },
+    {
+      "id": "ad-v1",
+      "title": "AD Knowledge Portal - v1.0 (50 variables)",
+      "description": "The AD v1.0 set. Sensitivity defaults to Low (sheet had no sensitivity tagging) - demonstrates inference + heuristic SDC.",
+      "overrideUrl": "/specs/ad-v1.spec.json",
+      "tables": [
+        { "name": "subjects", "url": "/data/ad-v1/subjects.parquet" },
+        { "name": "files", "url": "/data/ad-v1/files.parquet" },
+        { "name": "subject_files", "url": "/data/ad-v1/subject_files.parquet" }
+      ],
+      "primaryEntity": "subjects",
+      "variableCount": 50
+    }
+  ]
+}

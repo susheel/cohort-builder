@@ -1,0 +1,632 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ad-v1",
+  "title": "AD Knowledge Portal - v1.0 Variable Set",
+  "description": "AD Knowledge Portal - v1.0 Variable Set. Compiled from the 'AD v1.0' sheet of the ELITE Cohort Builder workbook. The AD sheet contains no Sensitive (Binary) or Sensitivity (Rank) data. Sensitivity was inferred from variable name heuristics: variables starting with 'has'/'is' or matching known-sensitive names were assigned High; all others default to Low. These assignments should be reviewed before production use. Variable count: 50.",
+  "primaryEntity": "subjects",
+  "relationships": [
+    {
+      "from": "subjects",
+      "to": "files",
+      "via": "subject_files",
+      "fromKey": "subject_id",
+      "toKey": "syn_id"
+    }
+  ],
+  "variables": [
+    {
+      "name": "ageDeath",
+      "label": "Age Death",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "age_death",
+      "widget": "bins",
+      "bins": [
+        {
+          "label": "<70",
+          "min": 0,
+          "max": 69
+        },
+        {
+          "label": "70-74",
+          "min": 70,
+          "max": 74
+        },
+        {
+          "label": "75-79",
+          "min": 75,
+          "max": 79
+        },
+        {
+          "label": "80-84",
+          "min": 80,
+          "max": 84
+        },
+        {
+          "label": "85-89",
+          "min": 85,
+          "max": 89
+        },
+        {
+          "label": "90+",
+          "min": 90,
+          "max": 200
+        }
+      ],
+      "note": "Range selection (BINNED)"
+    },
+    {
+      "name": "sex",
+      "label": "Sex",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "sex",
+      "widget": "multiselect",
+      "note": "Direct filter (STRING)"
+    },
+    {
+      "name": "diseaseDiagnosis",
+      "label": "Disease Diagnosis",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "disease_diagnosis",
+      "widget": "multiselect",
+      "note": "?"
+    },
+    {
+      "name": "brainRegion",
+      "label": "Brain Region",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "brain_region",
+      "widget": "multiselect"
+    },
+    {
+      "name": "study",
+      "label": "Study",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "study",
+      "widget": "multiselect",
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "assay",
+      "label": "Assay",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "files",
+      "column": "assay",
+      "widget": "multiselect",
+      "values": [
+        "10x multiome",
+        "rnaSeq",
+        "snATACSeq",
+        "snrnaSeq"
+      ],
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "isMultiSpecimen",
+      "label": "Is Multi Specimen",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "files",
+      "column": "is_multi_specimen",
+      "widget": "boolean",
+      "note": "Direct filter (BOOLEAN)"
+    },
+    {
+      "name": "species",
+      "label": "Species",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "files",
+      "column": "species",
+      "widget": "multiselect",
+      "values": [
+        "human"
+      ],
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "dataType",
+      "label": "Data Type",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "files",
+      "column": "data_type",
+      "widget": "multiselect",
+      "values": [
+        "epigenetics",
+        "geneExpression"
+      ],
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "dataSubtype",
+      "label": "Data Subtype",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "files",
+      "column": "data_subtype",
+      "widget": "multiselect",
+      "values": [
+        "dataMatrix",
+        "processed",
+        "raw"
+      ],
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "resourceType",
+      "label": "Resource Type",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "resource_type",
+      "widget": "multiselect",
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "program",
+      "label": "Program",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "program",
+      "widget": "multiselect",
+      "note": "Direct filter (STRING)"
+    },
+    {
+      "name": "fileFormats",
+      "label": "File Formats",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "files",
+      "column": "file_formats",
+      "widget": "multiselect",
+      "values": [
+        "bam",
+        "csv",
+        "fastq",
+        "hdf",
+        "tbi..."
+      ],
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "grants",
+      "label": "Grants",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "grants",
+      "widget": "multiselect",
+      "values": [
+        "R01AG067025",
+        "U19AG060909"
+      ],
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "organ",
+      "label": "Organ",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "files",
+      "column": "organ",
+      "widget": "multiselect",
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "tissues",
+      "label": "Tissues",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "files",
+      "column": "tissues",
+      "widget": "multiselect",
+      "values": [
+        "angular gyrus",
+        "caudate nucleus",
+        "hippocampus",
+        "inferior temporal gyrus..."
+      ],
+      "note": "Direct filter (STRING LIST)"
+    },
+    {
+      "name": "vitalStatus",
+      "label": "Vital Status",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "vital_status",
+      "widget": "multiselect",
+      "note": "?"
+    },
+    {
+      "name": "cohort",
+      "label": "Cohort",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "cohort",
+      "widget": "multiselect",
+      "note": "The initial study group population to which the individual belonged"
+    },
+    {
+      "name": "race",
+      "label": "Race",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "race",
+      "widget": "multiselect"
+    },
+    {
+      "name": "isHispanic",
+      "label": "Is Hispanic",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "is_hispanic",
+      "widget": "boolean"
+    },
+    {
+      "name": "yearsEducation",
+      "label": "Years Education",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "years_education",
+      "widget": "multiselect"
+    },
+    {
+      "name": "apoeGenotype",
+      "label": "Apoe Genotype",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "apoe_genotype",
+      "widget": "multiselect",
+      "note": "Apolipoporotein E genotype"
+    },
+    {
+      "name": "diagnosis",
+      "label": "Diagnosis",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "diagnosis",
+      "widget": "multiselect"
+    },
+    {
+      "name": "diagnosisCriteria",
+      "label": "Diagnosis Criteria",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "diagnosis_criteria",
+      "widget": "multiselect"
+    },
+    {
+      "name": "ageDeathUnits",
+      "label": "Age Death Units",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "age_death_units",
+      "widget": "multiselect"
+    },
+    {
+      "name": "causeDeath",
+      "label": "Cause Death",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "cause_death",
+      "widget": "multiselect"
+    },
+    {
+      "name": "mannerDeath",
+      "label": "Manner Death",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "manner_death",
+      "widget": "multiselect"
+    },
+    {
+      "name": "pMI",
+      "label": "P Mi",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "p_mi",
+      "widget": "multiselect",
+      "note": "Post-mortem interval (in hours)"
+    },
+    {
+      "name": "pmiUnits",
+      "label": "Pmi Units",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "pmi_units",
+      "widget": "multiselect"
+    },
+    {
+      "name": "brainWeight",
+      "label": "Brain Weight",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "brain_weight",
+      "widget": "multiselect"
+    },
+    {
+      "name": "pH",
+      "label": "P H",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "p_h",
+      "widget": "multiselect"
+    },
+    {
+      "name": "diverseCohortsIndividualIDFormat",
+      "label": "Diverse Cohorts Individual Id Format",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "diverse_cohorts_individual_id_format",
+      "widget": "multiselect"
+    },
+    {
+      "name": "individualMetadataSource",
+      "label": "Individual Metadata Source",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "individual_metadata_source",
+      "widget": "multiselect"
+    },
+    {
+      "name": "cDR",
+      "label": "C Dr",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "c_dr",
+      "widget": "multiselect"
+    },
+    {
+      "name": "amyCerad",
+      "label": "Amy Cerad",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "amy_cerad",
+      "widget": "multiselect",
+      "note": "CERAD score, a semi-quantitative measure of neuritic plaque"
+    },
+    {
+      "name": "braak",
+      "label": "Braak",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "braak",
+      "widget": "multiselect",
+      "note": "Braak stage"
+    },
+    {
+      "name": "pD",
+      "label": "P D",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "p_d",
+      "widget": "multiselect"
+    },
+    {
+      "name": "fTD",
+      "label": "F Td",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "f_td",
+      "widget": "multiselect"
+    },
+    {
+      "name": "mS",
+      "label": "M S",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "m_s",
+      "widget": "multiselect"
+    },
+    {
+      "name": "sCZ",
+      "label": "S Cz",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "s_cz",
+      "widget": "multiselect"
+    },
+    {
+      "name": "bD",
+      "label": "B D",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "b_d",
+      "widget": "multiselect"
+    },
+    {
+      "name": "pTSD",
+      "label": "P Tsd",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "p_tsd",
+      "widget": "multiselect"
+    },
+    {
+      "name": "aDHD",
+      "label": "A Dhd",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "a_dhd",
+      "widget": "multiselect"
+    },
+    {
+      "name": "oCD",
+      "label": "O Cd",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "o_cd",
+      "widget": "multiselect"
+    },
+    {
+      "name": "apoe4Status",
+      "label": "Apoe4 Status",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "apoe4_status",
+      "widget": "multiselect"
+    },
+    {
+      "name": "amyAny",
+      "label": "Amy Any",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "amy_any",
+      "widget": "multiselect",
+      "note": "Indicator for presence of any amyloid by CERAD score"
+    },
+    {
+      "name": "amyThal",
+      "label": "Amy Thal",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "amy_thal",
+      "widget": "multiselect",
+      "values": [
+        "Phase 1",
+        "phase 2",
+        "phase 3",
+        "phase 4",
+        "phase 5"
+      ],
+      "note": "Thal Phase (a measure of amyloid deposition)"
+    },
+    {
+      "name": "amyA",
+      "label": "Amy A",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "amy_a",
+      "widget": "multiselect",
+      "values": [
+        "Thal Phase 1 or 2",
+        "Thal Phase 3",
+        "Thal Phase 4 or 5"
+      ],
+      "note": "Indicator of Thal Phase, grouped"
+    },
+    {
+      "name": "bScore",
+      "label": "B Score",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "b_score",
+      "widget": "multiselect"
+    },
+    {
+      "name": "dataContributionGroup",
+      "label": "Data Contribution Group",
+      "category": "Other",
+      "sensitivity": "Low",
+      "sensitive": false,
+      "entity": "subjects",
+      "column": "data_contribution_group",
+      "widget": "multiselect",
+      "values": [
+        "Columbia",
+        "Emory",
+        "Mayo",
+        "MSSM",
+        "Rush"
+      ],
+      "note": "The research group who contributed the sample"
+    }
+  ],
+  "defaultCharts": [
+    "cohort"
+  ]
+}

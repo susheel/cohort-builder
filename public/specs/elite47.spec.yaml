@@ -1,0 +1,466 @@
+schemaVersion: "1.0"
+id: elite47
+title: "ELITE Cohort Builder - Curated 47 Variables"
+description: "ELITE Cohort Builder - Curated 47 Variables. Compiled from the 'elite_cohort_builder_variables' sheet of the ELITE Cohort Builder workbook. Sensitivity sourced directly from the 'Sensitivity Level' column (None/Low/Medium/High). SDC intent: High-sensitivity variables (e.g. apoeGenotype, diagnosis) should be subject to complementary suppression and boolean-only return at the High level per DEFAULT_SDC policy. Variable count: 47."
+primaryEntity: subjects
+relationships:
+  - from: subjects
+    to: files
+    via: subject_files
+    fromKey: subject_id
+    toKey: syn_id
+variables:
+  - name: familyStudyParticipant
+    label: Family Study Participant
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: family_study_participant
+    widget: boolean
+    note: "When familyStudyParticipant filter is active: participant count display augmented to show family count ('N participants across X families'). Used in family count × assay type characterization."
+  - name: diagnosisStatus
+    label: Diagnosis Status
+    category: "Demographic & Clinical"
+    sensitivity: Medium
+    sensitive: true
+    entity: subjects
+    column: diagnosis_status
+    widget: boolean
+    note: "Boolean direct filter (Has diagnosis: Yes / No)."
+  - name: diagnosis
+    label: Diagnosis
+    category: "Demographic & Clinical"
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: diagnosis
+    widget: multiselect
+    note: "Primary axis in diagnosis × assay type cross-tabulation. Count distribution across diagnosis categories shown in characterization panel. Suppression applied cell-by-cell."
+  - name: ethnicity
+    label: Ethnicity
+    category: "Demographic & Clinical"
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: ethnicity
+    widget: boolean
+    note: "Count breakdown in characterization panel where data available. Study-level availability indicator required."
+  - name: cohort
+    label: Cohort
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: cohort
+    widget: multiselect
+    note: Count breakdown per cohort in characterization panel.
+  - name: mortalityStatus
+    label: Mortality Status
+    category: "Demographic & Clinical"
+    sensitivity: Medium
+    sensitive: true
+    entity: subjects
+    column: mortality_status
+    widget: boolean
+    note: Count breakdown (alive vs. deceased) in characterization panel.
+  - name: hasBiomarkerData
+    label: Has Biomarker Data
+    category: Assessment Availability
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_biomarker_data
+    widget: boolean
+    note: Availability flags per biomarker type in characterization panel.
+  - name: visitCode
+    label: Visit Code
+    category: "Study & Cohort Design"
+    sensitivity: None
+    sensitive: false
+    entity: subjects
+    column: visit_code
+    widget: minCount
+    options:
+      - label: 1+ visit
+        min: 1
+      - label: 2+ visits
+        min: 2
+      - label: 3+ visits
+        min: 3
+    note: "Visit count distribution shown in characterization panel (e.g. histogram of participants by number of visits). Axis in visit count × assay type cross-tabulation (R-16)."
+  - name: hasFunctionalAssessment
+    label: Has Functional Assessment
+    category: Assessment Availability
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_functional_assessment
+    widget: boolean
+    note: Availability flags per instrument type in characterization panel.
+  - name: race
+    label: Race
+    category: "Demographic & Clinical"
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: race
+    widget: multiselect
+    note: "Count breakdown in characterization panel using controlled vocab categories. Not used as axis in cross-tabulations due to combination risk with age and sex."
+  - name: studyCode
+    label: Study Code
+    category: "Study & Cohort Design"
+    sensitivity: None
+    sensitive: false
+    entity: subjects
+    column: study_code
+    widget: multiselect
+    note: "Primary axis in study × data type cross-tabulation. Shown as count breakdown per study in characterization panel."
+  - name: hasAnthropometrics
+    label: Has Anthropometrics
+    category: Assessment Availability
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_anthropometrics
+    widget: boolean
+    note: Availability flags per measure in characterization panel. Longitudinal availability (V1/V2) shown separately for LLFS where applicable.
+  - name: age
+    label: Age
+    category: "Demographic & Clinical"
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: age
+    widget: bins
+    bins:
+      - label: "<70"
+        min: 0
+        max: 69
+      - label: "70-74"
+        min: 70
+        max: 74
+      - label: "75-79"
+        min: 75
+        max: 79
+      - label: "80-84"
+        min: 80
+        max: 84
+      - label: "85-89"
+        min: 85
+        max: 89
+      - label: 90+
+        min: 90
+        max: 200
+    note: "Primary axis in sex × age band cross-tabulation. Shown as distribution in characterization panel using binned categories only. Exact age available post-extraction only."
+  - name: sex
+    label: Sex
+    category: "Demographic & Clinical"
+    sensitivity: Medium
+    sensitive: true
+    entity: subjects
+    column: sex
+    widget: multiselect
+    note: "Primary stratification axis in sex × age band and sex × diagnosis cross-tabulations. Shown as count breakdown in characterization panel."
+  - name: hasCognitiveAssessment
+    label: Has Cognitive Assessment
+    category: Assessment Availability
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: has_cognitive_assessment
+    widget: boolean
+    note: Availability flags shown per instrument type in characterization panel. Longitudinal availability (V1/V2) shown separately for LLFS.
+  - name: dataType
+    label: Data Type
+    category: Data Modality
+    sensitivity: None
+    sensitive: false
+    entity: files
+    column: data_type
+    widget: multiselect
+    note: Shown in characterization panel alongside assayType.
+  - name: assayType
+    label: Assay Type
+    category: Data Modality
+    sensitivity: None
+    sensitive: false
+    entity: files
+    column: assay_type
+    widget: multiselect
+    note: "Primary axis in diagnosis × assay type and visit count × assay type cross-tabulations. Used in multi-omics intersection (upset plot)."
+  - name: fileFormat
+    label: File Format
+    category: Data Modality
+    sensitivity: None
+    sensitive: false
+    entity: files
+    column: file_format
+    widget: multiselect
+    note: Shown in characterization panel.
+  - name: isMultiSpecimen
+    label: Is Multi Specimen
+    category: Data Modality
+    sensitivity: None
+    sensitive: false
+    entity: files
+    column: is_multi_specimen
+    widget: boolean
+    note: "Count of multi-specimen files shown in characterization panel with transparency message."
+  - name: familyID
+    label: Family Id
+    category: "Study & Cohort Design"
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: family_id
+    widget: internal
+    visible: false
+    note: "Surfaces only in summary count display: 'N participants across X families'. Never shown as a filter value or in cross-tabulations."
+  - name: hasMZTwinData
+    label: Has Mz Twin Data
+    category: "Study & Cohort Design"
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_mz_twin_data
+    widget: boolean
+    note: "Surfaces only in summary characterization. Never shown as a cross-tabulation axis."
+  - name: hasCVD
+    label: Has Cvd
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_cvd
+    widget: boolean
+    note: "Count of participants with CVD diagnosis in characterization panel. Not used as cross-tabulation axis without combination risk warning."
+  - name: hasHypertension
+    label: Has Hypertension
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_hypertension
+    widget: internal
+    visible: false
+    note: Count in characterization panel.
+  - name: hasDementia
+    label: Has Dementia
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_dementia
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasDiabetes
+    label: Has Diabetes
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_diabetes
+    widget: boolean
+    note: Count in characterization panel.
+  - name: countryCode
+    label: Country Code
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: country_code
+    widget: multiselect
+    note: Count breakdown per country in characterization panel.
+  - name: fieldCenterCode
+    label: Field Center Code
+    category: "Study & Cohort Design"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: field_center_code
+    widget: range
+    note: Count breakdown per field center in characterization panel. Relevant for batch effect assessment.
+  - name: yearsOfEducation
+    label: Years Of Education
+    category: "Demographic & Clinical"
+    sensitivity: Low
+    sensitive: false
+    entity: subjects
+    column: years_of_education
+    widget: boolean
+    note: Study coverage indicator in characterization panel.
+  - name: apoeGenotype
+    label: Apoe Genotype
+    category: Genetic Stratification
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: apoe_genotype
+    widget: multiselect
+    note: "Count breakdown by genotype category in characterization panel. Not used as axis in cross-tabulations with other quasi-identifiers without combination risk warning."
+  - name: hasParkinsons
+    label: Has Parkinsons
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_parkinsons
+    widget: boolean
+    note: Count in characterization panel.
+  - name: ethnicGroupCode
+    label: Ethnic Group Code
+    category: "Demographic & Clinical"
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: ethnic_group_code
+    widget: multiselect
+    note: "Direct filter or post-extraction only — dependent on controlled vocab definition."
+  - name: hasPeripheralArteryDisease
+    label: Has Peripheral Artery Disease
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_peripheral_artery_disease
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasAtrialFibrillation
+    label: Has Atrial Fibrillation
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_atrial_fibrillation
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasAnxiety
+    label: Has Anxiety
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_anxiety
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasArthritis
+    label: Has Arthritis
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_arthritis
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasAsthma
+    label: Has Asthma
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_asthma
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasCABG
+    label: Has Cabg
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_cabg
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasTIA
+    label: Has Tia
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_tia
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasCancer
+    label: Has Cancer
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_cancer
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasDVT
+    label: Has Dvt
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_dvt
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasCHF
+    label: Has Chf
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_chf
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasDepression
+    label: Has Depression
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_depression
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasCOPD
+    label: Has Copd
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_copd
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasGlaucoma
+    label: Has Glaucoma
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_glaucoma
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasMI
+    label: Has Mi
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_mi
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasOsteoporosis
+    label: Has Osteoporosis
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_osteoporosis
+    widget: boolean
+    note: Count in characterization panel.
+  - name: hasStroke
+    label: Has Stroke
+    category: Comorbidity
+    sensitivity: High
+    sensitive: true
+    entity: subjects
+    column: has_stroke
+    widget: boolean
+    note: Count in characterization panel.
+
+defaultCharts:
+  - studyCode
