@@ -39,8 +39,8 @@ import {
 } from '../query/compileTree';
 import { dataFileColumns } from '../query/builder';
 import {
+  effectiveQuasiIdentifiers,
   privacyMetricsSql,
-  resolveQuasiIdentifiers,
   resolveSensitiveAttribute,
   type PrivacyMetrics,
 } from '../query/privacy';
@@ -555,9 +555,12 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const getPrivacyMetrics = useCallback(async () => {
     if (!spec) return null;
     if (cohortSuppressed) return { suppressed: true } as const;
-    const qis = resolveQuasiIdentifiers(spec);
-    if (qis.length === 0) return null;
+    // QIs are recomputed per query: the spec baseline plus the subject-level
+    // categorical dimensions this query constrains. The sensitive attribute is
+    // never also a quasi-identifier.
     const sensitive = resolveSensitiveAttribute(spec);
+    const qis = effectiveQuasiIdentifiers(spec, query).filter((v) => v.name !== sensitive?.name);
+    if (qis.length === 0) return null;
     const sqlTemplate = privacyMetricsSql(spec, query, { qis, sensitive });
     if (!sqlTemplate) return null;
     // k-anonymity is judged against its own privacy target (commonly 5), NOT the

@@ -36,6 +36,7 @@ export function buildSystemPrompt(spec: CohortSpec): string {
     (v) => v.visible !== false && v.widget !== 'internal',
   );
   const varList = visibleVars.map(describeVariable).join('\n');
+  const example = buildFewShot(spec) ?? GENERIC_EXAMPLE;
 
   return `You translate a plain-English cohort description into a strict JSON object for a clinical research tool. You map ONLY what the user actually says onto the variables below.
 
@@ -54,12 +55,75 @@ HARD RULES:
 7. Leave "notes" as "" unless you have a genuine caveat. Leave arrays empty ([]) when nothing applies.
 8. Output ONLY the JSON object, no prose, no markdown fences.
 
-EXAMPLE
-User: "women over 85 with hypertension, excluding anyone with dementia"
-JSON: {"include":[{"field":"sex","operator":"in","value":["Female"]},{"field":"age","operator":"in","value":["85-89","90+"]},{"field":"hasHypertension","operator":"=","value":"true"}],"exclude":[{"field":"hasDementia","operator":"=","value":"true"}],"notes":"","unmatched":[]}
+EXAMPLE (using this dataset's own variables)
+User: "${example.user}"
+JSON: ${example.json}
 
 OUTPUT SHAPE
 {"include":[{"field":"","operator":"","value":""}],"exclude":[],"notes":"","unmatched":[]}`;
+}
+
+// ---------------------------------------------------------------------------
+// Per-spec few-shot example
+// ---------------------------------------------------------------------------
+
+interface FewShot {
+  user: string;
+  json: string;
+}
+
+const GENERIC_EXAMPLE: FewShot = {
+  user: 'women over 85 with hypertension, excluding anyone with dementia',
+  json: '{"include":[{"field":"sex","operator":"in","value":["Female"]},{"field":"age","operator":"in","value":["85-89","90+"]},{"field":"hasHypertension","operator":"=","value":"true"}],"exclude":[{"field":"hasDementia","operator":"=","value":"true"}],"notes":"","unmatched":[]}',
+};
+
+/**
+ * Build a worked example from the spec's ACTUAL variables and values, so the
+ * model sees the real vocabulary it must copy from (and the no-mirror rule
+ * demonstrated). Falls back to a generic example when the spec lacks suitable
+ * variables.
+ */
+export function buildFewShot(spec: CohortSpec): FewShot | null {
+  const vars = spec.variables.filter((v) => v.visible !== false && v.widget !== 'internal');
+
+  const firstMulti = vars.find((v) => v.widget === 'multiselect' && (v.values?.length ?? 0) > 0);
+  const firstBins = vars.find((v) => (v.bins?.length ?? 0) >= 2);
+  const booleans = vars.filter((v) => v.widget === 'boolean');
+  const incBool = booleans[0];
+  const excBool = booleans.find((v) => v.name !== incBool?.name);
+
+  const include: DraftCriterion[] = [];
+  const phrases: string[] = [];
+
+  if (firstMulti) {
+    const val = firstMulti.values![0];
+    include.push({ field: firstMulti.name, operator: 'in', value: [val] });
+    phrases.push(`${firstMulti.label.toLowerCase()} of ${val}`);
+  }
+  if (firstBins) {
+    const labels = firstBins.bins!.slice(-2).map((b) => b.label);
+    include.push({ field: firstBins.name, operator: 'in', value: labels });
+    phrases.push(`in the ${labels.join(' or ')} ${firstBins.label.toLowerCase()} range`);
+  }
+  if (incBool) {
+    include.push({ field: incBool.name, operator: '=', value: 'true' });
+    phrases.push(`with ${incBool.label.toLowerCase()}`);
+  }
+
+  const exclude: DraftCriterion[] = [];
+  if (excBool) {
+    exclude.push({ field: excBool.name, operator: '=', value: 'true' });
+  }
+
+  if (include.length === 0 && exclude.length === 0) return null;
+
+  let user = phrases.length > 0 ? `subjects ${phrases.join(', ')}` : 'subjects';
+  if (excBool) user += `, excluding anyone with ${excBool.label.toLowerCase()}`;
+
+  return {
+    user,
+    json: JSON.stringify({ include, exclude, notes: '', unmatched: [] }),
+  };
 }
 
 // ---------------------------------------------------------------------------

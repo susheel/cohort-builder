@@ -1,6 +1,7 @@
 import type { CohortSpec } from '../spec/types';
 import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress, LlmTrace } from './types';
 import { buildSystemPrompt, buildUserPrompt, validateDraft } from './prompt';
+import { buildResponseSchemaString } from './schema';
 import { DEFAULT_WEBLLM_MODEL } from './models';
 
 const DEFAULT_MODEL = DEFAULT_WEBLLM_MODEL;
@@ -14,6 +15,9 @@ interface WebLlmEngine {
         temperature?: number;
         max_tokens?: number;
         stream?: false;
+        // XGrammar-backed constrained decoding: a stringified JSON schema the
+        // output is guaranteed to satisfy.
+        response_format?: { type: 'json_object' | 'text'; schema?: string };
       }): Promise<{
         choices: Array<{ message: { content: string | null } }>;
       }>;
@@ -73,7 +77,14 @@ export class WebLlmClient implements LlmClient {
       { role: 'system', content: buildSystemPrompt(spec) },
       { role: 'user', content: buildUserPrompt(text) },
     ];
-    const request = { model: this.model, messages, temperature: 0, max_tokens: 1024 };
+    // Constrained decoding: the engine is forced to emit JSON matching the
+    // spec-derived schema (enum-bound field names + operators), eliminating
+    // malformed JSON, unknown fields, and placeholder junk at the source.
+    const response_format = {
+      type: 'json_object' as const,
+      schema: buildResponseSchemaString(spec),
+    };
+    const request = { model: this.model, messages, temperature: 0, max_tokens: 1024, response_format };
     onTrace?.({ provider: 'webllm', model: this.model, request });
 
     let completion;

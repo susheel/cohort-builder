@@ -1,8 +1,7 @@
 import { useApp } from '../app/AppState';
 import { SENSITIVITY_ORDER, type SdcConfig, type SdcLevelPolicy, type Sensitivity } from '../spec/types';
-import type { LlmConfig, LlmProvider } from '../llm/types';
-import { WEBLLM_MODELS, DEFAULT_WEBLLM_MODEL } from '../llm/models';
 import { SensitivityBadge } from './SensitivityBadge';
+import { AiProviderControls } from './AiProviderControls';
 
 export function SettingsPanel({ onClose }: { onClose: () => void }) {
   const { sdc, setSdc, resetSdc, revealRaw, setRevealRaw, llmConfig, setLlmConfig } = useApp();
@@ -91,7 +90,14 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
         })}
       </div>
 
-      <AiAssistance config={llmConfig} onChange={setLlmConfig} />
+      <fieldset className="mt-4 rounded-md border border-slate-200 p-3">
+        <legend className="px-1 text-xs font-semibold uppercase tracking-wide text-slate-500">AI assistance (optional)</legend>
+        <p className="mb-2 text-[11px] leading-relaxed text-slate-500">
+          Used only by "Describe the cohort in plain English". You can also set this directly in that
+          panel. Your data is never sent; only your description is sent to the endpoint you configure.
+        </p>
+        <AiProviderControls config={llmConfig} onChange={setLlmConfig} />
+      </fieldset>
 
       <fieldset className="mt-4 rounded-md border border-sens-high/30 bg-sens-high/5 p-3">
         <legend className="px-1 text-xs font-semibold uppercase tracking-wide text-sens-high">Demo</legend>
@@ -119,132 +125,6 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
         </button>
       </div>
     </Drawer>
-  );
-}
-
-function AiAssistance({ config, onChange }: { config: LlmConfig; onChange: (c: LlmConfig) => void }) {
-  const merge = (patch: Partial<LlmConfig>) => onChange({ ...config, ...patch });
-  const isExternal = config.provider === 'openai' || config.provider === 'anthropic';
-
-  const providers: { value: LlmProvider; label: string; hint: string }[] = [
-    { value: 'webllm', label: 'In-browser model (WebGPU, no key)', hint: 'Runs locally; needs WebGPU and downloads a model on first use.' },
-    { value: 'openai', label: 'OpenAI-compatible', hint: 'Calls an OpenAI-compatible endpoint directly from your browser.' },
-    { value: 'anthropic', label: 'Anthropic-compatible', hint: 'Calls an Anthropic-compatible endpoint directly from your browser.' },
-  ];
-
-  return (
-    <fieldset className="mt-4 rounded-md border border-slate-200 p-3">
-      <legend className="px-1 text-xs font-semibold uppercase tracking-wide text-slate-500">AI assistance (optional)</legend>
-
-      <p className="mb-2 text-[11px] leading-relaxed text-slate-500">
-        Used only by "Describe the cohort in plain English". Your data is never sent; only your
-        description is sent to the endpoint you configure.
-      </p>
-
-      <div role="radiogroup" aria-label="AI provider" className="space-y-1.5">
-        {providers.map((p) => (
-          <label key={p.value} className="flex items-start gap-2 text-xs text-slate-700">
-            <input
-              type="radio"
-              name="llm-provider"
-              checked={config.provider === p.value}
-              onChange={() => merge({ provider: p.value })}
-              className="mt-0.5 h-3.5 w-3.5 border-slate-300 text-cyan-600 focus:ring-cyan-500/40"
-            />
-            <span>
-              <span className="font-medium">{p.label}</span>
-              <span className="block text-[11px] text-slate-400">{p.hint}</span>
-            </span>
-          </label>
-        ))}
-      </div>
-
-      {isExternal && (
-        <div className="mt-3 space-y-2.5">
-          <TextField
-            label="Base URL"
-            value={config.baseUrl ?? ''}
-            placeholder={config.provider === 'openai' ? 'https://api.openai.com/v1' : 'https://api.anthropic.com'}
-            onChange={(v) => merge({ baseUrl: v })}
-          />
-          <TextField
-            label="API key"
-            value={config.apiKey ?? ''}
-            type="password"
-            placeholder="sk-…"
-            onChange={(v) => merge({ apiKey: v })}
-          />
-          <TextField
-            label="Model"
-            value={config.model ?? ''}
-            placeholder={config.provider === 'openai' ? 'gpt-4o-mini' : 'claude-3-5-haiku-latest'}
-            onChange={(v) => merge({ model: v })}
-          />
-          <p className="text-[11px] leading-relaxed text-slate-400">
-            Keys are stored only in this browser (localStorage) and used to call the endpoint directly
-            from your browser.
-          </p>
-        </div>
-      )}
-
-      {config.provider === 'webllm' && (
-        <div className="mt-3 space-y-2.5">
-          <label className="block">
-            <span className="text-xs font-medium text-slate-700">In-browser model</span>
-            <select
-              value={config.model ?? DEFAULT_WEBLLM_MODEL}
-              onChange={(e) => merge({ model: e.target.value })}
-              className="mt-1 w-full rounded border border-slate-300 px-2 py-1.5 text-sm focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40"
-            >
-              {WEBLLM_MODELS.map((m) => (
-                <option key={m.id} value={m.id}>
-                  {m.label} ({m.params}, {m.download}){m.recommended ? ' - recommended' : ''}
-                </option>
-              ))}
-            </select>
-          </label>
-          {(() => {
-            const sel = WEBLLM_MODELS.find((m) => m.id === (config.model ?? DEFAULT_WEBLLM_MODEL));
-            return sel ? <p className="text-[11px] leading-relaxed text-slate-500">{sel.note}</p> : null;
-          })()}
-          <p className="text-[11px] leading-relaxed text-slate-400">
-            Smaller models are faster and download less, but make more mistakes on structured
-            extraction; larger models are more accurate but need a stronger GPU. Requires a
-            WebGPU-capable browser; the model is downloaded and cached on first use, and nothing
-            leaves your machine. For best results, an external provider (OpenAI/Anthropic-compatible)
-            outperforms any in-browser model.
-          </p>
-        </div>
-      )}
-    </fieldset>
-  );
-}
-
-function TextField({
-  label,
-  value,
-  onChange,
-  type = 'text',
-  placeholder,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  type?: string;
-  placeholder?: string;
-}) {
-  return (
-    <label className="flex flex-col gap-1 text-xs text-slate-600">
-      {label}
-      <input
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        onChange={(e) => onChange(e.target.value)}
-        autoComplete={type === 'password' ? 'off' : undefined}
-        className="rounded border border-slate-300 px-2 py-1 text-xs focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40"
-      />
-    </label>
   );
 }
 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useApp } from '../app/AppState';
 import { OP, type CohortField } from '../query/fields';
 import type { DraftCriterion, DraftedCohort, LlmTrace } from '../llm/types';
+import { AiProviderControls } from './AiProviderControls';
 
 type Phase = 'idle' | 'checking' | 'drafting' | 'preview' | 'error';
 
@@ -114,18 +115,19 @@ export function DescribeCohort() {
               {phase === 'checking' || phase === 'drafting' ? 'Drafting…' : 'Draft cohort'}
             </button>
             <span className="text-[11px] text-slate-400">
-              Provider: <span className="font-medium text-slate-500">{providerLabel(llmConfig.provider)}</span>
+              Using: <span className="font-medium text-slate-500">{providerLabel(llmConfig.provider)}</span>
             </span>
-            <label className="ml-auto flex items-center gap-1.5 text-[11px] text-slate-500">
-              <input
-                type="checkbox"
-                checked={traceOn}
-                onChange={(e) => setLlmConfig({ ...llmConfig, trace: e.target.checked })}
-                className="h-3.5 w-3.5 rounded border-slate-300 text-cyan-600 focus:ring-cyan-500/40"
-              />
-              Show LLM trace
-            </label>
           </div>
+
+          <details open className="rounded-md border border-slate-200 bg-slate-50/60">
+            <summary className="cursor-pointer select-none px-3 py-2 text-xs font-semibold text-slate-600">
+              AI provider &amp; model
+              <span className="ml-1 font-normal text-slate-400">({providerLabel(llmConfig.provider)})</span>
+            </summary>
+            <div className="border-t border-slate-200 p-3">
+              <AiProviderControls config={llmConfig} onChange={setLlmConfig} />
+            </div>
+          </details>
 
           <p className="rounded-md bg-slate-50 p-2.5 text-[11px] leading-relaxed text-slate-500">
             The AI drafts a starting point that you review and edit before anything runs. Only your

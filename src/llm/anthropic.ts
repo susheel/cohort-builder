@@ -1,6 +1,7 @@
 import type { CohortSpec } from '../spec/types';
 import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress, LlmTrace } from './types';
 import { buildSystemPrompt, buildUserPrompt, validateDraft } from './prompt';
+import { buildResponseSchema, COHORT_TOOL_NAME } from './schema';
 
 const DEFAULT_BASE_URL = 'https://api.anthropic.com';
 const DEFAULT_MODEL = 'claude-haiku-4-5';
@@ -9,6 +10,8 @@ const ANTHROPIC_VERSION = '2023-06-01';
 interface AnthropicContentBlock {
   type: string;
   text?: string;
+  name?: string;
+  input?: unknown;
 }
 
 interface AnthropicResponse {
@@ -44,6 +47,8 @@ export class AnthropicClient implements LlmClient {
     onProgress?.({ text: 'Sending request to Anthropic...' });
 
     const endpoint = `${this.baseUrl}/v1/messages`;
+    // Force a single tool call whose input is the spec-derived schema: the
+    // model must return structured criteria, not free text.
     const body = {
       model: this.model,
       max_tokens: 1024,
@@ -51,6 +56,14 @@ export class AnthropicClient implements LlmClient {
       messages: [
         { role: 'user', content: buildUserPrompt(text) },
       ],
+      tools: [
+        {
+          name: COHORT_TOOL_NAME,
+          description: 'Submit the drafted cohort criteria mapped onto the dataset variables.',
+          input_schema: buildResponseSchema(spec),
+        },
+      ],
+      tool_choice: { type: 'tool', name: COHORT_TOOL_NAME },
     };
     onTrace?.({ provider: 'anthropic', model: this.model, endpoint, request: body });
 
@@ -80,10 +93,18 @@ export class AnthropicClient implements LlmClient {
     }
 
     const data = (await response.json()) as AnthropicResponse;
-    const content = data.content.find((b) => b.type === 'text')?.text ?? '';
-    onTrace?.({ provider: 'anthropic', model: this.model, endpoint, request: body, response: content });
+    // Prefer the forced tool call's structured input; fall back to any text.
+    const toolUse = data.content.find((b) => b.type === 'tool_use' && b.name === COHORT_TOOL_NAME);
+    const raw: unknown = toolUse?.input ?? data.content.find((b) => b.type === 'text')?.text ?? '';
+    onTrace?.({
+      provider: 'anthropic',
+      model: this.model,
+      endpoint,
+      request: body,
+      response: typeof raw === 'string' ? raw : JSON.stringify(raw, null, 2),
+    });
 
     onProgress?.({ text: 'Parsing response...' });
-    return validateDraft(content, spec);
+    return validateDraft(raw, spec);
   }
 }

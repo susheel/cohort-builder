@@ -1,7 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import type { CohortSpec } from '../spec/types';
 import { DEFAULT_SDC } from '../spec/types';
-import { privacyMetricsSql, resolveQuasiIdentifiers, resolveSensitiveAttribute } from './privacy';
+import type { RuleGroupType } from 'react-querybuilder';
+import {
+  effectiveQuasiIdentifiers,
+  privacyMetricsSql,
+  resolveQuasiIdentifiers,
+  resolveSensitiveAttribute,
+} from './privacy';
 
 const spec: CohortSpec = {
   schemaVersion: '1.0',
@@ -53,6 +59,44 @@ describe('resolveSensitiveAttribute', () => {
   });
   it('honours an explicit override', () => {
     expect(resolveSensitiveAttribute({ ...spec, sensitiveAttribute: 'race' })?.column).toBe('race');
+  });
+});
+
+describe('effectiveQuasiIdentifiers', () => {
+  const empty: RuleGroupType = { combinator: 'and', rules: [] };
+
+  it('returns the spec baseline for an empty query', () => {
+    const names = effectiveQuasiIdentifiers(spec, empty).map((v) => v.name);
+    expect(names).toContain('sex');
+    expect(names).not.toContain('diagnosis'); // not a baseline QI, not in the query
+  });
+
+  it('adds subject-level categorical fields the query constrains', () => {
+    const q: RuleGroupType = {
+      combinator: 'and',
+      rules: [{ field: 'diagnosis', operator: 'in', value: ['AD'] }],
+    };
+    const names = effectiveQuasiIdentifiers(spec, q).map((v) => v.name);
+    expect(names).toContain('diagnosis'); // promoted to a QI because the query uses it
+    expect(names).toContain('sex'); // baseline still present
+  });
+});
+
+describe('privacyMetricsSql bins bucketing', () => {
+  const specBins: CohortSpec = {
+    ...spec,
+    variables: spec.variables.map((v) =>
+      v.name === 'ageBin'
+        ? { ...v, bins: [{ label: '65-74', min: 65, max: 74 }, { label: '75+', min: 75, max: 120 }] }
+        : v,
+    ),
+  };
+
+  it('groups a bins QI by its bucket label, not the raw column', () => {
+    const ageBin = specBins.variables.find((v) => v.name === 'ageBin')!;
+    const sql = privacyMetricsSql(specBins, { combinator: 'and', rules: [] }, { qis: [ageBin] })!;
+    expect(sql).toContain('CASE WHEN "subjects"."age_bin" BETWEEN 65 AND 74 THEN \'65-74\'');
+    expect(sql).toContain('GROUP BY 1'); // ordinal group-by over the bucketed expression
   });
 });
 

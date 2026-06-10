@@ -122,8 +122,9 @@ export function PrivacyPanel() {
       </div>
 
       <p className="mt-3 border-t border-slate-100 pt-2 text-[11px] text-slate-400">
-        k-anonymity and l-diversity are computed on the matching cohort and are informational; they
-        do not block queries.
+        k-anonymity and l-diversity are recomputed for each query, over the demographic dimensions
+        that query constrains (plus any configured in the spec). They are informational and do not
+        block queries.
       </p>
     </div>
   );
@@ -180,7 +181,7 @@ function Metrics({ metrics: m }: { metrics: PrivacyMetrics }) {
       <p className="text-[11px] leading-relaxed text-slate-400">
         Quasi-identifiers: {m.qiLabels.length > 0 ? joinLabels(m.qiLabels) : 'none'}
         {m.sensitiveLabel ? `; sensitive attribute: ${m.sensitiveLabel}` : '; no sensitive attribute'}.
-        These are configurable in the spec.
+        These reflect the variables this query uses, plus any configured in the spec.
       </p>
     </div>
   );
