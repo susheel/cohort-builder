@@ -153,7 +153,9 @@ export function DataFilesTable() {
 
       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 pt-2 text-xs text-slate-500">
         <p className="text-[11px] text-slate-400">
-          Files linked to the current cohort. Subject counts are disclosure-controlled.
+          Files linked to the current cohort. Per-file subject counts are disclosure-controlled at the
+          highest sensitivity: a file linked to fewer subjects than the threshold is shown as "&lt;k", not
+          an exact number.
         </p>
         {total > 0 && (
           <div className="flex items-center gap-2">

@@ -98,9 +98,9 @@ function ReadyLayout() {
         <DescribeCohort />
         {mode === 'guided' ? <GuidedBuilder /> : <QueryBuilderPanel />}
         <QuerySummary />
+        <PrivacyPanel />
         <Characterisation />
         <DataFilesTable />
-        <PrivacyPanel />
       </section>
 
       <aside className="lg:sticky lg:top-0 lg:self-start">

@@ -531,13 +531,20 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
         }
       }
       const seed = canonicalizeQuery({ id: spec.id, query, files: true });
+      // Per-file subject counts are a much finer partition than the cohort
+      // headline (a file may link to only a handful of subjects), so they get
+      // the most protective floor: at least the High level. A file linked to
+      // fewer than the High threshold of subjects is masked as "<k" rather than
+      // shown as a small, potentially identifying, exact number.
+      const fileLevel: Sensitivity =
+        sensitivityRank('High') > sensitivityRank(activeSensitivity) ? 'High' : activeSensitivity;
       const fileRows: FileRow[] = rows.map((r) => {
         const cells: Record<string, unknown> = {};
         for (const c of info.cols) cells[c] = r[c];
         const raw = Number(r.subject_count ?? 0);
         return {
           cells,
-          subjectCount: applyCount(raw, activeSensitivity, sdc, `${seed}:${String(r[info.cols[0]])}`),
+          subjectCount: applyCount(raw, fileLevel, sdc, `${seed}:${String(r[info.cols[0]])}`),
         };
       });
       return { columns: info.cols, rows: fileRows, total };
