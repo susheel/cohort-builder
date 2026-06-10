@@ -1,6 +1,7 @@
 import { useApp } from '../app/AppState';
 import { SENSITIVITY_ORDER, type SdcConfig, type SdcLevelPolicy, type Sensitivity } from '../spec/types';
 import type { LlmConfig, LlmProvider } from '../llm/types';
+import { WEBLLM_MODELS, DEFAULT_WEBLLM_MODEL } from '../llm/models';
 import { SensitivityBadge } from './SensitivityBadge';
 
 export function SettingsPanel({ onClose }: { onClose: () => void }) {
@@ -188,15 +189,30 @@ function AiAssistance({ config, onChange }: { config: LlmConfig; onChange: (c: L
 
       {config.provider === 'webllm' && (
         <div className="mt-3 space-y-2.5">
-          <TextField
-            label="Model (optional)"
-            value={config.model ?? ''}
-            placeholder="MLC prebuilt model id"
-            onChange={(v) => merge({ model: v })}
-          />
+          <label className="block">
+            <span className="text-xs font-medium text-slate-700">In-browser model</span>
+            <select
+              value={config.model ?? DEFAULT_WEBLLM_MODEL}
+              onChange={(e) => merge({ model: e.target.value })}
+              className="mt-1 w-full rounded border border-slate-300 px-2 py-1.5 text-sm focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40"
+            >
+              {WEBLLM_MODELS.map((m) => (
+                <option key={m.id} value={m.id}>
+                  {m.label} ({m.params}, {m.download}){m.recommended ? ' - recommended' : ''}
+                </option>
+              ))}
+            </select>
+          </label>
+          {(() => {
+            const sel = WEBLLM_MODELS.find((m) => m.id === (config.model ?? DEFAULT_WEBLLM_MODEL));
+            return sel ? <p className="text-[11px] leading-relaxed text-slate-500">{sel.note}</p> : null;
+          })()}
           <p className="text-[11px] leading-relaxed text-slate-400">
-            Requires a WebGPU-capable browser. The model is downloaded and cached on first use; nothing
-            leaves your machine.
+            Smaller models are faster and download less, but make more mistakes on structured
+            extraction; larger models are more accurate but need a stronger GPU. Requires a
+            WebGPU-capable browser; the model is downloaded and cached on first use, and nothing
+            leaves your machine. For best results, an external provider (OpenAI/Anthropic-compatible)
+            outperforms any in-browser model.
           </p>
         </div>
       )}

@@ -100,10 +100,13 @@ const MINIMAL_SPEC: CohortSpec = {
 // ---------------------------------------------------------------------------
 
 describe('buildSystemPrompt', () => {
-  it('includes the spec title and primary entity', () => {
+  it('includes the spec title and the hard rules + example', () => {
     const prompt = buildSystemPrompt(MINIMAL_SPEC);
     expect(prompt).toContain('Test Dataset');
-    expect(prompt).toContain('subjects');
+    expect(prompt).toContain('HARD RULES');
+    expect(prompt).toContain('AT MOST ONE'); // anti-mirror rule
+    expect(prompt).toContain('EXAMPLE');
+    expect(prompt).not.toContain('<optional caveats>'); // no placeholder leakage
   });
 
   it('lists visible variables', () => {
@@ -335,5 +338,67 @@ describe('validateDraft', () => {
     const result = validateDraft(raw, MINIMAL_SPEC);
     expect(result.exclude).toHaveLength(1);
     expect(result.exclude[0]?.field).toBe('age_group');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// validateDraft - hardening against weak-model output
+// ---------------------------------------------------------------------------
+
+describe('validateDraft - hardening', () => {
+  it('drops multiselect values not in the controlled vocabulary, routing them to unmatched', () => {
+    const raw = { include: [{ field: 'sex', operator: 'in', value: ['Female', 'Wizard'] }] };
+    const r = validateDraft(raw, MINIMAL_SPEC);
+    expect(r.include[0]?.value).toEqual(['Female']);
+    expect(r.unmatched).toContain('Sex: Wizard');
+  });
+
+  it('matches vocabulary case/punctuation-insensitively', () => {
+    const raw = { include: [{ field: 'sex', operator: 'in', value: ['female'] }] };
+    expect(validateDraft(raw, MINIMAL_SPEC).include[0]?.value).toEqual(['Female']);
+  });
+
+  it('maps a bare age number onto the bin whose range contains it', () => {
+    const raw = { include: [{ field: 'age_group', operator: 'in', value: ['90'] }] };
+    expect(validateDraft(raw, MINIMAL_SPEC).include[0]?.value).toEqual(['65+']);
+  });
+
+  it('drops a criterion whose values all fail to map (no empty criterion emitted)', () => {
+    const raw = { include: [{ field: 'sex', operator: 'in', value: ['Nope'] }] };
+    const r = validateDraft(raw, MINIMAL_SPEC);
+    expect(r.include).toHaveLength(0);
+    expect(r.unmatched).toContain('Sex: Nope');
+  });
+
+  it('clamps an absurd minCount to the variable maximum', () => {
+    const raw = { include: [{ field: 'visit_count', operator: '>=', value: '90' }] };
+    expect(validateDraft(raw, MINIMAL_SPEC).include[0]?.value).toBe('3');
+  });
+
+  it('removes mirror exclude rows (same field in include and exclude)', () => {
+    const raw = {
+      include: [{ field: 'sex', operator: 'in', value: ['Female'] }],
+      exclude: [{ field: 'sex', operator: 'notIn', value: ['Female'] }],
+    };
+    const r = validateDraft(raw, MINIMAL_SPEC);
+    expect(r.include).toHaveLength(1);
+    expect(r.exclude).toHaveLength(0);
+  });
+
+  it('strips placeholder text from notes and unmatched', () => {
+    const raw = {
+      include: [],
+      notes: '<optional caveats>',
+      unmatched: ['<concept that could not be mapped>', 'real concept'],
+    };
+    const r = validateDraft(raw, MINIMAL_SPEC);
+    expect(r.notes).toBeUndefined();
+    expect(r.unmatched).toEqual(['real concept']);
+  });
+
+  it('recovers JSON embedded in surrounding prose', () => {
+    const raw = 'Sure! Here you go:\n{"include":[{"field":"consented","operator":"=","value":"true"}]}\nHope that helps.';
+    const r = validateDraft(raw, MINIMAL_SPEC);
+    expect(r.include[0]).toMatchObject({ field: 'consented', value: 'true' });
   });
 });

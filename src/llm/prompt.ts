@@ -6,39 +6,28 @@ import type { DraftedCohort, DraftCriterion } from './types';
 // ---------------------------------------------------------------------------
 
 function describeVariable(v: VariableSpec): string {
-  const base = `  - ${v.name} (${v.label}, widget: ${v.widget}`;
+  const base = `  - ${v.name} (${v.label})`;
   switch (v.widget) {
     case 'boolean':
-      return `${base}, values: true | false)`;
-    case 'multiselect':
-      return `${base}, values: [${(v.values ?? []).map((x) => JSON.stringify(x)).join(', ')}])`;
-    case 'bins':
-      return `${base}, bins: [${(v.bins ?? []).map((b) => JSON.stringify(b.label)).join(', ')}])`;
-    case 'minCount':
-      return `${base}, options: [${(v.options ?? []).map((o) => JSON.stringify(String(o.min))).join(', ')}])`;
+      return `${base}: yes/no. operator "=", value "true" or "false".`;
+    case 'multiselect': {
+      const vals = (v.values ?? []).map((x) => JSON.stringify(x)).join(', ');
+      return `${base}: pick from [${vals}]. operator "in" (any of) or "notIn". value = string array.`;
+    }
+    case 'bins': {
+      const labels = (v.bins ?? []).map((b) => JSON.stringify(b.label)).join(', ');
+      return `${base}: pick from [${labels}]. operator "in" or "notIn". value = string array of these exact labels.`;
+    }
+    case 'minCount': {
+      const max = v.options?.reduce((m, o) => Math.max(m, o.min), 0) ?? 1;
+      return `${base}: a count. operator ">=", value a number string from 1 to ${max}.`;
+    }
     case 'range': {
       const r = v.range;
-      return `${base}, range: ${r?.min ?? 0}..${r?.max ?? 100})`;
+      return `${base}: numeric range ${r?.min ?? 0}..${r?.max ?? 100}. operator "between", value "min,max".`;
     }
     default:
-      return `${base})`;
-  }
-}
-
-function operatorRules(v: VariableSpec): string {
-  switch (v.widget) {
-    case 'boolean':
-      return '  Operator must be "=". Value must be "true" or "false" (string).';
-    case 'multiselect':
-      return '  Operator must be "in", "notIn", or "all". Value must be a non-empty string[].';
-    case 'bins':
-      return '  Operator must be "in" or "notIn". Value must be a non-empty string[] of bin labels.';
-    case 'minCount':
-      return '  Operator must be ">=". Value must be a string representing the numeric minimum.';
-    case 'range':
-      return '  Operator must be "between". Value must be a string of the form "min,max".';
-    default:
-      return '  Operator must be "in". Value must be a non-empty string[].';
+      return `${base}.`;
   }
 }
 
@@ -46,36 +35,31 @@ export function buildSystemPrompt(spec: CohortSpec): string {
   const visibleVars = spec.variables.filter(
     (v) => v.visible !== false && v.widget !== 'internal',
   );
+  const varList = visibleVars.map(describeVariable).join('\n');
 
-  const varList = visibleVars.map((v) => describeVariable(v)).join('\n');
-  const opRules = visibleVars.map((v) => `${v.name}:\n${operatorRules(v)}`).join('\n');
-
-  return `You are a cohort-building assistant for a clinical research platform.
-Your job is to translate a plain-English cohort description into a structured JSON object.
+  return `You translate a plain-English cohort description into a strict JSON object for a clinical research tool. You map ONLY what the user actually says onto the variables below.
 
 Dataset: ${spec.title}
-Primary entity: ${spec.primaryEntity}
 
-Available variables:
+VARIABLES (use these names and values exactly):
 ${varList}
 
-Operator and value rules per variable:
-${opRules}
+HARD RULES:
+1. Use ONLY variables and values listed above. Copy values EXACTLY (including punctuation and case). For bins, use the exact bracket labels.
+2. Add a criterion ONLY for a concept the user explicitly states. Do NOT invent filters (do not add file format, study, specimen, counts, etc. unless the user names them).
+3. A field must appear in AT MOST ONE of "include" or "exclude" - NEVER both. Do not create mirror/opposite rows.
+4. Put a criterion in "exclude" ONLY when the user says to remove it (words like without, except, no, not, excluding). Everything else goes in "include".
+5. Multiple options for one concept go in a single criterion's value array (that means "any of"), not as separate rows.
+6. If the user mentions something with no matching variable or value, list the phrase in "unmatched" and add no criterion for it.
+7. Leave "notes" as "" unless you have a genuine caveat. Leave arrays empty ([]) when nothing applies.
+8. Output ONLY the JSON object, no prose, no markdown fences.
 
-Response format (JSON only, no markdown fences):
-{
-  "include": [ { "field": "<name>", "operator": "<op>", "value": <value> } ],
-  "exclude": [ { "field": "<name>", "operator": "<op>", "value": <value> } ],
-  "notes": "<optional caveats>",
-  "unmatched": ["<concept that could not be mapped>"]
-}
+EXAMPLE
+User: "women over 85 with hypertension, excluding anyone with dementia"
+JSON: {"include":[{"field":"sex","operator":"in","value":["Female"]},{"field":"age","operator":"in","value":["85-89","90+"]},{"field":"hasHypertension","operator":"=","value":"true"}],"exclude":[{"field":"hasDementia","operator":"=","value":"true"}],"notes":"","unmatched":[]}
 
-Rules:
-- Only use variable names listed above.
-- Honour the operator and value constraints exactly.
-- Place inclusion criteria in "include", exclusion criteria in "exclude".
-- If the user requests something that cannot be mapped to any variable, add it to "unmatched".
-- Return ONLY the JSON object. No explanation, no markdown.`;
+OUTPUT SHAPE
+{"include":[{"field":"","operator":"","value":""}],"exclude":[],"notes":"","unmatched":[]}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -83,7 +67,7 @@ Rules:
 // ---------------------------------------------------------------------------
 
 export function buildUserPrompt(text: string): string {
-  return `Build a cohort matching this description: ${text}\n\nReturn only the JSON object.`;
+  return `Description: ${text}\n\nReturn ONLY the JSON object.`;
 }
 
 // ---------------------------------------------------------------------------
@@ -113,46 +97,112 @@ function coerceOperator(op: unknown, widget: VariableSpec['widget']): string {
   return defaultOperator(widget);
 }
 
-function coerceValue(
-  value: unknown,
-  operator: string,
-  v: VariableSpec,
-): unknown {
+function norm(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+/** Match a requested value to the controlled vocabulary, ignoring case/punctuation. */
+function matchVocab(requested: string, allowed: string[]): string | null {
+  const exact = allowed.find((a) => a === requested);
+  if (exact) return exact;
+  const n = norm(requested);
+  if (!n) return null;
+  const hits = allowed.filter((a) => norm(a) === n);
+  return hits.length === 1 ? hits[0] : null;
+}
+
+/** Map a bin value (a label, or a bare number that falls inside a bin range). */
+function matchBin(requested: string, v: VariableSpec): string | null {
+  const bins = v.bins ?? [];
+  const exact = bins.find((b) => b.label === requested);
+  if (exact) return exact.label;
+  const n = Number(String(requested).replace(/[^0-9.\-]/g, ''));
+  if (!Number.isNaN(n) && String(requested).match(/\d/)) {
+    const inRange = bins.find((b) => n >= b.min && n <= b.max);
+    if (inRange) return inRange.label;
+  }
+  const byNorm = bins.filter((b) => norm(b.label) === norm(requested));
+  return byNorm.length === 1 ? byNorm[0].label : null;
+}
+
+interface CoerceResult {
+  value: unknown;
+  /** values that could not be mapped to the controlled vocabulary */
+  dropped: string[];
+}
+
+function asArray(x: unknown): string[] {
+  if (Array.isArray(x)) return x.map(String);
+  if (typeof x === 'string' && x.length > 0) return x.split(',').map((s) => s.trim());
+  return [];
+}
+
+function coerceValue(value: unknown, v: VariableSpec): CoerceResult {
   switch (v.widget) {
     case 'boolean': {
-      if (value === true || value === 'true') return 'true';
-      if (value === false || value === 'false') return 'false';
-      return 'true';
+      const val =
+        value === true || value === 'true'
+          ? 'true'
+          : value === false || value === 'false'
+            ? 'false'
+            : 'true';
+      return { value: val, dropped: [] };
     }
-    case 'multiselect':
+    case 'multiselect': {
+      const requested = asArray(value);
+      const allowed = v.values ?? [];
+      if (allowed.length === 0) return { value: requested, dropped: [] }; // no vocab to validate
+      const kept: string[] = [];
+      const dropped: string[] = [];
+      for (const r of requested) {
+        const m = matchVocab(r, allowed);
+        if (m) kept.push(m);
+        else dropped.push(r);
+      }
+      return { value: Array.from(new Set(kept)), dropped };
+    }
     case 'bins': {
-      if (Array.isArray(value)) return value.filter((x) => typeof x === 'string');
-      if (typeof value === 'string' && value.length > 0) return [value];
-      return [];
+      const requested = asArray(value);
+      const kept: string[] = [];
+      const dropped: string[] = [];
+      for (const r of requested) {
+        const m = matchBin(r, v);
+        if (m) kept.push(m);
+        else dropped.push(r);
+      }
+      return { value: Array.from(new Set(kept)), dropped };
     }
     case 'minCount': {
-      if (typeof value === 'number') return String(value);
-      if (typeof value === 'string') return value;
-      return String(v.options?.[0]?.min ?? 1);
+      const n = Math.round(Number(value));
+      const max = v.options?.reduce((m, o) => Math.max(m, o.min), 1) ?? 1;
+      const min = v.options?.reduce((m, o) => Math.min(m, o.min), max) ?? 1;
+      if (Number.isNaN(n)) return { value: String(min), dropped: [] };
+      const clamped = Math.min(Math.max(n, min), max); // clamp absurd values (e.g. 90 -> max)
+      return { value: String(clamped), dropped: [] };
     }
     case 'range': {
-      if (typeof value === 'string' && /^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/.test(value)) return value;
-      if (typeof value === 'number') return `${value},${v.range?.max ?? 100}`;
-      return `${v.range?.min ?? 0},${v.range?.max ?? 100}`;
+      const lo = v.range?.min ?? 0;
+      const hi = v.range?.max ?? 100;
+      if (typeof value === 'string' && /^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/.test(value)) {
+        const [a, b] = value.split(',').map(Number);
+        return { value: `${Math.max(a, lo)},${Math.min(b, hi)}`, dropped: [] };
+      }
+      if (typeof value === 'number') return { value: `${Math.max(value, lo)},${hi}`, dropped: [] };
+      return { value: `${lo},${hi}`, dropped: [] };
     }
-    default: {
-      // treat operator as unused in other branches; it is intentionally used here implicitly
-      void operator;
-      if (Array.isArray(value)) return value.filter((x) => typeof x === 'string');
-      if (typeof value === 'string') return [value];
-      return [];
-    }
+    default:
+      return { value: asArray(value), dropped: [] };
   }
+}
+
+function isEmptyValue(value: unknown): boolean {
+  return Array.isArray(value) && value.length === 0;
 }
 
 function parseCriteria(
   arr: unknown,
   varMap: Map<string, VariableSpec>,
+  unmatched: string[],
 ): DraftCriterion[] {
   if (!Array.isArray(arr)) return [];
   const result: DraftCriterion[] = [];
@@ -161,12 +211,25 @@ function parseCriteria(
     const rec = item as Record<string, unknown>;
     const field = String(rec['field'] ?? '');
     const spec = varMap.get(field);
-    if (!spec) continue;
+    if (!spec) {
+      if (field) unmatched.push(field);
+      continue;
+    }
     const operator = coerceOperator(rec['operator'], spec.widget);
-    const value = coerceValue(rec['value'], operator, spec);
+    const { value, dropped } = coerceValue(rec['value'], spec);
+    for (const d of dropped) unmatched.push(`${spec.label}: ${d}`);
+    if (isEmptyValue(value)) continue; // nothing valid left for this criterion
     result.push({ field, operator, value });
   }
   return result;
+}
+
+function cleanStrings(arr: unknown): string[] {
+  if (!Array.isArray(arr)) return [];
+  return arr
+    .filter((x): x is string => typeof x === 'string')
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0 && !/[<>]/.test(s)); // drop placeholder / junk text
 }
 
 export function validateDraft(raw: unknown, spec: CohortSpec): DraftedCohort {
@@ -177,26 +240,41 @@ export function validateDraft(raw: unknown, spec: CohortSpec): DraftedCohort {
   );
 
   let parsed: Record<string, unknown> = {};
-
   if (typeof raw === 'string') {
-    // strip markdown fences if present
     const stripped = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '').trim();
     try {
       parsed = JSON.parse(stripped) as Record<string, unknown>;
     } catch {
-      parsed = {};
+      // recover the first {...} block from noisy output
+      const m = stripped.match(/\{[\s\S]*\}/);
+      if (m) {
+        try {
+          parsed = JSON.parse(m[0]) as Record<string, unknown>;
+        } catch {
+          parsed = {};
+        }
+      }
     }
   } else if (typeof raw === 'object' && raw !== null) {
     parsed = raw as Record<string, unknown>;
   }
 
-  const include = parseCriteria(parsed['include'], varMap);
-  const exclude = parseCriteria(parsed['exclude'], varMap);
+  const unmatched = cleanStrings(parsed['unmatched']);
+  const include = parseCriteria(parsed['include'], varMap, unmatched);
+  let exclude = parseCriteria(parsed['exclude'], varMap, unmatched);
 
-  const notes = typeof parsed['notes'] === 'string' ? parsed['notes'] : undefined;
-  const unmatched = Array.isArray(parsed['unmatched'])
-    ? (parsed['unmatched'] as unknown[]).filter((x): x is string => typeof x === 'string')
-    : undefined;
+  // Anti-mirror: a field must not appear in both include and exclude. Weak
+  // models often duplicate every include as its opposite exclude; drop those.
+  const includeFields = new Set(include.map((c) => c.field));
+  exclude = exclude.filter((c) => !includeFields.has(c.field));
 
-  return { include, exclude, notes, unmatched };
+  const notesRaw = typeof parsed['notes'] === 'string' ? parsed['notes'].trim() : '';
+  const notes = notesRaw.length > 0 && !/[<>]/.test(notesRaw) ? notesRaw : undefined;
+
+  return {
+    include,
+    exclude,
+    notes,
+    unmatched: unmatched.length > 0 ? Array.from(new Set(unmatched)) : undefined,
+  };
 }

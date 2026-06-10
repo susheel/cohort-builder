@@ -1,8 +1,9 @@
 import type { CohortSpec } from '../spec/types';
 import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress } from './types';
 import { buildSystemPrompt, buildUserPrompt, validateDraft } from './prompt';
+import { DEFAULT_WEBLLM_MODEL } from './models';
 
-const DEFAULT_MODEL = 'Llama-3.2-1B-Instruct-q4f16_1-MLC';
+const DEFAULT_MODEL = DEFAULT_WEBLLM_MODEL;
 
 // Minimal shape of the WebLLM engine we use (avoids importing the full package at top level).
 interface WebLlmEngine {
