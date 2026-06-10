@@ -147,6 +147,10 @@ export interface CohortSpec {
   sdc: SdcConfig;
   /** variable names to show as default characterisation charts */
   defaultCharts?: string[];
+  /** variable names treated as quasi-identifiers for k-anonymity */
+  quasiIdentifiers?: string[];
+  /** variable name treated as the sensitive attribute for l-diversity */
+  sensitiveAttribute?: string;
   /** provenance metadata */
   meta?: Record<string, unknown>;
 }
@@ -165,6 +169,8 @@ export interface CohortSpecOverride {
   variables?: VariableOverride[];
   sdc?: DeepPartial<SdcConfig>;
   defaultCharts?: string[];
+  quasiIdentifiers?: string[];
+  sensitiveAttribute?: string;
   meta?: Record<string, unknown>;
 }
 
@@ -222,7 +228,9 @@ export const DEFAULT_SDC: SdcConfig = {
       roundingBase: 20,
       roundingMode: 'up',
       complementarySuppression: true,
-      booleanOnly: true,
+      // Count-driven by default: suppress only when below k, round above it.
+      // 'Strict availability' (booleanOnly) is an opt-in toggle, not the default.
+      booleanOnly: false,
       zeroIsDisclosive: true,
     },
   },

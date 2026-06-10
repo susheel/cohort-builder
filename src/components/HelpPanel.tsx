@@ -182,22 +182,29 @@ function SdcSection() {
           ['None', '1', 'none', 'no', 'no'],
           ['Low', '5', 'nearest 5', 'no', 'no'],
           ['Medium', '10', 'up to 10', 'yes', 'no'],
-          ['High', '20', 'up to 20', 'yes', 'yes'],
+          ['High', '20', 'up to 20', 'yes', 'no (optional)'],
         ]}
       />
+      <P className="mt-2">
+        Suppression is <strong>count-driven</strong>: a result is suppressed only when its count is
+        below its threshold k, and rounded above it. Sensitivity sets k (higher = stricter), it does
+        not by itself hide a large cohort. So a cohort of thousands filtered by a High variable still
+        shows its (rounded) number; only genuinely small counts are hidden.
+      </P>
       <DefList
         items={[
           ['thresholdK', 'Counts below this (but above zero) are suppressed'],
           ['roundingBase / roundingMode', 'Granularity and method (none / nearest / up / random)'],
           ['complementarySuppression', 'Secondary suppression on cross-tabs to block differencing'],
-          ['booleanOnly', 'Return only "data available / insufficient", never a number'],
+          ['booleanOnly', 'Optional strict mode: return only "data available / insufficient", never a number'],
           ['zeroIsDisclosive', 'Treat a true zero as disclosive and suppress it too'],
         ]}
       />
       <Callout>
-        Suppressed is never shown as a number and is visually distinct from a true zero. High-
-        sensitivity queries return availability only by default. All values are editable at runtime
-        in the Settings panel.
+        Suppressed is never shown as a number and is visually distinct from a true zero. If the whole
+        matching cohort is below k, the charts and the data files table are suppressed too; when the
+        cohort is large enough they are shown, with any individual small cell still suppressed. All
+        values are editable at runtime in the Settings panel.
       </Callout>
     </Section>
   );

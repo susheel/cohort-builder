@@ -41,7 +41,7 @@ function renderCell(col: string, raw: unknown) {
 }
 
 export function DataFilesTable() {
-  const { spec, query, sdc, getDataFiles } = useApp();
+  const { spec, query, sdc, getDataFiles, cohortSuppressed } = useApp();
   const [page, setPage] = useState(0);
   const [data, setData] = useState<DataFilesPage>({ columns: [], rows: [], total: 0 });
   const [loading, setLoading] = useState(false);
@@ -86,6 +86,23 @@ export function DataFilesTable() {
   // file-level datasets only: hide entirely if there is no file table
   if (columns.length === 0 && total === 0 && !loading) {
     return null;
+  }
+
+  if (cohortSuppressed) {
+    return (
+      <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+        <h2 className="mb-2 text-sm font-semibold text-slate-700">Data files</h2>
+        <div
+          className="rounded-lg border border-slate-200 bg-slate-50 p-5 text-sm text-slate-600"
+          role="status"
+        >
+          <p className="font-semibold text-slate-700">Data files hidden</p>
+          <p className="mt-1.5 leading-relaxed">
+            The matching cohort is below the disclosure threshold, so the file list is suppressed.
+          </p>
+        </div>
+      </div>
+    );
   }
 
   return (

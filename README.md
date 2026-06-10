@@ -88,14 +88,26 @@ remove panels at runtime.
 
 Every count and every cross-tab cell passes through the SDC engine
 (`src/sdc/`). Treatment is keyed on the **most sensitive variable** touched by
-the query. Defaults:
+the query. Suppression is **count-driven**: a result is suppressed only when its
+count is below its threshold `k`, and rounded above it. Sensitivity sets `k`
+(higher = stricter); it does not by itself hide a large cohort. Defaults:
 
 | Sensitivity | threshold `k` | rounding | complementary | boolean-only |
 |---|---|---|---|---|
 | None | 1 | none | no | no |
 | Low | 5 | nearest 5 | no | no |
 | Medium | 10 | up to 10 | yes | no |
-| High | 20 | up to 20 | yes | **yes** |
+| High | 20 | up to 20 | yes | no (optional) |
+
+So a cohort of thousands filtered by a High variable (e.g. Age) still shows its
+rounded number; only genuinely small counts (< k) are suppressed. "Boolean-only"
+(availability instead of a number) is an opt-in strict mode in Settings, not the
+High default.
+
+**Panel gating**: if the *whole matching cohort* is below `k`, the
+characterisation charts and the data files table are suppressed (in both Guided
+and Advanced modes). When the cohort is large enough they are shown, with any
+individual small cell still suppressed.
 
 Algorithm order (load-bearing): zero-check → boolean mode → primary suppression
 → rounding → recompute totals → complementary pass on cross-tabs. Random
@@ -103,12 +115,27 @@ rounding is deterministic per canonical query string, so repeating a query
 cannot average the noise away. See
 [`docs/research/02-statistical-disclosure-control.md`](docs/research/02-statistical-disclosure-control.md).
 
+### k-anonymity & l-diversity
+
+A Privacy assessment panel computes, for the matching cohort:
+
+- **k-anonymity**: the size of the smallest equivalence class over the
+  quasi-identifiers (the most re-identifiable subject shares its QI profile with
+  k-1 others). Banded against a privacy target of 5: k=1 is flagged "high
+  re-identification risk".
+- **l-diversity**: the smallest number of distinct sensitive-attribute values in
+  any class.
+
+Quasi-identifiers and the sensitive attribute are configurable per spec
+(`quasiIdentifiers`, `sensitiveAttribute`); sensible defaults are inferred.
+These metrics are informational and do not block queries.
+
 ### Honesty rules
 
 - A **suppressed** cell is never shown as a number, and is visually distinct
   from a **true zero**.
-- **High-sensitivity** queries return only "Data available" / "Insufficient
-  data" by default (overridable in Settings).
+- Suppression follows the **count**, not the mere presence of a sensitive
+  variable; "boolean-only" availability is an opt-in mode (Settings).
 - The "How this number was computed" panel always states which policy was
   applied.
 

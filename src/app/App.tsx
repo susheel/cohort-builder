@@ -10,6 +10,7 @@ import { TemplatePicker } from '../components/TemplatePicker';
 import { DescribeCohort } from '../components/DescribeCohort';
 import { Characterisation } from '../components/Characterisation';
 import { DataFilesTable } from '../components/DataFilesTable';
+import { PrivacyPanel } from '../components/PrivacyPanel';
 import { CountRail } from '../components/CountRail';
 import { SettingsPanel } from '../components/SettingsPanel';
 import { DataUploader } from '../components/DataUploader';
@@ -99,6 +100,7 @@ function ReadyLayout() {
         <QuerySummary />
         <Characterisation />
         <DataFilesTable />
+        <PrivacyPanel />
       </section>
 
       <aside className="lg:sticky lg:top-0 lg:self-start">

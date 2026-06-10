@@ -38,6 +38,12 @@ import {
   treeCountSql,
 } from '../query/compileTree';
 import { dataFileColumns } from '../query/builder';
+import {
+  privacyMetricsSql,
+  resolveQuasiIdentifiers,
+  resolveSensitiveAttribute,
+  type PrivacyMetrics,
+} from '../query/privacy';
 import { buildFields, fieldByName, type CohortField } from '../query/fields';
 import {
   funnelSteps,
@@ -94,6 +100,9 @@ export interface FunnelRow {
 }
 
 const LLM_CONFIG_KEY = 'cohort-builder.llmConfig';
+
+/** Privacy target for k-anonymity risk banding (the widely-cited minimum). */
+const K_ANON_TARGET = 5;
 
 function loadLlmConfig(): LlmConfig {
   try {
@@ -159,6 +168,10 @@ interface AppStateValue {
   counting: boolean;
   populationWarning: string | null;
   repetitionWarning: string | null;
+  /** true when the whole cohort is below threshold: gate charts + files table */
+  cohortSuppressed: boolean;
+  /** k-anonymity / l-diversity for the cohort (null if no quasi-identifiers) */
+  getPrivacyMetrics: () => Promise<PrivacyMetrics | { suppressed: true } | null>;
 
   chartVars: string[];
   addChart: (variable: string) => void;
@@ -517,6 +530,49 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     [spec, query, sdc, activeSensitivity],
   );
 
+  // the whole cohort is below threshold (or strict-availability says insufficient):
+  // gate the charts and the data files table on this.
+  const cohortSuppressed = useMemo(() => {
+    if (!count) return false;
+    return count.kind === 'suppressed' || (count.kind === 'boolean' && !count.available);
+  }, [count]);
+
+  const getPrivacyMetrics = useCallback(async () => {
+    if (!spec) return null;
+    if (cohortSuppressed) return { suppressed: true } as const;
+    const qis = resolveQuasiIdentifiers(spec);
+    if (qis.length === 0) return null;
+    const sensitive = resolveSensitiveAttribute(spec);
+    const sqlTemplate = privacyMetricsSql(spec, query, { qis, sensitive });
+    if (!sqlTemplate) return null;
+    // k-anonymity is judged against its own privacy target (commonly 5), NOT the
+    // count-suppression threshold (which can be 1 when no sensitive variable is
+    // filtered). A unique record (k=1) is always high risk.
+    const threshold = K_ANON_TARGET;
+    const sql = sqlTemplate.replaceAll('{K}', String(threshold));
+    const { rows } = await runQuery<{
+      k_anon: number;
+      l_div: number | null;
+      classes: number;
+      total: number;
+      records_at_risk: number;
+      classes_at_risk: number;
+    }>(sql);
+    const r = rows[0];
+    if (!r || r.total == null) return null;
+    return {
+      kAnonymity: Number(r.k_anon ?? 0),
+      lDiversity: r.l_div == null ? null : Number(r.l_div),
+      classes: Number(r.classes ?? 0),
+      total: Number(r.total ?? 0),
+      recordsAtRisk: Number(r.records_at_risk ?? 0),
+      classesAtRisk: Number(r.classes_at_risk ?? 0),
+      threshold,
+      qiLabels: qis.map((v) => v.label),
+      sensitiveLabel: sensitive?.label,
+    } satisfies PrivacyMetrics;
+  }, [spec, query, cohortSuppressed]);
+
   const value: AppStateValue = {
     catalogue,
     status,
@@ -554,6 +610,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     counting,
     populationWarning,
     repetitionWarning,
+    cohortSuppressed,
+    getPrivacyMetrics,
     chartVars,
     addChart,
     removeChart,

@@ -182,29 +182,34 @@ describe('applyCount – Medium sensitivity (k=10, up to nearest 10)', () => {
 });
 
 // ---------------------------------------------------------------------------
-// High level: k=20, boolean only, zeroIsDisclosive
+// High level (default): k=20, COUNT-DRIVEN (suppress below 20, round above),
+// zeroIsDisclosive. Boolean-only is an opt-in mode tested separately below.
 // ---------------------------------------------------------------------------
 
-describe('applyCount – High sensitivity (boolean only, k=20)', () => {
-  it('returns boolean with available=true when count >= 20', () => {
-    const result = applyCount(20, 'High', DEFAULT_SDC);
-    expect(result.kind).toBe('boolean');
-    expect(result.value).toBeNull();
-    expect(result.available).toBe(true);
-    expect(result.displayLabel).toBe('Data available (≥20)');
-  });
-
-  it('returns boolean with available=false when count < 20', () => {
-    const result = applyCount(19, 'High', DEFAULT_SDC);
-    expect(result.kind).toBe('boolean');
-    expect(result.available).toBe(false);
-    expect(result.displayLabel).toBe('Insufficient data (<20)');
-  });
-
-  it('returns boolean for any large count', () => {
+describe('applyCount – High sensitivity (count-driven default, k=20)', () => {
+  it('rounds (not boolean) a large count', () => {
     const result = applyCount(999, 'High', DEFAULT_SDC);
-    expect(result.kind).toBe('boolean');
+    expect(result.kind).toBe('rounded');
     expect(result.available).toBe(true);
+    expect(result.value).toBe(1000); // round up to base 20
+  });
+
+  it('shows a sizeable cohort as a number, not availability-only', () => {
+    const result = applyCount(18000, 'High', DEFAULT_SDC);
+    expect(result.kind).toBe('rounded');
+    expect(result.value).toBe(18000);
+  });
+
+  it('suppresses a count below k=20', () => {
+    const result = applyCount(19, 'High', DEFAULT_SDC);
+    expect(result.kind).toBe('suppressed');
+    expect(result.available).toBe(true);
+    expect(result.displayLabel).toBe('<20');
+  });
+
+  it('count exactly at k=20 is shown (rounded), not suppressed', () => {
+    const result = applyCount(20, 'High', DEFAULT_SDC);
+    expect(result.kind).toBe('rounded');
   });
 
   it('suppresses zero when zeroIsDisclosive=true (High)', () => {
@@ -213,9 +218,32 @@ describe('applyCount – High sensitivity (boolean only, k=20)', () => {
     expect(result.available).toBe(false);
     expect(result.displayLabel).toBe('<20');
   });
+});
 
-  it('display label for boolean does not contain raw count', () => {
-    const result = applyCount(7, 'High', DEFAULT_SDC);
+// Opt-in strict 'boolean only' availability mode (still supported by the engine)
+const BOOLEAN_HIGH: SdcConfig = {
+  ...DEFAULT_SDC,
+  levels: { ...DEFAULT_SDC.levels, High: { ...DEFAULT_SDC.levels.High, booleanOnly: true } },
+};
+
+describe('applyCount – boolean-only mode (opt-in)', () => {
+  it('returns boolean available=true when count >= 20', () => {
+    const result = applyCount(20, 'High', BOOLEAN_HIGH);
+    expect(result.kind).toBe('boolean');
+    expect(result.value).toBeNull();
+    expect(result.available).toBe(true);
+    expect(result.displayLabel).toBe('Data available (≥20)');
+  });
+
+  it('returns boolean available=false when count < 20', () => {
+    const result = applyCount(19, 'High', BOOLEAN_HIGH);
+    expect(result.kind).toBe('boolean');
+    expect(result.available).toBe(false);
+    expect(result.displayLabel).toBe('Insufficient data (<20)');
+  });
+
+  it('boolean display label does not contain the raw count', () => {
+    const result = applyCount(7, 'High', BOOLEAN_HIGH);
     expect(result.displayLabel).not.toContain('7');
   });
 });
@@ -423,9 +451,9 @@ describe('canonicalizeQuery', () => {
 // ---------------------------------------------------------------------------
 
 describe('DEFAULT_SDC sanity', () => {
-  it('High is booleanOnly with k=20', () => {
+  it('High is count-driven with k=20 (suppress below, not boolean-only)', () => {
     const high = DEFAULT_SDC.levels.High;
-    expect(high.booleanOnly).toBe(true);
+    expect(high.booleanOnly).toBe(false);
     expect(high.thresholdK).toBe(20);
     expect(high.zeroIsDisclosive).toBe(true);
   });
@@ -471,8 +499,12 @@ describe('CountResult shape', () => {
     expect(r.displayLabel).not.toContain('3');
   });
 
-  it('boolean cell has value=null regardless of raw', () => {
-    const r: CountResult = applyCount(100, 'High', DEFAULT_SDC);
+  it('boolean cell has value=null regardless of raw (boolean-only mode)', () => {
+    const boolHigh: SdcConfig = {
+      ...DEFAULT_SDC,
+      levels: { ...DEFAULT_SDC.levels, High: { ...DEFAULT_SDC.levels.High, booleanOnly: true } },
+    };
+    const r: CountResult = applyCount(100, 'High', boolHigh);
     expect(r.kind).toBe('boolean');
     expect(r.value).toBeNull();
     // Label must not expose the raw count

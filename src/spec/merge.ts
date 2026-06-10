@@ -159,6 +159,8 @@ export function mergeSpec(base: CohortSpec, override?: CohortSpecOverride): Coho
     variables,
     sdc: mergeSdc(base.sdc, override.sdc as SdcConfig | undefined),
     defaultCharts: override.defaultCharts ?? base.defaultCharts,
+    quasiIdentifiers: override.quasiIdentifiers ?? base.quasiIdentifiers,
+    sensitiveAttribute: override.sensitiveAttribute ?? base.sensitiveAttribute,
     meta: { ...(base.meta ?? {}), ...(override.meta ?? {}) },
   };
 }

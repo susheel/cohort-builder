@@ -40,7 +40,7 @@ function toDatum(cell: BreakdownCell): ChartDatum {
 }
 
 export function Characterisation() {
-  const { spec, chartVars, addChart, removeChart } = useApp();
+  const { spec, chartVars, addChart, removeChart, cohortSuppressed, sdc, activeSensitivity } = useApp();
 
   // candidate variables for breakdown: any visible categorical-ish widget,
   // subject- or file-level.
@@ -62,35 +62,50 @@ export function Characterisation() {
 
   if (!spec) return null;
 
+  const thresholdK = sdc.levels[activeSensitivity]?.thresholdK ?? 1;
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-sm font-semibold text-slate-700">Characterisation</h2>
-        <label className="flex items-center gap-2 text-xs text-slate-500">
-          Add chart
-          <select
-            value={pending}
-            onChange={(e) => {
-              const name = e.target.value;
-              if (name) {
-                addChart(name);
-                setPending('');
-              }
-            }}
-            disabled={available.length === 0}
-            className="rounded-md border border-slate-300 px-2 py-1 text-xs text-slate-800 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40 disabled:opacity-50"
-          >
-            <option value="">{available.length === 0 ? 'All shown' : 'Choose a variable…'}</option>
-            {available.map((v) => (
-              <option key={v.name} value={v.name}>
-                {v.label}
-              </option>
-            ))}
-          </select>
-        </label>
+        {!cohortSuppressed && (
+          <label className="flex items-center gap-2 text-xs text-slate-500">
+            Add chart
+            <select
+              value={pending}
+              onChange={(e) => {
+                const name = e.target.value;
+                if (name) {
+                  addChart(name);
+                  setPending('');
+                }
+              }}
+              disabled={available.length === 0}
+              className="rounded-md border border-slate-300 px-2 py-1 text-xs text-slate-800 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40 disabled:opacity-50"
+            >
+              <option value="">{available.length === 0 ? 'All shown' : 'Choose a variable…'}</option>
+              {available.map((v) => (
+                <option key={v.name} value={v.name}>
+                  {v.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
       </div>
 
-      {chartVars.length === 0 ? (
+      {cohortSuppressed ? (
+        <div
+          className="rounded-lg border border-slate-200 bg-slate-50 p-5 text-sm text-slate-600"
+          role="status"
+        >
+          <p className="font-semibold text-slate-700">Characterisation hidden</p>
+          <p className="mt-1.5 leading-relaxed">
+            The matching cohort is below the disclosure threshold (k = {thresholdK}), so breakdowns
+            are suppressed to protect privacy. Broaden the cohort to see charts.
+          </p>
+        </div>
+      ) : chartVars.length === 0 ? (
         <div className="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-center text-sm text-slate-400">
           No charts. Use “Add chart” to break the cohort down by a variable.
         </div>

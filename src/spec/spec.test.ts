@@ -89,7 +89,7 @@ describe('mergeSpec', () => {
   it('deep-merges the SDC policy', () => {
     const merged = mergeSpec(base, { sdc: { levels: { High: { thresholdK: 50 } } } as never });
     expect(merged.sdc.levels.High.thresholdK).toBe(50);
-    expect(merged.sdc.levels.High.booleanOnly).toBe(true); // inherited default
+    expect(merged.sdc.levels.High.booleanOnly).toBe(false); // inherited default (count-driven)
     expect(merged.sdc.levels.Low.thresholdK).toBe(5); // untouched
   });
 

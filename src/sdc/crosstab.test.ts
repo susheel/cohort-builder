@@ -246,7 +246,12 @@ describe('applyCrossTab – secondary suppression picks smallest cell', () => {
 // High level cross-tab: boolean only
 // ---------------------------------------------------------------------------
 
-describe('applyCrossTab – High level (boolean only)', () => {
+describe('applyCrossTab – High level (boolean-only, opt-in)', () => {
+  // Boolean-only is no longer the High default; set it explicitly to test the path.
+  const BOOLEAN_HIGH: SdcConfig = {
+    ...DEFAULT_SDC,
+    levels: { ...DEFAULT_SDC.levels, High: { ...DEFAULT_SDC.levels.High, booleanOnly: true } },
+  };
   const cells = makeCells([
     [5, 25, 50],
     [30, 0, 100],
@@ -255,7 +260,7 @@ describe('applyCrossTab – High level (boolean only)', () => {
   it('non-zero cells are boolean kind', () => {
     // Algorithm order (per spec): zero check BEFORE boolean-only.
     // All non-zero cells go through the boolean-only path.
-    const result = applyCrossTab(cells, 'High', DEFAULT_SDC);
+    const result = applyCrossTab(cells, 'High', BOOLEAN_HIGH);
     const nonZeroCells = result.cells.flat().filter((c) => c.raw !== 0);
     for (const cell of nonZeroCells) {
       expect(cell.kind).toBe('boolean');
@@ -263,25 +268,23 @@ describe('applyCrossTab – High level (boolean only)', () => {
   });
 
   it('cell with raw=5 (< 20) has available=false', () => {
-    const result = applyCrossTab(cells, 'High', DEFAULT_SDC);
+    const result = applyCrossTab(cells, 'High', BOOLEAN_HIGH);
     expect(result.cells[0][0].available).toBe(false);
   });
 
   it('cell with raw=25 (>= 20) has available=true', () => {
-    const result = applyCrossTab(cells, 'High', DEFAULT_SDC);
+    const result = applyCrossTab(cells, 'High', BOOLEAN_HIGH);
     expect(result.cells[0][1].available).toBe(true);
   });
 
   it('zero cell with zeroIsDisclosive=true is suppressed (zero check precedes boolean-only)', () => {
-    const result = applyCrossTab(cells, 'High', DEFAULT_SDC);
-    // Per spec algorithm order: zero -> boolean. Zero with zeroIsDisclosive
-    // returns suppressed before the boolean-only check is reached.
+    const result = applyCrossTab(cells, 'High', BOOLEAN_HIGH);
     expect(result.cells[1][1].kind).toBe('suppressed');
     expect(result.cells[1][1].available).toBe(false);
   });
 
   it('large count (100) is boolean with available=true', () => {
-    const result = applyCrossTab(cells, 'High', DEFAULT_SDC);
+    const result = applyCrossTab(cells, 'High', BOOLEAN_HIGH);
     expect(result.cells[1][2].kind).toBe('boolean');
     expect(result.cells[1][2].available).toBe(true);
   });
