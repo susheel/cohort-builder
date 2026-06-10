@@ -54,7 +54,7 @@ import {
   type GuidedModel,
 } from '../query/guided';
 import { makeLlmClient } from '../llm';
-import type { DraftedCohort, LlmConfig, LlmProgress } from '../llm/types';
+import type { DraftedCohort, LlmConfig, LlmProgress, LlmTrace } from '../llm/types';
 import { TEMPLATES, type CohortTemplate } from '../data/templates';
 import { asset } from '../util/asset';
 
@@ -137,8 +137,9 @@ interface AppStateValue {
   query: RuleGroupType;
   setQuery: (q: RuleGroupType) => void;
   clearQuery: () => void;
-  /** append a default rule for a field (used by the variable palette) */
-  addRule: (field: string) => void;
+  /** append a rule for a field (used by the variable palette); presetValues
+   * pre-selects values for array-valued widgets (multiselect / bins). */
+  addRule: (field: string, presetValues?: string[]) => void;
   /** number of active leaf predicates */
   ruleCount: number;
 
@@ -155,7 +156,11 @@ interface AppStateValue {
   llmConfig: LlmConfig;
   setLlmConfig: (c: LlmConfig) => void;
   llmAvailable: () => Promise<{ ok: boolean; reason?: string }>;
-  draftFromText: (text: string, onProgress?: (p: LlmProgress) => void) => Promise<DraftedCohort>;
+  draftFromText: (
+    text: string,
+    onProgress?: (p: LlmProgress) => void,
+    onTrace?: (t: LlmTrace) => void,
+  ) => Promise<DraftedCohort>;
   applyDraft: (draft: DraftedCohort) => void;
 
   templates: CohortTemplate[];
@@ -302,15 +307,21 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const clearQuery = useCallback(() => setQuery({ combinator: 'and', rules: [] }), []);
 
   const addRule = useCallback(
-    (field: string) => {
+    (field: string, presetValues?: string[]) => {
       const f = fieldByName(fields, field);
       if (!f) return;
       ruleId += 1;
+      // Preset values only apply to array-valued widgets (multiselect / bins);
+      // other widgets keep their default value.
+      const value =
+        presetValues && presetValues.length && Array.isArray(f.defaultValue)
+          ? presetValues
+          : (f.defaultValue ?? []);
       const rule = {
         id: `r-${ruleId}`,
         field,
         operator: (f.defaultOperator as string) ?? 'in',
-        value: f.defaultValue ?? [],
+        value,
       };
       setQuery((prev) => ({ ...prev, rules: [...prev.rules, rule] }));
     },
@@ -384,10 +395,14 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   }, [llmConfig]);
 
   const draftFromText = useCallback(
-    async (text: string, onProgress?: (p: LlmProgress) => void): Promise<DraftedCohort> => {
+    async (
+      text: string,
+      onProgress?: (p: LlmProgress) => void,
+      onTrace?: (t: LlmTrace) => void,
+    ): Promise<DraftedCohort> => {
       if (!spec) return { include: [], exclude: [] };
       const client = makeLlmClient(llmConfig);
-      return client.draftCohort(text, spec, onProgress);
+      return client.draftCohort(text, spec, onProgress, onTrace);
     },
     [spec, llmConfig],
   );

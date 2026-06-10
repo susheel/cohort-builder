@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useApp } from '../app/AppState';
 import { OP, type CohortField } from '../query/fields';
-import type { DraftCriterion, DraftedCohort } from '../llm/types';
+import type { DraftCriterion, DraftedCohort, LlmTrace } from '../llm/types';
 
 type Phase = 'idle' | 'checking' | 'drafting' | 'preview' | 'error';
 
@@ -13,19 +13,23 @@ type Phase = 'idle' | 'checking' | 'drafting' | 'preview' | 'error';
  * sent to the provider.
  */
 export function DescribeCohort() {
-  const { fields, llmAvailable, draftFromText, applyDraft, llmConfig } = useApp();
+  const { fields, llmAvailable, draftFromText, applyDraft, llmConfig, setLlmConfig } = useApp();
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('');
   const [phase, setPhase] = useState<Phase>('idle');
   const [progress, setProgress] = useState<{ progress?: number; text: string } | null>(null);
   const [draft, setDraft] = useState<DraftedCohort | null>(null);
   const [problem, setProblem] = useState<string | null>(null);
+  const [trace, setTrace] = useState<LlmTrace | null>(null);
+
+  const traceOn = llmConfig.trace ?? false;
 
   const reset = () => {
     setPhase('idle');
     setProgress(null);
     setDraft(null);
     setProblem(null);
+    setTrace(null);
   };
 
   const submit = async () => {
@@ -33,6 +37,7 @@ export function DescribeCohort() {
     if (!trimmed) return;
     setProblem(null);
     setDraft(null);
+    setTrace(null);
     setPhase('checking');
     const avail = await llmAvailable();
     if (!avail.ok) {
@@ -46,7 +51,11 @@ export function DescribeCohort() {
     setPhase('drafting');
     setProgress({ text: 'Contacting the model…' });
     try {
-      const result = await draftFromText(trimmed, (p) => setProgress(p));
+      const result = await draftFromText(
+        trimmed,
+        (p) => setProgress(p),
+        traceOn ? (t) => setTrace(t) : undefined,
+      );
       setDraft(result);
       setPhase('preview');
     } catch (e) {
@@ -107,6 +116,15 @@ export function DescribeCohort() {
             <span className="text-[11px] text-slate-400">
               Provider: <span className="font-medium text-slate-500">{providerLabel(llmConfig.provider)}</span>
             </span>
+            <label className="ml-auto flex items-center gap-1.5 text-[11px] text-slate-500">
+              <input
+                type="checkbox"
+                checked={traceOn}
+                onChange={(e) => setLlmConfig({ ...llmConfig, trace: e.target.checked })}
+                className="h-3.5 w-3.5 rounded border-slate-300 text-cyan-600 focus:ring-cyan-500/40"
+              />
+              Show LLM trace
+            </label>
           </div>
 
           <p className="rounded-md bg-slate-50 p-2.5 text-[11px] leading-relaxed text-slate-500">
@@ -140,9 +158,72 @@ export function DescribeCohort() {
           {phase === 'preview' && draft && (
             <DraftPreview draft={draft} fields={fields} onConfirm={confirm} onCancel={reset} />
           )}
+
+          {traceOn && trace && <TracePanel trace={trace} />}
         </div>
       )}
     </div>
+  );
+}
+
+function prettyJson(value: unknown): string {
+  try {
+    return JSON.stringify(value, null, 2);
+  } catch {
+    return String(value);
+  }
+}
+
+/** Developer-facing view of the exact request sent to the provider and the raw response. */
+function TracePanel({ trace }: { trace: LlmTrace }) {
+  const [open, setOpen] = useState(true);
+  return (
+    <details
+      open={open}
+      onToggle={(e) => setOpen((e.target as HTMLDetailsElement).open)}
+      className="rounded-md border border-slate-300 bg-slate-50"
+    >
+      <summary className="cursor-pointer select-none px-3 py-2 text-xs font-semibold text-slate-600">
+        LLM trace
+        <span className="ml-1 font-normal text-slate-400">
+          ({providerLabel(trace.provider)}
+          {trace.model ? ` · ${trace.model}` : ''})
+        </span>
+      </summary>
+      <div className="space-y-3 border-t border-slate-200 p-3">
+        {trace.endpoint && (
+          <p className="break-all text-[11px] text-slate-500">
+            <span className="font-medium text-slate-600">Endpoint:</span> {trace.endpoint}
+          </p>
+        )}
+        <div>
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">Request sent</p>
+          <pre className="max-h-64 overflow-auto rounded bg-slate-900 p-2.5 text-[11px] leading-relaxed text-slate-100">
+            {prettyJson(trace.request)}
+          </pre>
+        </div>
+        {trace.response !== undefined && (
+          <div>
+            <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">Response received</p>
+            <pre className="max-h-64 overflow-auto rounded bg-slate-900 p-2.5 text-[11px] leading-relaxed text-slate-100">
+              {trace.response || '(empty)'}
+            </pre>
+          </div>
+        )}
+        {trace.error && (
+          <div>
+            <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-rose-600">Error</p>
+            <pre className="max-h-40 overflow-auto rounded bg-rose-50 p-2.5 text-[11px] leading-relaxed text-rose-800">
+              {trace.error}
+            </pre>
+          </div>
+        )}
+        <p className="text-[11px] leading-relaxed text-slate-400">
+          This is the exact prompt and parameters sent to the provider. API keys are sent as headers and
+          are not shown here. Only your description (never your data) is included.
+        </p>
+      </div>
+    </details>
   );
 }
 

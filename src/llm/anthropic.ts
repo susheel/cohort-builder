@@ -1,5 +1,5 @@
 import type { CohortSpec } from '../spec/types';
-import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress } from './types';
+import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress, LlmTrace } from './types';
 import { buildSystemPrompt, buildUserPrompt, validateDraft } from './prompt';
 
 const DEFAULT_BASE_URL = 'https://api.anthropic.com';
@@ -39,9 +39,11 @@ export class AnthropicClient implements LlmClient {
     text: string,
     spec: CohortSpec,
     onProgress?: (p: LlmProgress) => void,
+    onTrace?: (t: LlmTrace) => void,
   ): Promise<DraftedCohort> {
     onProgress?.({ text: 'Sending request to Anthropic...' });
 
+    const endpoint = `${this.baseUrl}/v1/messages`;
     const body = {
       model: this.model,
       max_tokens: 1024,
@@ -50,25 +52,36 @@ export class AnthropicClient implements LlmClient {
         { role: 'user', content: buildUserPrompt(text) },
       ],
     };
+    onTrace?.({ provider: 'anthropic', model: this.model, endpoint, request: body });
 
-    const response = await fetch(`${this.baseUrl}/v1/messages`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': this.apiKey,
-        'anthropic-version': ANTHROPIC_VERSION,
-        'anthropic-dangerous-direct-browser-access': 'true',
-      },
-      body: JSON.stringify(body),
-    });
+    let response: Response;
+    try {
+      response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': this.apiKey,
+          'anthropic-version': ANTHROPIC_VERSION,
+          'anthropic-dangerous-direct-browser-access': 'true',
+        },
+        body: JSON.stringify(body),
+      });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      onTrace?.({ provider: 'anthropic', model: this.model, endpoint, request: body, error: msg });
+      throw e;
+    }
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => response.statusText);
-      throw new Error(`Anthropic request failed (${response.status}): ${errorText}`);
+      const msg = `Anthropic request failed (${response.status}): ${errorText}`;
+      onTrace?.({ provider: 'anthropic', model: this.model, endpoint, request: body, error: msg });
+      throw new Error(msg);
     }
 
     const data = (await response.json()) as AnthropicResponse;
     const content = data.content.find((b) => b.type === 'text')?.text ?? '';
+    onTrace?.({ provider: 'anthropic', model: this.model, endpoint, request: body, response: content });
 
     onProgress?.({ text: 'Parsing response...' });
     return validateDraft(content, spec);

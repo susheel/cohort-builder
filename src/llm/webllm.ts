@@ -1,5 +1,5 @@
 import type { CohortSpec } from '../spec/types';
-import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress } from './types';
+import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress, LlmTrace } from './types';
 import { buildSystemPrompt, buildUserPrompt, validateDraft } from './prompt';
 import { DEFAULT_WEBLLM_MODEL } from './models';
 
@@ -47,6 +47,7 @@ export class WebLlmClient implements LlmClient {
     text: string,
     spec: CohortSpec,
     onProgress?: (p: LlmProgress) => void,
+    onTrace?: (t: LlmTrace) => void,
   ): Promise<DraftedCohort> {
     if (!('gpu' in navigator)) {
       throw new Error('WebGPU is not available in this browser.');
@@ -68,17 +69,24 @@ export class WebLlmClient implements LlmClient {
 
     onProgress?.({ text: 'Generating cohort criteria...' });
 
-    const completion = await engine.chat.completions.create({
-      messages: [
-        { role: 'system', content: buildSystemPrompt(spec) },
-        { role: 'user', content: buildUserPrompt(text) },
-      ],
-      temperature: 0,
-      max_tokens: 1024,
-      stream: false,
-    });
+    const messages = [
+      { role: 'system', content: buildSystemPrompt(spec) },
+      { role: 'user', content: buildUserPrompt(text) },
+    ];
+    const request = { model: this.model, messages, temperature: 0, max_tokens: 1024 };
+    onTrace?.({ provider: 'webllm', model: this.model, request });
+
+    let completion;
+    try {
+      completion = await engine.chat.completions.create({ ...request, stream: false });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      onTrace?.({ provider: 'webllm', model: this.model, request, error: msg });
+      throw e;
+    }
 
     const content = completion.choices[0]?.message?.content ?? '';
+    onTrace?.({ provider: 'webllm', model: this.model, request, response: content });
 
     onProgress?.({ text: 'Parsing response...' });
     return validateDraft(content, spec);

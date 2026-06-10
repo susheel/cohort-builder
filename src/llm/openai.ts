@@ -1,5 +1,5 @@
 import type { CohortSpec } from '../spec/types';
-import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress } from './types';
+import type { LlmClient, LlmConfig, DraftedCohort, LlmProgress, LlmTrace } from './types';
 import { buildSystemPrompt, buildUserPrompt, validateDraft } from './prompt';
 
 const DEFAULT_BASE_URL = 'https://api.openai.com/v1';
@@ -49,9 +49,11 @@ export class OpenAiClient implements LlmClient {
     text: string,
     spec: CohortSpec,
     onProgress?: (p: LlmProgress) => void,
+    onTrace?: (t: LlmTrace) => void,
   ): Promise<DraftedCohort> {
     onProgress?.({ text: 'Sending request to OpenAI...' });
 
+    const endpoint = `${this.baseUrl}/chat/completions`;
     const body: OpenAiRequest = {
       model: this.model,
       messages: [
@@ -61,23 +63,34 @@ export class OpenAiClient implements LlmClient {
       response_format: { type: 'json_object' },
       max_tokens: 1024,
     };
+    onTrace?.({ provider: 'openai', model: this.model, endpoint, request: body });
 
-    const response = await fetch(`${this.baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${this.apiKey}`,
-      },
-      body: JSON.stringify(body),
-    });
+    let response: Response;
+    try {
+      response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify(body),
+      });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      onTrace?.({ provider: 'openai', model: this.model, endpoint, request: body, error: msg });
+      throw e;
+    }
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => response.statusText);
-      throw new Error(`OpenAI request failed (${response.status}): ${errorText}`);
+      const msg = `OpenAI request failed (${response.status}): ${errorText}`;
+      onTrace?.({ provider: 'openai', model: this.model, endpoint, request: body, error: msg });
+      throw new Error(msg);
     }
 
     const data = (await response.json()) as OpenAiResponse;
     const content = data.choices[0]?.message?.content ?? '';
+    onTrace?.({ provider: 'openai', model: this.model, endpoint, request: body, response: content });
 
     onProgress?.({ text: 'Parsing response...' });
     return validateDraft(content, spec);

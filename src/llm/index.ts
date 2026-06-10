@@ -1,4 +1,4 @@
-export type { LlmClient, LlmConfig, LlmProvider, LlmProgress, DraftedCohort, DraftCriterion } from './types';
+export type { LlmClient, LlmConfig, LlmProvider, LlmProgress, LlmTrace, DraftedCohort, DraftCriterion } from './types';
 export { buildSystemPrompt, buildUserPrompt, validateDraft } from './prompt';
 export { OpenAiClient } from './openai';
 export { AnthropicClient } from './anthropic';
